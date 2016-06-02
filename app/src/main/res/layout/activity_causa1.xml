@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorMain">
+
+    <TextView
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="Dona Fulana"
+        android:id="@+id/t_criar_causa"
+        style="@style/MyStyle"
+        android:textSize="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/imageView2" />
+
+    <Button
+        android:id="@+id/voltar"
+        android:layout_width="130px"
+        android:layout_height="130px"
+        android:src="@drawable/seta"
+        android:background="@drawable/seta"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="350px"
+        android:layout_height="200px"
+        android:src="@drawable/imagens"
+        android:layout_below="@+id/t_criar_causa"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="550px"
+        android:layout_height="350px"
+        android:src="@drawable/videoimg"
+        android:layout_gravity="center_vertical"
+        android:layout_below="@+id/voltar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="58dp" />
+
+    <TextView android:id="@+id/dados_text_view"
+        android:layout_width="50dp"
+        android:layout_height="180dp"
+        android:gravity="center"
+        android:text="Nome: Dona Fulana
+        Idade: 6 anos
+        Tipo Sanguíneo: A+
+        Local: Hemope - R. Joaquim Nabuco, 171 -
+        Graças, Recife - PE, 52011-000"
+        android:textSize="16dp"
+        style="@style/MyStyle"
+        android:layout_above="@+id/bt_apoiar"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/bt_doar">
+    </TextView>
+
+    <Button
+        android:id="@+id/bt_apoiar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/botaoapoiar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+    </Button>
+
+    <Button
+        android:id="@+id/bt_doar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/botaodoar"
+        android:layout_alignTop="@+id/bt_apoiar"
+        android:layout_alignParentEnd="true">>
+
+    </Button>
+
+</RelativeLayout>

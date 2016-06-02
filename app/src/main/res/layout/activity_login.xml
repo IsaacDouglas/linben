@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:clickable="true"
+    android:contextClickable="true"
+    android:focusableInTouchMode="false"
+    android:background="@color/color">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="350px"
+        android:layout_height="220px"
+        android:src="@drawable/libred"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:text="Conecte-se a sua conta"
+        android:id="@+id/t_conectarconta"
+        style="@style/LetrasCinza"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_below="@+id/logo"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:inputType="textEmailAddress"
+        android:background="@color/colorMain"
+        android:ems="10"
+        android:text="Insira o seu e-mail"
+        android:textColor="@color/color"
+        android:textAlignment="center"
+        android:id="@+id/email"
+        android:singleLine="true"
+        android:layout_above="@+id/senha"
+        android:layout_alignStart="@+id/t_conectarconta"
+        android:layout_marginBottom="43dp" />
+
+
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:inputType="text|textVisiblePassword"
+        android:background="@color/colorMain"
+        android:ems="10"
+        android:id="@+id/senha"
+        android:text="Insira a sua senha"
+        android:textAlignment="center"
+        android:textColor="@color/color"
+        android:singleLine="false"
+        android:layout_above="@+id/continuar"
+        android:layout_alignStart="@+id/t_conectarconta"
+        android:layout_marginBottom="25dp" />
+
+
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="45dp"
+        android:background="@drawable/entrarbranco"
+        android:id="@+id/continuar"
+        android:layout_above="@+id/bt_esqueci_senha"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="38dp" />
+
+    <Button
+        android:id="@+id/bt_esqueci_senha"
+        android:layout_height="30dp"
+        android:layout_width="130dp"
+        android:background="@color/color"
+        android:text="Esqueci a senha"
+        android:textSize="12dp"
+        style="@style/LetrasCinza"
+        android:layout_above="@+id/bt_novo_usuario"
+        android:layout_alignStart="@+id/continuar"
+        android:layout_marginBottom="28dp" />
+
+    <Button
+        android:id="@+id/bt_novo_usuario"
+        android:layout_height="25dp"
+        android:layout_width="100dp"
+        android:background="@color/color"
+        android:text="Novo usuário"
+        android:textSize="12dp"
+        style="@style/LetrasCinza"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@color/color">
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="Novo apelo"
+        android:id="@+id/t_novo_apelo"
+        style="@style/LetrasVinho"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:layout_below="@+id/topo"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/topo"
+        android:layout_width="390dp"
+        android:layout_height="70dp"
+        android:src="@drawable/topoicon"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:text="Descrição"
+        android:id="@+id/t_descricao"
+        style="@style/LetrasPreta"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_below="@+id/t_novo_apelo"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:background="@color/colorCinza"
+        android:id="@+id/descricao"
+        android:layout_below="@+id/t_descricao"
+        android:layout_centerHorizontal="true" />
+
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:text="Categoria"
+        android:id="@+id/t_categoria"
+        style="@style/LetrasPreta"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_below="@+id/descricao"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:id="@+id/categoria"
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:background="@color/colorCinza"
+        android:layout_below="@+id/t_categoria"
+        android:layout_alignStart="@+id/descricao">
+    </Spinner>
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:text="Local de doação"
+        android:id="@+id/t_local_doacao"
+        style="@style/LetrasPreta"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_below="@+id/categoria"
+        android:layout_alignStart="@+id/categoria" />
+
+    <Spinner
+        android:id="@+id/estado"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:background="@color/colorCinza"
+        android:layout_below="@+id/t_local_doacao"
+        android:layout_alignStart="@+id/t_local_doacao"
+        android:layout_alignEnd="@+id/t_categoria"
+        android:text= "Estado">
+    </Spinner>
+
+    <Spinner
+        android:id="@+id/cidade"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:background="@color/colorCinza"
+        android:layout_below="@+id/t_local_doacao"
+        android:layout_alignEnd="@+id/t_novo_apelo"
+        android:layout_toEndOf="@+id/t_local_doacao"
+        android:text= "Cidade"/>
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:text="Hemocentro"
+        android:id="@+id/t_hemocentro"
+        style="@style/LetrasPreta"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_below="@+id/estado"
+        android:layout_alignStart="@+id/estado" />
+
+    <Spinner
+        android:id="@+id/hemocentro"
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:background="@color/colorCinza"
+        android:layout_below="@+id/t_hemocentro"
+        android:layout_centerHorizontal="true"
+        android:text= "Selecione o posto de coleta">
+    </Spinner>
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:text="Enviar foto ou vídeo"
+        android:id="@+id/t_enviar_foto_video"
+        style="@style/LetrasPreta"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:layout_below="@+id/hemocentro"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/foto"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/camera"
+        android:layout_below="@+id/t_enviar_foto_video"
+        android:layout_alignEnd="@+id/t_hemocentro" />
+
+    <Button
+        android:id="@+id/galeria"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/galeria"
+        android:layout_alignTop="@+id/foto"
+        android:layout_alignStart="@+id/cidade" />
+
+    <Button
+        android:id="@+id/voltar"
+        android:layout_width="130dp"
+        android:layout_height="45dp"
+        android:background="@drawable/voltarbranco"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/t_novo_apelo" />
+
+    <Button
+        android:id="@+id/concluir"
+        android:layout_width="130dp"
+        android:layout_height="45dp"
+        android:background="@drawable/concluirbranco"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/cidade" />
+</RelativeLayout>

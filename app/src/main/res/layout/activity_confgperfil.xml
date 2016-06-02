@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@color/color">
+
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="70dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/topoicon"
+        android:baselineAlignBottom="false"
+        android:clickable="true"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:id="@+id/camera"
+        android:background="@drawable/cameranewphoto"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/configperfil"
+        android:layout_toStartOf="@+id/nome" />
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="Configurar Perfil"
+        style="@style/LetrasVinho"
+        android:textSize="25dp"
+        android:textAlignment="center"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/configperfil" />
+
+    <TextView
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:text="Amanda Carla"
+        style="@style/LetrasCinza"
+        android:textSize="22dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/configperfil"
+        android:layout_toStartOf="@+id/sangue"
+        android:id="@+id/nome"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="A+"
+        style="@style/LetrasVinho"
+        android:textSize="30dp"
+        android:id="@+id/sangue"
+        android:layout_below="@+id/configperfil"
+        android:layout_alignEnd="@+id/configperfil"
+        android:layout_marginLeft="20dp"
+        android:layout_alignBottom="@+id/nome" />
+
+    <TextView
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:text="Feminino"
+        style="@style/LetrasCinza"
+        android:textSize="20dp"
+        android:id="@+id/sexo"
+        android:textStyle="italic"
+        android:layout_alignTop="@+id/adcfoto"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+    android:layout_width="120dp"
+    android:layout_height="50dp"
+    android:text="Adicionar               Foto"
+    android:textSize="13dp"
+    style="@style/LetrasCinza"
+    android:id="@+id/adcfoto"
+    android:textAlignment="center"
+    android:layout_below="@+id/camera"
+    android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:text="Sobre você"
+        android:textSize="17dp"
+        style="@style/LetrasCinza"
+        android:id="@+id/sobre"
+        android:textAlignment="center"
+        android:layout_below="@+id/sexo"
+        android:layout_toStartOf="@+id/sexo" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:id="@+id/cxsobre"
+        android:layout_below="@+id/sobre"
+        android:layout_centerHorizontal="true"
+        android:background="#94cdcdcd"/>
+
+    <TextView
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:text="Onde Mora?"
+        android:textSize="17dp"
+        style="@style/LetrasCinza"
+        android:id="@+id/ondemoratx"
+        android:textAlignment="center"
+        android:layout_below="@+id/cxsobre"
+        android:layout_alignStart="@+id/sobre"
+        android:layout_marginTop="10dp" />
+
+    <Spinner
+        android:id="@+id/estado"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:background="#94cdcdcd"
+        android:layout_below="@+id/ondemoratx"
+        android:layout_alignStart="@+id/camera"
+        android:layout_alignEnd="@+id/ondemoratx">
+    </Spinner>
+    <Spinner
+        android:id="@+id/cidade"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:background="#94cdcdcd"
+        android:layout_below="@+id/ondemoratx"
+        android:layout_alignEnd="@+id/cxsobre">
+    </Spinner>
+
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="45dp"
+        android:id="@+id/voltar"
+        android:src="@drawable/voltarbranco"
+        android:background="@drawable/voltarbranco"
+        android:layout_alignTop="@+id/concluir"
+        android:layout_alignStart="@+id/ondemoratx" />
+    <Button
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:src="@drawable/concluirbranco"
+        android:background="@drawable/concluirbranco"
+        android:id="@+id/concluir"
+        style="@style/MyStyle1"
+        android:layout_below="@+id/cidade"
+        android:layout_alignEnd="@+id/cidade"
+        android:layout_marginTop="45dp"
+        android:longClickable="false" />
+
+
+</RelativeLayout>

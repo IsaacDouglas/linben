@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@color/colorMain">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Causas"
+        android:id="@+id/t_causa"
+        style="@style/MyStyle"
+        android:textSize="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/mais"
+        android:id="@+id/criar"
+        android:background="@drawable/mais"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:id="@+id/causa1"
+        android:layout_width="800px"
+        android:layout_height="200px"
+        android:src="@drawable/linha1"
+        android:layout_below="@+id/criar"
+        android:layout_toStartOf="@+id/ver2" />
+    <Button
+        android:id="@+id/ver1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/olho"
+        android:layout_below="@+id/t_causa"
+        android:layout_toEndOf="@+id/causa1" />
+
+    <ImageView
+        android:id="@+id/causa2"
+        android:layout_width="800px"
+        android:layout_height="200px"
+        android:src="@drawable/linha2"
+        android:layout_below="@+id/causa1"
+        android:layout_toStartOf="@+id/ver2" />
+
+    <Button
+        android:id="@+id/ver2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/olho"
+        android:layout_alignTop="@+id/causa2"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:id="@+id/causa3"
+        android:layout_width="800px"
+        android:layout_height="200px"
+        android:src="@drawable/linha3"
+        android:layout_below="@+id/causa2"
+        android:layout_toStartOf="@+id/ver4" />
+
+    <ImageButton
+        android:id="@+id/ver3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/olho"
+        android:layout_alignTop="@+id/causa3"
+        android:layout_toEndOf="@+id/causa3" />
+
+    <ImageView
+        android:id="@+id/causa4"
+        android:layout_width="800px"
+        android:layout_height="200px"
+        android:src="@drawable/linha4"
+        android:layout_below="@+id/causa3"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/causa3" />
+
+    <ImageButton
+        android:id="@+id/ver4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/olho"
+        android:layout_alignTop="@+id/causa4"
+        android:layout_toEndOf="@+id/causa2" />
+
+
+
+</RelativeLayout>
