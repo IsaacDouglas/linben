@@ -18,8 +18,10 @@
         <activity android:name=".CadastroActivity" />
         <activity android:name=".Causa1Activity" />
         <activity android:name=".InicioActivity" />
+        <activity android:name=".ApeloActivity" />
         <activity android:name=".ConfPerfilActivity">
-            <activity android:name=".DatabaseHelper" />
+
+
         </activity>
         <activity
             android:name=".MenuActivity"
