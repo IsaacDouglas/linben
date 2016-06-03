@@ -19,8 +19,12 @@
         <activity android:name=".Causa1Activity" />
         <activity android:name=".InicioActivity" />
         <activity android:name=".ConfPerfilActivity">
-            <activity android:name=".DatabaseHelper"/>
+            <activity android:name=".DatabaseHelper" />
         </activity>
+        <activity
+            android:name=".MenuActivity"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
     </application>
 
 </manifest>

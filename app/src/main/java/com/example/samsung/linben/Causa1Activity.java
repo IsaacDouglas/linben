@@ -19,23 +19,8 @@ public class Causa1Activity extends AppCompatActivity {
         Button bt_doar = (Button) findViewById(R.id.bt_doar);
         Button bt_voltar = (Button) findViewById(R.id.voltar);
 
-        bt_apoiar.setOnClickListener(new View.OnClickListener() {
-                                               @Override
-                                               public void onClick(View v) {
-                                                   Intent i = new Intent(Causa1Activity.this, ApoiarActivity.class);
-                                                   startActivity(i);
-                                               }
-                                           }
-        );
 
-        bt_doar.setOnClickListener(new View.OnClickListener() {
-                                         @Override
-                                         public void onClick(View v) {
-                                             Intent i = new Intent(Causa1Activity.this, AgendarActivity.class);
-                                             startActivity(i);
-                                         }
-                                     }
-        );
+
 
         bt_voltar.setOnClickListener(new View.OnClickListener() {
                                          @Override
