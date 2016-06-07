@@ -20,6 +20,7 @@ public class LoginActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         //chamada dos objetos
         bt_novo_usuario = (Button) findViewById(R.id.bt_novo_usuario);
         bt_entrar = (Button) findViewById(R.id.entrar);
@@ -40,16 +41,16 @@ public class LoginActivity extends AppCompatActivity  {
         bt_entrar.setOnClickListener(new View.OnClickListener() {
                                          @Override
                                          public void onClick(View v) {
-                                             Intent i = new Intent(LoginActivity.this, InicioActivity.class);
-                                             startActivity(i);
+
                                              //verificar se campo login e senha estão vazios
-                                             if (email .getText().length()==0 || senha.getText().length()==0){
+                                             if (email.getText().length()==0 || senha.getText().length()==0){
                                                  Toast.makeText(getApplication(), "Os campos email e senha são obrigatórios", Toast.LENGTH_LONG).show();
-                                                 Intent j = new Intent(LoginActivity.this, LoginActivity.class);
-                                                 startActivity(j);
+                                                 //Intent j = new Intent(LoginActivity.this, LoginActivity.class);
+                                                 //startActivity(j);
                                              }else{
                                                  Toast.makeText(getApplication(), "Seja bem vindo ao Linben!", Toast.LENGTH_LONG).show();
-
+                                                 Intent i = new Intent(LoginActivity.this, InicioActivity.class);
+                                                 startActivity(i);
                                                  //limpando os campos
                                                  email.setText("");
                                                  senha.setText("");

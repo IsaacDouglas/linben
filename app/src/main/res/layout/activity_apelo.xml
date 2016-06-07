@@ -5,6 +5,10 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:background="@color/color">
+    <include
+        layout="@layout/app_bar_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <TextView
         android:layout_width="300dp"
@@ -14,16 +18,10 @@
         style="@style/LetrasVinho"
         android:textAlignment="center"
         android:textSize="25dp"
-        android:layout_below="@+id/topo"
-        android:layout_centerHorizontal="true" />
-
-    <ImageView
-        android:id="@+id/topo"
-        android:layout_width="390dp"
-        android:layout_height="70dp"
-        android:src="@drawable/topoicon"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignEnd="@+id/concluir"
+        android:layout_marginTop="55dp" />
+
 
     <TextView
         android:layout_width="150dp"
@@ -106,22 +104,22 @@
         android:textAlignment="center"
         android:textSize="20dp"
         android:layout_below="@+id/estado"
-        android:layout_alignStart="@+id/estado" />
+        android:layout_alignParentStart="true" />
 
     <Spinner
         android:id="@+id/hemocentro"
         android:layout_width="350dp"
         android:layout_height="30dp"
         android:background="@color/colorCinza"
+        android:text= "Selecione o posto de coleta"
         android:layout_below="@+id/t_hemocentro"
-        android:layout_centerHorizontal="true"
-        android:text= "Selecione o posto de coleta">
+        android:layout_alignStart="@+id/estado">
     </Spinner>
 
     <TextView
         android:layout_width="200dp"
         android:layout_height="30dp"
-        android:text="Enviar foto ou vídeo"
+        android:text="Enviar  vídeo"
         android:id="@+id/t_enviar_foto_video"
         style="@style/LetrasPreta"
         android:textAlignment="center"
@@ -135,15 +133,15 @@
         android:layout_height="40dp"
         android:background="@drawable/camera"
         android:layout_below="@+id/t_enviar_foto_video"
-        android:layout_alignEnd="@+id/t_hemocentro" />
+        android:layout_toEndOf="@+id/t_local_doacao" />
 
     <Button
         android:id="@+id/galeria"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:background="@drawable/galeria"
-        android:layout_alignTop="@+id/foto"
-        android:layout_alignStart="@+id/cidade" />
+        android:layout_below="@+id/t_enviar_foto_video"
+        android:layout_toEndOf="@+id/t_hemocentro" />
 
     <Button
         android:id="@+id/voltar"
@@ -158,6 +156,6 @@
         android:layout_width="130dp"
         android:layout_height="45dp"
         android:background="@drawable/concluirbranco"
-        android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/cidade" />
+        android:layout_alignTop="@+id/voltar"
+        android:layout_toEndOf="@+id/t_local_doacao" />
 </RelativeLayout>

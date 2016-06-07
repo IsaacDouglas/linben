@@ -85,7 +85,7 @@ public class MenuActivity extends AppCompatActivity
         int id = item.getItemId();
         FragmentManager fragmentManager = getFragmentManager();
         if (id == R.id.nav_home) {
-            fragmentManager.beginTransaction().replace(R.id.content_frame,new InicioActivity()).commit();
+            //fragmentManager.beginTransaction().replace(R.id.content_frame,new InicioActivity()).commit();
 
         } else if (id == R.id.nav_causas_recentes) {
 

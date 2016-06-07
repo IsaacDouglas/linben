@@ -9,7 +9,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -22,10 +24,24 @@ public class CadastroActivity extends AppCompatActivity {
     private int ano, mes, dia;
     private Button dataNascimento;
 
+    Button btn_voltar;
+    Button btn_continuar;
+    Button btn_data_nascimento;
+    EditText nome;
+    EditText email;
+    EditText senha;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
+
+        btn_voltar = (Button) findViewById(R.id.voltar);
+        btn_continuar = (Button) findViewById(R.id.continuar);
+        btn_data_nascimento = (Button) findViewById(R.id.data);
+        nome = (EditText) findViewById(R.id.nome);
+        email = (EditText) findViewById(R.id.email);
+        senha = (EditText) findViewById(R.id.t_senha);
 
         Calendar calendar = Calendar.getInstance();
         ano = calendar.get(Calendar.YEAR);
@@ -46,8 +62,6 @@ public class CadastroActivity extends AppCompatActivity {
         sexo = (Spinner) findViewById(R.id.sexo);
         sexo.setAdapter(adapter1);
 
-        Button btn_voltar = (Button) findViewById(R.id.voltar);
-        Button btn_continuar = (Button) findViewById(R.id.continuar);
 
         btn_voltar.setOnClickListener(new View.OnClickListener() {
                                           @Override
@@ -62,8 +76,15 @@ public class CadastroActivity extends AppCompatActivity {
         btn_continuar.setOnClickListener(new View.OnClickListener() {
                                             @Override
                                             public void onClick(View v) {
-                                                Intent i = new Intent(CadastroActivity.this, ConfPerfilActivity.class);
-                                                startActivity(i);
+
+                                                //verificar se os campos estão vazios
+                                                   if (email.getText().length()==0 || senha.getText().length()==0 || nome.getText().length()==0 || btn_data_nascimento.getText().length()==0){
+                                                      Toast.makeText(getApplication(), "Todos os campos são obrigatórios", Toast.LENGTH_LONG).show();
+                                                     
+                                                      }else{
+                                                    Intent i = new Intent(CadastroActivity.this, ConfPerfilActivity.class);
+                                                    startActivity(i);
+                                                                                                }
                                             }
                                         }
         );
