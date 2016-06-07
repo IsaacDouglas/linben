@@ -23,7 +23,7 @@
         android:textAlignment="center"
         android:textSize="20dp"
         android:layout_below="@+id/logo"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignStart="@+id/email" />
 
     <EditText
         android:layout_width="300dp"
@@ -31,31 +31,27 @@
         android:inputType="textEmailAddress"
         android:background="@color/colorMain"
         android:ems="10"
-        android:text="Insira o seu e-mail"
         android:textColor="@color/color"
         android:textAlignment="center"
         android:id="@+id/email"
         android:singleLine="true"
-        android:layout_above="@+id/senha"
-        android:layout_alignStart="@+id/t_conectarconta"
-        android:layout_marginBottom="43dp" />
-
-
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:hint="Insira seu e-mail" />
 
     <EditText
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:inputType="text|textVisiblePassword"
+        android:inputType="textPassword"
         android:background="@color/colorMain"
         android:ems="10"
         android:id="@+id/senha"
-        android:text="Insira a sua senha"
         android:textAlignment="center"
         android:textColor="@color/color"
         android:singleLine="false"
         android:layout_above="@+id/continuar"
-        android:layout_alignStart="@+id/t_conectarconta"
-        android:layout_marginBottom="25dp" />
+        android:layout_alignStart="@+id/email"
+        android:hint="Insira sua senha" />
 
 
     <Button
@@ -65,7 +61,8 @@
         android:id="@+id/continuar"
         android:layout_above="@+id/bt_esqueci_senha"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="38dp" />
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="10dp" />
 
     <Button
         android:id="@+id/bt_esqueci_senha"
