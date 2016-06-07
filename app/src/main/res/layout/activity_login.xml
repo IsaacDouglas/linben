@@ -49,7 +49,7 @@
         android:textAlignment="center"
         android:textColor="@color/color"
         android:singleLine="false"
-        android:layout_above="@+id/continuar"
+        android:layout_above="@+id/entrar"
         android:layout_alignStart="@+id/email"
         android:hint="Insira sua senha" />
 
@@ -58,7 +58,7 @@
         android:layout_width="130dp"
         android:layout_height="45dp"
         android:background="@drawable/entrarbranco"
-        android:id="@+id/continuar"
+        android:id="@+id/entrar"
         android:layout_above="@+id/bt_esqueci_senha"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp"
@@ -73,7 +73,7 @@
         android:textSize="12dp"
         style="@style/LetrasCinza"
         android:layout_above="@+id/bt_novo_usuario"
-        android:layout_alignStart="@+id/continuar"
+        android:layout_alignStart="@+id/entrar"
         android:layout_marginBottom="28dp" />
 
     <Button
