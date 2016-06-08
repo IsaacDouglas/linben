@@ -21,40 +21,42 @@ import android.widget.Spinner;
 /**
  * Created by Samsung on 28/05/2016.
  */
-public class ConfPerfilActivity extends Fragment {
+public class ConfPerfilActivity extends Activity {
     private Spinner estado;
     private Spinner cidade;
-    private RelativeLayout rl;
-    private FragmentActivity fa;
+   // private RelativeLayout rl;
+   // private FragmentActivity fa;
     private Button btn_voltar;
     private Button btn_concluir;
 
+    protected void onCreate(Bundle savedInstanceState){
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        fa = (FragmentActivity) super.getActivity();
-        rl = (RelativeLayout) inflater.inflate(R.layout.activity_confgperfil, container, false);
+    //public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+       // fa = (FragmentActivity) super.getActivity();
+       // rl = (RelativeLayout) inflater.inflate(R.layout.activity_confgperfil, container, false);
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_confgperfil);
 
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                fa, R.array.estado,
+                this, R.array.estado,
                 android.R.layout.simple_spinner_item);
-        estado = (Spinner) rl.findViewById(R.id.estado);
+        estado = (Spinner) findViewById(R.id.estado);
         estado.setAdapter(adapter);
 
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(
-                fa, R.array.cidade,
+                this, R.array.cidade,
                 android.R.layout.simple_spinner_item);
-        cidade = (Spinner) rl.findViewById(R.id.cidade);
+        cidade = (Spinner) findViewById(R.id.cidade);
         cidade.setAdapter(adapter1);
 
-       btn_voltar = (Button) rl.findViewById(R.id.voltar);
-       btn_concluir = (Button) rl.findViewById(R.id.concluir);
+       btn_voltar = (Button) findViewById(R.id.voltar);
+       btn_concluir = (Button) findViewById(R.id.concluir);
 
         btn_voltar.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
-                                            Intent i = new Intent(fa, CadastroActivity.class);
+                                            Intent i = new Intent(ConfPerfilActivity.this, CadastroActivity.class);
                                             startActivity(i);
                                         }
                                     }
@@ -64,11 +66,11 @@ public class ConfPerfilActivity extends Fragment {
         btn_concluir.setOnClickListener(new View.OnClickListener() {
                                        @Override
                                        public void onClick(View v) {
-                                           Intent i = new Intent(fa, LoginActivity.class);
+                                           Intent i = new Intent(ConfPerfilActivity.this, LoginActivity.class);
                                            startActivity(i);
                                        }
                                    }
         );
-        return rl;
+        //return rl;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.samsung.linben;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,20 +15,22 @@ import android.widget.RelativeLayout;
 /**
  * Created by Raquel on 12/05/2016.
  */
-public class Causa1Activity extends Fragment {
-    private RelativeLayout rl;
-    private FragmentActivity fa;
+public class Causa1Activity extends Activity {
+   // private RelativeLayout rl;
+    //private FragmentActivity fa;
     private Button bt_apoiar;
     private Button bt_doar;
     private Button bt_voltar;
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        fa = (FragmentActivity) super.getActivity();
-        rl = (RelativeLayout) inflater.inflate(R.layout.activity_causa1, container, false);
+    protected void onCreate(Bundle savedInstanceState){
+   // public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        //fa = (FragmentActivity) super.getActivity();
+        //rl = (RelativeLayout) inflater.inflate(R.layout.activity_causa1, container, false);
         super.onCreate(savedInstanceState);
-        bt_apoiar = (Button) rl.findViewById(R.id.bt_apoiar);
-        bt_doar = (Button) rl.findViewById(R.id.bt_doar);
-        bt_voltar = (Button) rl.findViewById(R.id.voltar);
+        setContentView(R.layout.activity_causa1);
+        bt_apoiar = (Button) findViewById(R.id.bt_apoiar);
+        bt_doar = (Button) findViewById(R.id.bt_doar);
+        bt_voltar = (Button) findViewById(R.id.voltar);
 
 
 
@@ -35,12 +38,12 @@ public class Causa1Activity extends Fragment {
         bt_voltar.setOnClickListener(new View.OnClickListener() {
                                          @Override
                                          public void onClick(View v) {
-                                             Intent i = new Intent(fa, InicioActivity.class);
+                                             Intent i = new Intent(Causa1Activity.this, InicioActivity.class);
                                              startActivity(i);
                                          }
                                      }
         );
 
-        return rl;
+      //  return rl;
     }
 }
