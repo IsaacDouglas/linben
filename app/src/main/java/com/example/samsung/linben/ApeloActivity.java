@@ -2,7 +2,9 @@ package com.example.samsung.linben;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NotificationCompat;
@@ -14,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 /**
  * Created by Raquel on 12/05/2016.
@@ -24,6 +27,15 @@ public class ApeloActivity extends Activity {
     private Spinner categoria;
     private Spinner hemocentro;
 
+    private static final int CAPTURAR_VIDEO = 2;
+
+    public void capturarVideo(View v){
+        Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+        intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 1);
+        intent.putExtra(MediaStore.EXTRA_DURATION_LIMIT, 240);
+        startActivityForResult(intent, CAPTURAR_VIDEO);
+    }
+    private Uri uri;
 
     protected void onCreate(Bundle savedInstanceState){
         setContentView(R.layout.activity_apelo);
@@ -54,4 +66,34 @@ public class ApeloActivity extends Activity {
         hemocentro.setAdapter(adapter3);
 
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (resultCode == RESULT_OK) {
+            String msg = "Vídeo gravado em " + data.getDataString();
+            mostrarMensagem(msg);
+            uri = data.getData();
+            adicionarNaGaleria();
+        } else {
+            mostrarMensagem("Vídeo não gravado");
+        }
+    }
+    public void visualizarVideo(View v){
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setDataAndType(uri, "video/mp4");
+        startActivity(intent);
+    }
+
+    private void adicionarNaGaleria() {
+        Intent intent = new Intent(
+                Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+        intent.setData(uri);
+        this.sendBroadcast(intent);
+    }
+
+    private void mostrarMensagem(String msg){
+        Toast.makeText(this, msg,Toast.LENGTH_LONG).show();
+    }
+
 }

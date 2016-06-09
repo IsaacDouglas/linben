@@ -80,7 +80,7 @@ public class CadastroActivity extends AppCompatActivity {
                                                 //verificar se os campos estão vazios
                                                    if (email.getText().length()==0 || senha.getText().length()==0 || nome.getText().length()==0 || btn_data_nascimento.getText().length()==0){
                                                       Toast.makeText(getApplication(), "Todos os campos são obrigatórios", Toast.LENGTH_LONG).show();
-                                                     
+
                                                       }else{
                                                     Intent i = new Intent(CadastroActivity.this, ConfPerfilActivity.class);
                                                     startActivity(i);
