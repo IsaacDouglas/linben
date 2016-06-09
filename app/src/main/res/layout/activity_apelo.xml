@@ -6,19 +6,30 @@
     android:orientation="vertical"
     android:background="@color/color">
 
-
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/t_enviar_foto_video"
+        android:background="@drawable/topo" />
     <TextView
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:text="Novo apelo"
-        android:id="@+id/t_novo_apelo"
-        style="@style/LetrasVinho"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:text="Enviar  vídeo"
+        android:id="@+id/t_enviar_foto_video"
+        style="@style/LetrasPreta"
         android:textAlignment="center"
-        android:textSize="25dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignEnd="@+id/concluir"
-        android:layout_marginTop="55dp" />
+        android:textSize="15dp"
+        android:layout_above="@+id/video"
+        android:layout_centerHorizontal="true" />
 
+    <Button
+        android:id="@+id/video"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/camera"
+        android:onClick="capturarVideo"
+        android:layout_above="@+id/t_descricao"
+        android:layout_toStartOf="@+id/cidade" />
 
     <TextView
         android:layout_width="150dp"
@@ -28,16 +39,16 @@
         style="@style/LetrasPreta"
         android:textAlignment="center"
         android:textSize="20dp"
-        android:layout_below="@+id/t_novo_apelo"
-        android:layout_alignParentStart="true" />
+        android:layout_above="@+id/descricao"
+         />
 
     <EditText
         android:layout_width="350dp"
         android:layout_height="80dp"
         android:background="@color/colorCinza"
         android:id="@+id/descricao"
-        android:layout_below="@+id/t_descricao"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/t_categoria"
+        android:layout_alignStart="@+id/hemocentro" />
 
 
     <TextView
@@ -48,8 +59,8 @@
         style="@style/LetrasPreta"
         android:textAlignment="center"
         android:textSize="20dp"
-        android:layout_below="@+id/descricao"
-        android:layout_alignParentStart="true" />
+        android:layout_centerVertical="true"
+      />
 
     <Spinner
         android:id="@+id/categoria"
@@ -88,9 +99,9 @@
         android:layout_height="30dp"
         android:background="@color/colorCinza"
         android:layout_below="@+id/t_local_doacao"
-        android:layout_alignEnd="@+id/t_novo_apelo"
         android:layout_toEndOf="@+id/t_local_doacao"
-        android:text= "Cidade"/>
+        android:text= "Cidade"
+        android:layout_alignEnd="@+id/concluir" />
 
     <TextView
         android:layout_width="150dp"
@@ -100,7 +111,7 @@
         style="@style/LetrasPreta"
         android:textAlignment="center"
         android:textSize="20dp"
-        android:layout_below="@+id/estado"
+        android:layout_above="@+id/hemocentro"
         android:layout_alignParentStart="true" />
 
     <Spinner
@@ -109,46 +120,17 @@
         android:layout_height="30dp"
         android:background="@color/colorCinza"
         android:text= "Selecione o posto de coleta"
-        android:layout_below="@+id/t_hemocentro"
-        android:layout_alignStart="@+id/estado">
+        android:layout_marginBottom="59dp"
+        android:layout_above="@+id/voltar"
+        android:layout_centerHorizontal="true">
     </Spinner>
-
-    <TextView
-        android:layout_width="200dp"
-        android:layout_height="30dp"
-        android:text="Enviar  vídeo"
-        android:id="@+id/t_enviar_foto_video"
-        style="@style/LetrasPreta"
-        android:textAlignment="center"
-        android:textSize="15dp"
-        android:layout_below="@+id/hemocentro"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:id="@+id/video"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/camera"
-        android:layout_below="@+id/t_enviar_foto_video"
-        android:layout_toEndOf="@+id/t_local_doacao"
-        android:onClick="capturarVideo"/>
-
-    <Button
-        android:id="@+id/galeria"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/galeria"
-        android:layout_below="@+id/t_enviar_foto_video"
-        android:layout_toEndOf="@+id/t_hemocentro"
-        android:onClick="visualizarVideo"/>
 
     <Button
         android:id="@+id/voltar"
         android:layout_width="130dp"
         android:layout_height="45dp"
         android:background="@drawable/voltarbranco"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/t_novo_apelo" />
+        android:layout_alignParentBottom="true" />
 
     <Button
         android:id="@+id/concluir"

@@ -38,7 +38,7 @@ public class Causa1Activity extends Activity {
         bt_voltar.setOnClickListener(new View.OnClickListener() {
                                          @Override
                                          public void onClick(View v) {
-                                             Intent i = new Intent(Causa1Activity.this, InicioActivity.class);
+                                             Intent i = new Intent(Causa1Activity.this, MenuActivity.class);
                                              startActivity(i);
                                          }
                                      }

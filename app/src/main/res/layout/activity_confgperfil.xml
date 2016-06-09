@@ -3,66 +3,44 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
     android:orientation="vertical"
     android:background="@color/color">
 
     <ImageView
-        android:layout_width="400dp"
-        android:layout_height="70dp"
-        android:id="@+id/imageView"
-        android:src="@drawable/topoicon"
-        android:baselineAlignBottom="false"
-        android:clickable="true"
-        android:layout_alignParentStart="false"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:layout_width="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/nome"
+        android:background="@drawable/topo"
+        android:layout_alignParentTop="false" />
+    <TextView
+        android:layout_width="200dp"
         android:layout_height="30dp"
-        android:id="@+id/camera"
-        android:background="@drawable/cameranewphoto"
-        android:layout_marginLeft="10dp"
-        android:layout_below="@+id/configperfil"
-        android:layout_toStartOf="@+id/nome" />
-
-    <TextView
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:text="Configurar Perfil"
-        style="@style/LetrasVinho"
-        android:textSize="25dp"
+        android:id="@+id/naousa"
+        style="@style/LetrasPreta"
         android:textAlignment="center"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:id="@+id/configperfil" />
-
+        android:textSize="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/nome"
+        android:layout_marginTop="48dp" />
     <TextView
+
         android:layout_width="180dp"
         android:layout_height="40dp"
         android:text="Amanda Carla"
         style="@style/LetrasCinza"
         android:textSize="22dp"
-        android:layout_marginLeft="15dp"
-        android:layout_below="@+id/configperfil"
-        android:layout_toStartOf="@+id/sangue"
         android:id="@+id/nome"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_alignTop="@+id/naousa"
+        android:layout_toEndOf="@+id/adcfoto" />
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:id="@+id/camera"
+        android:background="@drawable/cameranewphoto"
+        android:layout_above="@+id/adcfoto"
+        android:layout_alignStart="@+id/cxsobre" />
 
-    <TextView
-        android:layout_width="50dp"
-        android:layout_height="80dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="A+"
-        style="@style/LetrasVinho"
-        android:textSize="30dp"
-        android:id="@+id/sangue"
-        android:layout_below="@+id/configperfil"
-        android:layout_alignEnd="@+id/configperfil"
-        android:layout_marginLeft="20dp"
-        android:layout_alignBottom="@+id/nome" />
 
     <TextView
         android:layout_width="120dp"
@@ -72,20 +50,29 @@
         android:textSize="20dp"
         android:id="@+id/sexo"
         android:textStyle="italic"
-        android:layout_alignTop="@+id/adcfoto"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/nome"
+        android:layout_toEndOf="@+id/estado" />
 
     <TextView
-    android:layout_width="120dp"
-    android:layout_height="50dp"
-    android:text="Adicionar               Foto"
-    android:textSize="13dp"
-    style="@style/LetrasCinza"
-    android:id="@+id/adcfoto"
-    android:textAlignment="center"
-    android:layout_below="@+id/camera"
-    android:layout_alignParentStart="true" />
-
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:text="Adicionar               Foto"
+        android:textSize="13dp"
+        style="@style/LetrasCinza"
+        android:id="@+id/adcfoto"
+        android:textAlignment="center"
+        android:layout_alignBaseline="@+id/sexo"
+        android:layout_alignBottom="@+id/sexo"
+        android:layout_alignParentStart="true" />
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:text="A+"
+        style="@style/LetrasVinho"
+        android:textSize="30dp"
+        android:id="@+id/sangue"
+        android:layout_alignBottom="@+id/adcfoto"
+        android:layout_toEndOf="@+id/naousa" />
     <TextView
         android:layout_width="120dp"
         android:layout_height="40dp"
@@ -94,16 +81,17 @@
         style="@style/LetrasCinza"
         android:id="@+id/sobre"
         android:textAlignment="center"
-        android:layout_below="@+id/sexo"
-        android:layout_toStartOf="@+id/sexo" />
+        android:layout_below="@+id/adcfoto"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="36dp" />
 
     <EditText
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:id="@+id/cxsobre"
+        android:background="#94cdcdcd"
         android:layout_below="@+id/sobre"
-        android:layout_centerHorizontal="true"
-        android:background="#94cdcdcd"/>
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="120dp"
@@ -114,8 +102,7 @@
         android:id="@+id/ondemoratx"
         android:textAlignment="center"
         android:layout_below="@+id/cxsobre"
-        android:layout_alignStart="@+id/sobre"
-        android:layout_marginTop="10dp" />
+        android:layout_alignStart="@+id/cxsobre" />
 
     <Spinner
         android:id="@+id/estado"
@@ -123,8 +110,7 @@
         android:layout_height="30dp"
         android:background="#94cdcdcd"
         android:layout_below="@+id/ondemoratx"
-        android:layout_alignStart="@+id/camera"
-        android:layout_alignEnd="@+id/ondemoratx">
+        android:layout_alignStart="@+id/ondemoratx">
     </Spinner>
     <Spinner
         android:id="@+id/cidade"
@@ -152,8 +138,12 @@
         style="@style/MyStyle1"
         android:layout_below="@+id/cidade"
         android:layout_alignEnd="@+id/cidade"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="70dp"
         android:longClickable="false" />
+
+
+
+
 
 
 </RelativeLayout>

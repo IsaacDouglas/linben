@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity  {
                                                  //startActivity(j);
                                              }else{
                                                  Toast.makeText(getApplication(), "Seja bem vindo ao Linben!", Toast.LENGTH_LONG).show();
-                                                 Intent i = new Intent(LoginActivity.this, InicioActivity.class);
+                                                 Intent i = new Intent(LoginActivity.this, MenuActivity.class);
                                                  startActivity(i);
                                                  //limpando os campos
                                                  email.setText("");

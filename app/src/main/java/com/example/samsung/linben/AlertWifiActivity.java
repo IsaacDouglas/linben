@@ -32,7 +32,7 @@ public class AlertWifiActivity extends Activity{
             public void onClick(View arg0) { //exibe um Toast informativo.
 
               //  Toast.makeText(AlertWifiActivity.this, "alerta.dismiss()", Toast.LENGTH_SHORT).show(); //desfaz o alerta.
-                Intent i = new Intent(AlertWifiActivity.this, InicioActivity.class);
+                Intent i = new Intent(AlertWifiActivity.this, MenuActivity.class);
                 startActivity(i);
               //  alerta.dismiss();
 

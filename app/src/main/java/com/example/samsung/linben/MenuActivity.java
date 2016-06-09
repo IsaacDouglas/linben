@@ -1,6 +1,7 @@
 package com.example.samsung.linben;
 
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class MenuActivity extends AppCompatActivity
@@ -25,6 +27,31 @@ public class MenuActivity extends AppCompatActivity
         setContentView(R.layout.activity_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+       // super.onCreate(savedInstanceState);
+        // setContentView(R.layout.content_menu);
+        Button bt_criar = (Button) findViewById(R.id.criar);
+        Button bt_ver1 = (Button) findViewById(R.id.ver1);
+
+        bt_criar.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            Intent i = new Intent(MenuActivity.this, ApeloActivity.class);
+                                            startActivity(i);
+                                        }
+                                    }
+        );
+
+
+        bt_ver1.setOnClickListener(new View.OnClickListener() {
+                                       @Override
+                                       public void onClick(View v) {
+                                           Intent i = new Intent(MenuActivity.this, Causa1Activity.class);
+                                           startActivity(i);
+                                       }
+                                   }
+        );
+
 
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.nav_Ajuda);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +100,7 @@ public class MenuActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.direita) {
             return true;
         }
 
@@ -90,15 +117,25 @@ public class MenuActivity extends AppCompatActivity
 
           //  fragmentManager.beginTransaction().replace(R.id.content_frame,new InicioActivity()).commit();
 
-        } else if (id == R.id.nav_causas_recentes) {
+        } else if (id == R.id.nav_minhas_causas) {
+            if (this.getClass().getSimpleName().equals("ApeloActivity")) {
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            } else {
+                Intent i = new Intent(this, ApeloActivity.class);
+                startActivity(i);
+            }
 
-        } else if (id == R.id.nav_causas_apoiadas) {
-
-        } else if (id == R.id.nav_meu_linben) {
+        }else if (id == R.id.nav_editar) {
+            if (this.getClass().getSimpleName().equals("ConfPerfilActivity")) {
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            } else {
+                Intent i = new Intent(this, ConfPerfilActivity.class);
+                startActivity(i);
+            }
 
         } else if (id == R.id.nav_hemocentros) {
 
-        } else if (id == R.id.nav_configuracoes) {
+        } else if (id == R.id.nav_sobre) {
 
         }else if (id == R.id.nav_ajuda) {
 
