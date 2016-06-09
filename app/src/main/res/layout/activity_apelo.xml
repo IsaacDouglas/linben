@@ -128,12 +128,13 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:id="@+id/foto"
+        android:id="@+id/video"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:background="@drawable/camera"
         android:layout_below="@+id/t_enviar_foto_video"
-        android:layout_toEndOf="@+id/t_local_doacao" />
+        android:layout_toEndOf="@+id/t_local_doacao"
+        android:onClick="capturarVideo"/>
 
     <Button
         android:id="@+id/galeria"
@@ -141,7 +142,8 @@
         android:layout_height="40dp"
         android:background="@drawable/galeria"
         android:layout_below="@+id/t_enviar_foto_video"
-        android:layout_toEndOf="@+id/t_hemocentro" />
+        android:layout_toEndOf="@+id/t_hemocentro"
+        android:onClick="visualizarVideo"/>
 
     <Button
         android:id="@+id/voltar"
