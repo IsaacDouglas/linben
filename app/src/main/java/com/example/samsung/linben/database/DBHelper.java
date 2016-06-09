@@ -1,28 +1,33 @@
-package com.example.samsung.linben;
+package com.example.samsung.linben.database;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.view.View;
+
+import java.util.ArrayList;
+import java.util.Date;
 
 /**
- * Created by Raquel on 02/06/2016.
+ * Created by Raquel on 09/06/2016.
  */
-public class DatabaseHelper extends SQLiteOpenHelper{
+public class DBHelper extends SQLiteOpenHelper {
 
-    private static final String BANCO_DADOS = "Linben";
-    private static int VERSAO = 1;
+    private static final String DATABASE = "mydb";
 
-    public DatabaseHelper(Context context) {
-        super(context, BANCO_DADOS, null, VERSAO);
+    public DBHelper(Context context) {
+        super(context, DATABASE, null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE usuario (id NUMBER PRIMARY KEY," + " Nome TEXT, data_nascimento DATE," +
-                " email TEXT, senha TEXT," + " id_gotinha NUMBER, id_causa NUMBER, id_amigo NUMBER," +
+        db.execSQL("CREATE TABLE usuario(id INTEGER PRIMARY KEY," + "nome TEXT, data_nascimento DATE," +
+                "email TEXT, senha TEXT," + " id_gotinha NUMBER, id_causa NUMBER, id_amigo NUMBER," +
                 "id_causas_apoiadas NUMBER, tipo_sanguíneo CHECK (tipo IN ('A+', 'A-’, 'B+', 'B-’, 'O+', 'O-’, 'AB+', 'AB-’))," +
                 "FOREIGN KEY(id_gotinha) REFERENCES gotinha(id)," + "FOREIGN KEY(id_causa) REFERENCES causa(id)," +
-               "FOREIGN KEY(id_amigo) REFERENCES usuario(id)," + "FOREIGN KEY(id_causas_apoiadas) REFERENCES causa(id));");
+                "FOREIGN KEY(id_amigo) REFERENCES usuario(id)," + "FOREIGN KEY(id_causas_apoiadas) REFERENCES causa(id));");
 
         db.execSQL("CREATE TABLE gotinha (id NUMBER PRIMARY KEY);");
 
@@ -30,7 +35,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
                 "FOREIGN KEY(id_amigo) REFERENCES usuario(id));");
 
         db.execSQL("CREATE TABLE doador (id NUMBER PRIMARY KEY," + "id_gotinha NUMBER," + "FOREIGN KEY(id_gotinha) REFERENCES gotinha(id)," +
-        "FOREIGN KEY(id) REFERENCES usuario(id));");
+                "FOREIGN KEY(id) REFERENCES usuario(id));");
 
         db.execSQL("CREATE TABLE receptor (id NUMBER PRIMARY KEY," + "FOREIGN KEY(id) REFERENCES usuario(id));");
 
@@ -53,4 +58,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
+
 }
+
+

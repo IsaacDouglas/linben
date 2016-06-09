@@ -2,7 +2,10 @@ package com.example.samsung.linben;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -13,6 +16,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.samsung.linben.database.DBHelper;
+
+import java.util.ArrayList;
 import java.util.Calendar;
 
 /**
@@ -23,6 +29,7 @@ public class CadastroActivity extends AppCompatActivity {
     private Spinner sexo;
     private int ano, mes, dia;
     private Button dataNascimento;
+    private DBHelper helper;
 
     Button btn_voltar;
     Button btn_continuar;
@@ -35,6 +42,7 @@ public class CadastroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
+        helper = new DBHelper(this);
 
         btn_voltar = (Button) findViewById(R.id.voltar);
         btn_continuar = (Button) findViewById(R.id.continuar);
@@ -82,12 +90,17 @@ public class CadastroActivity extends AppCompatActivity {
                                                       Toast.makeText(getApplication(), "Todos os campos são obrigatórios", Toast.LENGTH_LONG).show();
 
                                                       }else{
-                                                    Intent i = new Intent(CadastroActivity.this, ConfPerfilActivity.class);
-                                                    startActivity(i);
+                                                       addUser(nome);
+                                                        Intent i = new Intent(CadastroActivity.this, ConfPerfilActivity.class);
+                                                        startActivity(i);
                                                                                                 }
                                             }
-                                        }
+
+
+                                         }
         );
+
+
     }
 
 
@@ -114,6 +127,36 @@ public class CadastroActivity extends AppCompatActivity {
         }
     };
 
+
+
+    public boolean insertUser(View view){
+        SQLiteDatabase db = helper.getWritableDatabase();
+        ContentValues content = new ContentValues(); //faz ligação entre o nome da coluna e o dado que está inserindo
+        content.put("nome", nome.getText().toString()); //repetir para os outros atributos
+        content.put("data_nascimento", dataNascimento.getText().toString());
+        db.insert("usuario", null, content);
+        return true;
+    }
+
+
+    public void addUser(View view) {
+        CadastroActivity myD = new CadastroActivity();
+        myD.insertUser(nome);
+        Toast.makeText(CadastroActivity.this, "Usuário " +nome+ " adicionado!", Toast.LENGTH_SHORT).show();
+        finish();
+    }
+
+    public ArrayList<String> getAllUsers(){
+        ArrayList<String> myArray = new ArrayList<String>();
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor cur = db.rawQuery("select * from usuario", null);
+        cur.moveToFirst();
+        while (cur.isAfterLast()==false){
+            myArray.add(cur.getString(cur.getColumnIndex("nome")));
+            cur.moveToNext();
+        }
+        return myArray;
+    }
 
 }
 
