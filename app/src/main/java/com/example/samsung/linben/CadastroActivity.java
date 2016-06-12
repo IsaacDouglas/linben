@@ -44,7 +44,7 @@ public class CadastroActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cadastro);
         helper = new DBHelper(this);
 
-        btn_voltar = (Button) findViewById(R.id.voltar);
+        btn_voltar = (Button) findViewById(R.id.voltarseta);
         btn_continuar = (Button) findViewById(R.id.continuar);
         btn_data_nascimento = (Button) findViewById(R.id.data);
         nome = (EditText) findViewById(R.id.nome);
@@ -91,7 +91,7 @@ public class CadastroActivity extends AppCompatActivity {
 
                                                       }else{
                                                        addUser(nome);
-                                                        Intent i = new Intent(CadastroActivity.this, ConfPerfilActivity.class);
+                                                        Intent i = new Intent(CadastroActivity.this, ContinuarCadastroActivity.class);
                                                         startActivity(i);
                                                                                                 }
                                             }

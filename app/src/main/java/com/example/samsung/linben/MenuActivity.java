@@ -20,7 +20,7 @@ import android.widget.Toast;
 
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    DrawerLayout drawer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,10 +100,18 @@ public class MenuActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.direita) {
+        if (id == R.id.gotinha) {
+            if (this.getClass().getSimpleName().equals("ApeloActivity")) {
+                drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            } else {
+                Intent i = new Intent(this, ApeloActivity.class);
+                startActivity(i);
+            }
             return true;
         }
-
+        else if (id == R.id.wifi){
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -119,7 +127,7 @@ public class MenuActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_minhas_causas) {
             if (this.getClass().getSimpleName().equals("ApeloActivity")) {
-                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                 drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             } else {
                 Intent i = new Intent(this, ApeloActivity.class);
                 startActivity(i);
@@ -127,7 +135,7 @@ public class MenuActivity extends AppCompatActivity
 
         }else if (id == R.id.nav_editar) {
             if (this.getClass().getSimpleName().equals("ConfPerfilActivity")) {
-                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             } else {
                 Intent i = new Intent(this, ConfPerfilActivity.class);
                 startActivity(i);
@@ -141,7 +149,7 @@ public class MenuActivity extends AppCompatActivity
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

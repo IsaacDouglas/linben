@@ -40,8 +40,7 @@
 
     <style name="LetrasCinza">
         <item name="android:textColor">#9e9b9c</item>
-        <item name="android:typeface">monospace</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:typeface">sans</item>
         <item name="android:padding">5dp</item>
     </style>
 
@@ -55,7 +54,7 @@
 
     <style name="LetrasPreta">
         <item name="android:textColor">#d0050001</item>
-        <item name="android:typeface">monospace</item>
+        <item name="android:typeface">sans</item>
         <item name="android:textStyle">normal</item>
         <item name="android:padding">5dp</item>
     </style>

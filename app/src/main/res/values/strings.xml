@@ -37,7 +37,7 @@
         <item>HEMOPE</item>
         <item>IHENE</item>
     </string-array>
-    <string name="title_activity_menu">Linben</string>
+    <string name="title_activity_menu"></string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -55,5 +55,6 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="title_activity_continuar_cadastro">ContinuarCadastroActivity</string>
 
 </resources>

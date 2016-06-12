@@ -26,11 +26,16 @@
         <activity android:name=".ConfPerfilActivity" />
         <activity android:name=".AlertAproxChaveiroActivity" />
         <activity android:name=".AlertAcessoNegadoActivity" />
-        <activity android:name=".AlertWifiActivity"></activity>
+        <activity android:name=".AlertWifiActivity" />
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".ContinuarCadastroActivity"
+            android:label="@string/title_activity_continuar_cadastro"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".DoacaoRegistradaActivity"></activity>
     </application>
 
 </manifest>
