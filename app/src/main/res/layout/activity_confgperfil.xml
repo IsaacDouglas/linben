@@ -7,7 +7,7 @@
     android:background="@color/color">
 
     <ImageView
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
         android:id="@+id/imageView"
         android:background="@drawable/toponovo"

@@ -110,6 +110,13 @@ public class MenuActivity extends AppCompatActivity
             return true;
         }
         else if (id == R.id.wifi){
+            //so pra teste back vai ter que mudar depois
+            if (this.getClass().getSimpleName().equals("AlertWifiActivity")) {
+                drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            } else {
+                Intent i = new Intent(this, AlertWifiActivity.class);
+                startActivity(i);
+            }
             return true;
         }
         return super.onOptionsItemSelected(item);

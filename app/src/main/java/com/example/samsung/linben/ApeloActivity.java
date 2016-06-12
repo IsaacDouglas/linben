@@ -24,8 +24,9 @@ import android.widget.Toast;
 public class ApeloActivity extends Activity {
     private Spinner estado;
     private Spinner cidade;
-    private Spinner categoria;
     private Spinner hemocentro;
+    private Button btn_voltar;
+    private Button btn_continuar;
 
     private static final int CAPTURAR_VIDEO = 2;
 
@@ -40,6 +41,9 @@ public class ApeloActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState){
         setContentView(R.layout.activity_apelo);
         super.onCreate(savedInstanceState);
+        btn_voltar = (Button) findViewById(R.id.voltarseta);
+        btn_continuar = (Button) findViewById(R.id.concluir);
+
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, R.array.estado,
@@ -53,17 +57,36 @@ public class ApeloActivity extends Activity {
         cidade = (Spinner) findViewById(R.id.cidade);
         cidade.setAdapter(adapter1);
 
-        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(
-                this, R.array.categoria,
-                android.R.layout.simple_spinner_item);
-        categoria = (Spinner) findViewById(R.id.categoria);
-        categoria.setAdapter(adapter2);
 
         ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(
                 this, R.array.hemocentro,
                 android.R.layout.simple_spinner_item);
         hemocentro = (Spinner) findViewById(R.id.hemocentro);
         hemocentro.setAdapter(adapter3);
+
+        btn_voltar.setOnClickListener(new View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+                                              Intent i = new Intent(ApeloActivity.this, MenuActivity.class);
+                                              startActivity(i);
+                                          }
+                                      }
+        );
+
+//mudar
+        btn_continuar.setOnClickListener(new View.OnClickListener() {
+                                             @Override
+                                             public void onClick(View v) {
+
+
+                                                     Intent i = new Intent(ApeloActivity.this, MenuActivity.class);
+                                                     startActivity(i);
+                                                 }
+                                             }
+
+
+
+        );
 
     }
 
