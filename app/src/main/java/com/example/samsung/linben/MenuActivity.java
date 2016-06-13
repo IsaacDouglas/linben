@@ -29,10 +29,10 @@ public class MenuActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
        // super.onCreate(savedInstanceState);
-        // setContentView(R.layout.content_menu);
-        Button bt_criar = (Button) findViewById(R.id.criar);
+       // setContentView(R.layout.content_menu);
+       // Button bt_criar = (Button) findViewById(R.id.criar);
         Button bt_ver1 = (Button) findViewById(R.id.ver1);
-
+/*
         bt_criar.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
@@ -42,7 +42,7 @@ public class MenuActivity extends AppCompatActivity
                                     }
         );
 
-
+*/
         bt_ver1.setOnClickListener(new View.OnClickListener() {
                                        @Override
                                        public void onClick(View v) {
