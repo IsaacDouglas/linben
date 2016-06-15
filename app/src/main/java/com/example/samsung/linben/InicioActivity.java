@@ -12,8 +12,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 
 /**
@@ -24,6 +27,42 @@ public class InicioActivity extends Activity{
     private FragmentActivity fa;
     private Button bt_criar;
     private Button bt_ver1;
+
+    ListView list;
+    String[] itemname ={
+            "Mariana",
+            "Claádia",
+            "Júlio",
+            "Nathália",
+            "Paulo",
+            "Felipe"
+    };
+
+    Integer[] imgid ={
+            R.drawable.fotoperfilvideo,
+            R.drawable.fotohome1,
+            R.drawable.fotohome2,
+            R.drawable.fotohome3,
+            R.drawable.fotohome4,
+            R.drawable.fotohome5
+    };
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.content_menu);
+
+        CustomListAdapter adapter = new CustomListAdapter(this, itemname, imgid);
+        list = (ListView) findViewById(R.id.list);
+        list.setAdapter(adapter);
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String Slecteditem = itemname[+position];
+                Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 /*
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
