@@ -19,7 +19,7 @@
         android:layout_height="match_parent"
         android:layout_alignParentTop="true">
 
-        <TextView
+        <!--<TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Causas"
@@ -96,7 +96,7 @@
                     android:src="@drawable/linha3"
                     android:layout_below="@+id/causa2"
                   android:layout_toStartOf="@+id/ver4"
-                    android:layout_gravity="center" />
+                    android:layout_gravity="center" />-->
     </RelativeLayout>
 
 </RelativeLayout>

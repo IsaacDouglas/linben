@@ -55,7 +55,7 @@ public class InicioActivity extends Activity{
     }
 */
 
-   protected void onCreate(Bundle savedInstanceState) {
+/*   protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
         Button bt_criar = (Button) findViewById(R.id.criar);
@@ -81,5 +81,5 @@ public class InicioActivity extends Activity{
         );
 
 
-    }
+    }*/
 }
