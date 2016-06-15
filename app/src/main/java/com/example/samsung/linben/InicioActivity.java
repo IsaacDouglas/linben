@@ -30,17 +30,27 @@ public class InicioActivity extends Activity{
 
     ListView list;
     String[] itemname ={
-            "Mariana"
+            "Mariana",
+            "Claádia",
+            "Júlio",
+            "Nathália",
+            "Paulo",
+            "Felipe"
     };
 
     Integer[] imgid ={
-            R.drawable.fotoperfilvideo
+            R.drawable.fotoperfilvideo,
+            R.drawable.fotohome1,
+            R.drawable.fotohome2,
+            R.drawable.fotohome3,
+            R.drawable.fotohome4,
+            R.drawable.fotohome5
     };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inicio);
+        setContentView(R.layout.content_menu);
 
         CustomListAdapter adapter = new CustomListAdapter(this, itemname, imgid);
         list = (ListView) findViewById(R.id.list);

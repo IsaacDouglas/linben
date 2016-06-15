@@ -22,7 +22,7 @@
             android:layout_width="400dp"
             android:layout_height="70dp"
             android:id="@+id/imageView"
-            android:src="@drawable/fotoperfilvideo"
+            android:src="@drawable/fotohome1"
             android:baselineAlignBottom="false"
             android:clickable="true"
             android:layout_alignParentStart="false"
