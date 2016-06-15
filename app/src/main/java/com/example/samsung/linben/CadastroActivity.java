@@ -25,8 +25,6 @@ import java.util.Calendar;
  * Created by Raquel on 12/05/2016.
  */
 public class CadastroActivity extends AppCompatActivity {
-    private Spinner sangue;
-    private Spinner sexo;
     private int ano, mes, dia;
     private Button dataNascimento;
     private DBHelper helper;
@@ -37,6 +35,8 @@ public class CadastroActivity extends AppCompatActivity {
     EditText nome;
     EditText email;
     EditText senha;
+    Spinner sexo;
+    Spinner sangue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +50,8 @@ public class CadastroActivity extends AppCompatActivity {
         nome = (EditText) findViewById(R.id.nome);
         email = (EditText) findViewById(R.id.email);
         senha = (EditText) findViewById(R.id.t_senha);
+        sexo = (Spinner) findViewById(R.id.sexo);
+        sangue = (Spinner) findViewById(R.id.sangue);
 
         Calendar calendar = Calendar.getInstance();
         ano = calendar.get(Calendar.YEAR);
@@ -58,7 +60,7 @@ public class CadastroActivity extends AppCompatActivity {
         dataNascimento = (Button) findViewById(R.id.data);
         dataNascimento.setText(dia + "/" + (mes+1) + "/" + ano);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+        final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                  this, R.array.tipo_sanguineo,
          android.R.layout.simple_spinner_item);
          sangue = (Spinner) findViewById(R.id.sangue);
@@ -90,8 +92,7 @@ public class CadastroActivity extends AppCompatActivity {
                                                       Toast.makeText(getApplication(), "Todos os campos são obrigatórios", Toast.LENGTH_LONG).show();
 
                                                       }else{
-                                                       addUser(nome);
-                                                        Intent i = new Intent(CadastroActivity.this, ContinuarCadastroActivity.class);
+                                                         Intent i = new Intent(CadastroActivity.this, ContinuarCadastroActivity.class);
                                                         startActivity(i);
                                                                                                 }
                                             }
@@ -129,34 +130,8 @@ public class CadastroActivity extends AppCompatActivity {
 
 
 
-    public boolean insertUser(View view){
-        SQLiteDatabase db = helper.getWritableDatabase();
-        ContentValues content = new ContentValues(); //faz ligação entre o nome da coluna e o dado que está inserindo
-        content.put("nome", nome.getText().toString()); //repetir para os outros atributos
-        content.put("data_nascimento", dataNascimento.getText().toString());
-        db.insert("usuario", null, content);
-        return true;
-    }
 
 
-    public void addUser(View view) {
-        CadastroActivity myD = new CadastroActivity();
-        myD.insertUser(nome);
-        Toast.makeText(CadastroActivity.this, "Usuário " +nome+ " adicionado!", Toast.LENGTH_SHORT).show();
-        finish();
-    }
-
-    public ArrayList<String> getAllUsers(){
-        ArrayList<String> myArray = new ArrayList<String>();
-        SQLiteDatabase db = helper.getReadableDatabase();
-        Cursor cur = db.rawQuery("select * from usuario", null);
-        cur.moveToFirst();
-        while (cur.isAfterLast()==false){
-            myArray.add(cur.getString(cur.getColumnIndex("nome")));
-            cur.moveToNext();
-        }
-        return myArray;
-    }
 
 }
 

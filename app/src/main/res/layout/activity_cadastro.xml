@@ -171,6 +171,7 @@
         android:id="@+id/continuar"
         style="@style/MyStyle1"
         android:layout_below="@+id/t_senha"
+        android:onClick="insertUser"
         android:layout_marginTop="52dp"
         android:layout_alignStart="@+id/senha"
         android:layout_toStartOf="@+id/ajuda" />

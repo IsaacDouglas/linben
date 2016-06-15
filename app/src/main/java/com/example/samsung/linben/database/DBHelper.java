@@ -24,8 +24,8 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE usuario(id INTEGER PRIMARY KEY," + "nome TEXT, data_nascimento DATE," +
-                "email TEXT, senha TEXT," + " id_gotinha NUMBER, id_causa NUMBER, id_amigo NUMBER," +
-                "id_causas_apoiadas NUMBER, tipo_sanguíneo CHECK (tipo IN ('A+', 'A-’, 'B+', 'B-’, 'O+', 'O-’, 'AB+', 'AB-’))," +
+                "email TEXT, senha TEXT," + " id_gotinha NUMBER, id_causa NUMBER, id_amigo NUMBER, estado TEXT, cidade TEXT" +
+                "id_causas_apoiadas NUMBER, tipo_sanguíneo CHECK (tipo IN ('A+', 'A-’, 'B+', 'B-’, 'O+', 'O-’, 'AB+', 'AB-’)), genero CHECK (tipo IN ('Feminino', 'Masculino'))," +
                 "FOREIGN KEY(id_gotinha) REFERENCES gotinha(id)," + "FOREIGN KEY(id_causa) REFERENCES causa(id)," +
                 "FOREIGN KEY(id_amigo) REFERENCES usuario(id)," + "FOREIGN KEY(id_causas_apoiadas) REFERENCES causa(id));");
 

@@ -4,7 +4,7 @@
     android:clickable="true"
     android:contextClickable="true"
     android:focusableInTouchMode="false"
-    android:background="@drawable/menu">
+    android:background="@color/colorMain">
 
     <ImageView
         android:id="@+id/logo"
