@@ -12,12 +12,30 @@
     tools:context="com.example.samsung.linben.MenuActivity"
     tools:showIn="@layout/app_bar_menu">
 
-
     <RelativeLayout
         android:id="@+id/content_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true">
+
+        <ImageView
+            android:layout_width="400dp"
+            android:layout_height="70dp"
+            android:id="@+id/imageView"
+            android:src="@drawable/fotoperfilvideo"
+            android:baselineAlignBottom="false"
+            android:clickable="true"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/imageView">
+        </ListView>
 
         <!--<TextView
                     android:layout_width="wrap_content"
