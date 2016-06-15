@@ -29,15 +29,14 @@ public class ContinuarCadastroActivity extends AppCompatActivity {
     private Button btn_concluir;
     private DBHelper helper;
 
+   CadastroActivity dados = new CadastroActivity();
 
-
-    CadastroActivity dados = new CadastroActivity();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_continuar_cadastro);
-
+        helper = new DBHelper(this);
 
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
@@ -68,8 +67,8 @@ public class ContinuarCadastroActivity extends AppCompatActivity {
         btn_concluir.setOnClickListener(new View.OnClickListener() {
                                             @Override
                                             public void onClick(View v) {
-                                                addUser(dados.nome.getText().toString());
-                                                Intent i = new Intent(ContinuarCadastroActivity.this, InicioActivity.class);
+                                                //Toast.makeText(ContinuarCadastroActivity.this, "Usuário " + dados.nome.getText().toString()+ " adicionado com sucesso!", Toast.LENGTH_SHORT).show();
+                                                Intent i = new Intent(ContinuarCadastroActivity.this, ListUsersActivity.class);
                                                 startActivity(i);
                                             }
                                         }
@@ -78,14 +77,7 @@ public class ContinuarCadastroActivity extends AppCompatActivity {
 
     }
 
-    private void addUser(String nome){
-       insertUser(dados.nome);
-       Toast.makeText(ContinuarCadastroActivity.this, "Usuário " + dados.nome.getText().toString()+ " adicionado com sucesso!", Toast.LENGTH_SHORT).show();
-       finish();
-    }
-
-
-       /*BANCO DE DADOS*/
+          /*BANCO DE DADOS*/
 
     public boolean insertUser(View view){
         SQLiteDatabase db = helper.getWritableDatabase();
@@ -96,26 +88,13 @@ public class ContinuarCadastroActivity extends AppCompatActivity {
         content.put("data_nascimento", dados.btn_data_nascimento.getText().toString());
         content.put("email", dados.email.getText().toString());
         content.put("senha", dados.senha.getText().toString());
-        content.put("tipo_sanguineo", dados.sangue.toString());
-        content.put("genero", dados.sexo.toString());
-        content.put("estado", estado.toString());
-        content.put("cidade", cidade.toString());
+        //content.put("tipo_sanguineo", dados.sangue.toString());
+        //content.put("genero", dados.sexo.toString());
+        //content.put("estado", estado.toString());
+        //content.put("cidade", cidade.toString());
         db.insert("usuario", null, content);
         return true;
 
     }
 
-    public ArrayList<String> getAllUsers(){
-        ArrayList<String> myArray = new ArrayList<String>();
-        SQLiteDatabase db = helper.getReadableDatabase();
-        Cursor cur = db.rawQuery("select nome from usuario", null);
-        cur.moveToFirst();
-        while(cur.isAfterLast()==false){
-            myArray.add(cur.getString(cur.getColumnIndex("nome")));
-            cur.moveToNext();
-        }
-
-        return myArray;
-    }
-
-}
+ }
