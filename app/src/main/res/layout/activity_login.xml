@@ -51,7 +51,7 @@
 
 
     <Button
-        android:layout_width="130dp"
+        android:layout_width="50dp"
         android:layout_height="45dp"
         android:background="@drawable/entrarlogin"
         android:id="@+id/entrar"

@@ -154,11 +154,7 @@ public class MenuActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         FragmentManager fragmentManager = getFragmentManager();
-        if (id == R.id.nav_home) {
-
-          //  fragmentManager.beginTransaction().replace(R.id.content_frame,new InicioActivity()).commit();
-
-        } else if (id == R.id.nav_minhas_causas) {
+        if (id == R.id.nav_minhas_causas) {
             if (this.getClass().getSimpleName().equals("ApeloActivity")) {
                  drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             } else {

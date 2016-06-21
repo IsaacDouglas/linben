@@ -42,7 +42,7 @@ public class CadastroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
-        helper = new DBHelper(this);
+//        helper = new DBHelper(this);
 
         btn_voltar = (Button) findViewById(R.id.voltarseta);
         btn_continuar = (Button) findViewById(R.id.continuar);
