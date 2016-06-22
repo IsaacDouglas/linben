@@ -27,7 +27,6 @@
         <activity android:name=".AlertAproxChaveiroActivity" />
         <activity android:name=".AlertAcessoNegadoActivity" />
         <activity android:name=".AlertWifiActivity" />
-        <activity android:name=".ListUsersActivity" />
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"

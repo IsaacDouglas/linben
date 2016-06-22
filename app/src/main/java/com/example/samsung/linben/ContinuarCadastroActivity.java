@@ -16,8 +16,6 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.samsung.linben.database.DBHelper;
-
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
@@ -27,7 +25,6 @@ public class ContinuarCadastroActivity extends AppCompatActivity {
     private Spinner cidade;
     private Button btn_voltar;
     private Button btn_concluir;
-    private DBHelper helper;
 
    CadastroActivity dados = new CadastroActivity();
 
@@ -36,7 +33,6 @@ public class ContinuarCadastroActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_continuar_cadastro);
-        helper = new DBHelper(this);
 
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
@@ -68,32 +64,12 @@ public class ContinuarCadastroActivity extends AppCompatActivity {
                                             @Override
                                             public void onClick(View v) {
                                                 //Toast.makeText(ContinuarCadastroActivity.this, "Usuário " + dados.nome.getText().toString()+ " adicionado com sucesso!", Toast.LENGTH_SHORT).show();
-                                                Intent i = new Intent(ContinuarCadastroActivity.this, ListUsersActivity.class);
+                                                Intent i = new Intent(ContinuarCadastroActivity.this, LoginActivity.class);
                                                 startActivity(i);
                                             }
                                         }
         );
 
-
-    }
-
-          /*BANCO DE DADOS*/
-
-    public boolean insertUser(View view){
-        SQLiteDatabase db = helper.getWritableDatabase();
-        ContentValues content = new ContentValues();
-
-        //atributos
-        content.put("nome", dados.nome.getText().toString());
-        content.put("data_nascimento", dados.btn_data_nascimento.getText().toString());
-        content.put("email", dados.email.getText().toString());
-        content.put("senha", dados.senha.getText().toString());
-        //content.put("tipo_sanguineo", dados.sangue.toString());
-        //content.put("genero", dados.sexo.toString());
-        //content.put("estado", estado.toString());
-        //content.put("cidade", cidade.toString());
-        db.insert("usuario", null, content);
-        return true;
 
     }
 
