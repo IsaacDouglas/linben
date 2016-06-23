@@ -15,6 +15,7 @@ import android.widget.Toast;
 public class LoginActivity extends AppCompatActivity  {
     Button bt_novo_usuario;
     Button bt_entrar;
+    Button bt_esqueci_senha;
     EditText email;
     EditText senha;
     private RelativeLayout rl;
@@ -27,6 +28,7 @@ public class LoginActivity extends AppCompatActivity  {
 
         //chamada dos objetos
         bt_novo_usuario = (Button) findViewById(R.id.bt_novo_usuario);
+        bt_esqueci_senha = (Button) findViewById(R.id.bt_esqueci_senha);
         bt_entrar = (Button) findViewById(R.id.entrar);
         email = (EditText) findViewById(R.id.email);
         senha = (EditText) findViewById(R.id.senha);
@@ -34,6 +36,17 @@ public class LoginActivity extends AppCompatActivity  {
                                                @Override
                                                public void onClick(View v) {
                                                    Intent i = new Intent(LoginActivity.this, CadastroActivity.class);
+                                                   startActivity(i);
+
+
+                                               }
+                                           }
+        );
+
+        bt_esqueci_senha.setOnClickListener(new View.OnClickListener() {
+                                               @Override
+                                               public void onClick(View v) {
+                                                   Intent i = new Intent(LoginActivity.this, TesteActivity.class);
                                                    startActivity(i);
 
 

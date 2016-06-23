@@ -16,8 +16,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.samsung.linben.database.DBHelper;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -27,7 +25,6 @@ import java.util.Calendar;
 public class CadastroActivity extends AppCompatActivity {
     private int ano, mes, dia;
     private Button dataNascimento;
-    private DBHelper helper;
 
     Button btn_voltar;
     Button btn_continuar;
@@ -42,7 +39,6 @@ public class CadastroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
-        helper = new DBHelper(this);
 
         btn_voltar = (Button) findViewById(R.id.voltarseta);
         btn_continuar = (Button) findViewById(R.id.continuar);
