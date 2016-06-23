@@ -40,7 +40,8 @@
             android:name=".ContinuarCadastroActivity"
             android:label="@string/title_activity_continuar_cadastro"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".DoacaoRegistradaActivity"></activity>
+        <activity android:name=".DoacaoRegistradaActivity" />
+        <activity android:name=".VerCausaActivity"></activity>
     </application>
 
 </manifest>

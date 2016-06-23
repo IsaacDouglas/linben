@@ -34,6 +34,9 @@ public class ContinuarCadastroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_continuar_cadastro);
 
+//        helper = new DBHelper(this);
+
+
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, R.array.estado,

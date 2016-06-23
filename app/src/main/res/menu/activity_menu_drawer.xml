@@ -3,16 +3,12 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/timeicon"
-            android:title="Pagina Inicial" />
-        <item
             android:id="@+id/nav_hemocentros"
-            android:icon="@drawable/timeicon"
+            android:icon="@drawable/menuhemocentros"
             android:title="Hemocentros" />
         <item
             android:id="@+id/nav_minhas_causas"
-            android:icon="@drawable/playicon"
+            android:icon="@drawable/menucausas"
             android:title="Minhas causas" />
 
         <item
@@ -21,12 +17,12 @@
             android:title="Editar Perfil" />
         <item
             android:id="@+id/nav_ajuda"
-            android:icon="@drawable/globo"
+            android:icon="@drawable/menuajuda"
             android:title="Ajuda" />
 
         <item
             android:id="@+id/nav_sobre"
-            android:icon="@drawable/globo"
+            android:icon="@drawable/menusobre"
             android:title="Sobre" />
 
     </group>

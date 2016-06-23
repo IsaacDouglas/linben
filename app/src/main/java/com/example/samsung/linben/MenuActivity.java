@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentActivity;
 import android.view.MenuInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -15,12 +16,35 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawer;
+    private Button bt_ver1;
+
+    ListView list;
+    String[] itemname ={
+            "Mariana",
+            "Claádia",
+            "Júlio",
+            "Nathália",
+            "Paulo",
+            "Felipe"
+    };
+
+    Integer[] imgid ={
+            R.drawable.fotoperfilvideo,
+            R.drawable.fotohome1,
+            R.drawable.fotohome2,
+            R.drawable.fotohome3,
+            R.drawable.fotohome4,
+            R.drawable.fotohome5
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,22 +52,24 @@ public class MenuActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+        CustomListAdapter adapter = new CustomListAdapter(this, itemname, imgid);
+        list = (ListView) findViewById(R.id.list);
+        list.setAdapter(adapter);
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String Slecteditem = itemname[+position];
+                Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
+            }
+        });
+
        // super.onCreate(savedInstanceState);
        // setContentView(R.layout.content_menu);
        // Button bt_criar = (Button) findViewById(R.id.criar);
-        Button bt_ver1 = (Button) findViewById(R.id.ver1);
-/*
-        bt_criar.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View v) {
-                                            Intent i = new Intent(MenuActivity.this, ApeloActivity.class);
-                                            startActivity(i);
-                                        }
-                                    }
-        );
+        //Button bt_ver1 = (Button) findViewById(R.id.ver1);
 
-*/
-        bt_ver1.setOnClickListener(new View.OnClickListener() {
+/*        bt_ver1.setOnClickListener(new View.OnClickListener() {
                                        @Override
                                        public void onClick(View v) {
                                            Intent i = new Intent(MenuActivity.this, Causa1Activity.class);
@@ -51,7 +77,7 @@ public class MenuActivity extends AppCompatActivity
                                        }
                                    }
         );
-
+*/
 
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.nav_Ajuda);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -128,11 +154,7 @@ public class MenuActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         FragmentManager fragmentManager = getFragmentManager();
-        if (id == R.id.nav_home) {
-
-          //  fragmentManager.beginTransaction().replace(R.id.content_frame,new InicioActivity()).commit();
-
-        } else if (id == R.id.nav_minhas_causas) {
+        if (id == R.id.nav_minhas_causas) {
             if (this.getClass().getSimpleName().equals("ApeloActivity")) {
                  drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             } else {
