@@ -25,18 +25,33 @@ public class ContinuarCadastroActivity extends AppCompatActivity {
     private Spinner cidade;
     private Button btn_voltar;
     private Button btn_concluir;
+    private Usuario usuario;
 
-   CadastroActivity dados = new CadastroActivity();
+    CadastroActivity cad = new CadastroActivity();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_continuar_cadastro);
 
-//        helper = new DBHelper(this);
+        this.usuario = new Usuario();
 
-
+        Intent intent = getIntent();
+        if (intent != null){
+            Bundle bundle = intent.getExtras();
+            if (bundle != null){
+                this.usuario.setId(bundle.getInt("id"));
+                cad.nome.setText(bundle.getString("nome"));
+                //cad.sangue.setAdapter(bundle.getString(""));
+                //genero
+                //data
+                cad.email.setText(bundle.getString("email"));
+                cad.senha.setText(bundle.getString("senha"));
+                //estado
+                //cidade
+            }
+        }
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, R.array.estado,
@@ -66,7 +81,6 @@ public class ContinuarCadastroActivity extends AppCompatActivity {
         btn_concluir.setOnClickListener(new View.OnClickListener() {
                                             @Override
                                             public void onClick(View v) {
-                                                //Toast.makeText(ContinuarCadastroActivity.this, "Usuário " + dados.nome.getText().toString()+ " adicionado com sucesso!", Toast.LENGTH_SHORT).show();
                                                 Intent i = new Intent(ContinuarCadastroActivity.this, LoginActivity.class);
                                                 startActivity(i);
                                             }
@@ -74,6 +88,22 @@ public class ContinuarCadastroActivity extends AppCompatActivity {
         );
 
 
+    }
+
+    public void salvar (View view){
+        this.usuario.setNome(cad.nome.getText().toString());
+        this.usuario.setTipo_sanguineo(cad.sangue.toString());
+        this.usuario.setGenero(cad.sexo.toString());
+        this.usuario.setData_nascimento(cad.btn_data_nascimento.getText().toString());
+        this.usuario.setEmail(cad.email.getText().toString());
+        this.usuario.setSenha(cad.senha.getText().toString());
+        this.usuario.setEstado(this.estado.toString());
+        this.usuario.setCidade(this.cidade.toString());
+        this.usuario.salvar();
+
+        Toast.makeText(this, this.usuario.get_mensagem(), Toast.LENGTH_LONG).show();
+        if (usuario.is_status())
+            finish();
     }
 
  }

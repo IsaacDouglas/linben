@@ -80,7 +80,10 @@ public class LoginActivity extends AppCompatActivity  {
 
 
 
-
+    public void abreLista (View view){
+        Intent intent = new Intent(this, TesteActivity.class);
+        startActivity(intent);
+    }
 
 
 }

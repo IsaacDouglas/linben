@@ -89,6 +89,7 @@
         android:id="@+id/concluir"
         android:layout_below="@+id/estado"
         android:layout_toEndOf="@+id/estado"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="40dp"
+        android:onClick="salvar"/>
 
 </RelativeLayout>
