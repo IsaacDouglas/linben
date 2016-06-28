@@ -11,9 +11,9 @@ public class DB extends _Default implements Runnable{
 
     private Connection conn;
     private String host = "192.168.1.10";
-    private String db = "android";
+    private String db = "linben";
     private int port = 5432;
-    private String user = "android";
+    private String user = "linben";
     private String pass = "Linben123";
     private String url = "jdbc:postgresql://%s:%d/%s";
 

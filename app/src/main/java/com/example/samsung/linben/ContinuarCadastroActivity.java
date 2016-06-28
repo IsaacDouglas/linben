@@ -38,9 +38,9 @@ public class ContinuarCadastroActivity extends AppCompatActivity {
         this.usuario = new Usuario();
 
         Intent intent = getIntent();
-        if (intent != null){
+        if (intent != null) {
             Bundle bundle = intent.getExtras();
-            if (bundle != null){
+            if (bundle != null) {
                 this.usuario.setId(bundle.getInt("id"));
                 cad.nome.setText(bundle.getString("nome"));
                 //cad.sangue.setAdapter(bundle.getString(""));
@@ -79,31 +79,31 @@ public class ContinuarCadastroActivity extends AppCompatActivity {
 
 
         btn_concluir.setOnClickListener(new View.OnClickListener() {
-                                            @Override
-                                            public void onClick(View v) {
-                                                Intent i = new Intent(ContinuarCadastroActivity.this, LoginActivity.class);
-                                                startActivity(i);
-                                            }
-                                        }
+                                          @Override
+                                          public void onClick(View v) {
+                                              usuario.setNome(cad.nome.getText().toString());
+                                              usuario.setTipo_sanguineo(cad.sangue.toString());
+                                              usuario.setGenero(cad.sexo.toString());
+                                              usuario.setData_nascimento(cad.btn_data_nascimento.getText().toString());
+                                              usuario.setEmail(cad.email.getText().toString());
+                                              usuario.setSenha(cad.senha.getText().toString());
+                                              usuario.setEstado(estado.toString());
+                                              usuario.setCidade(cidade.toString());
+                                              usuario.salvar();
+
+                                              Toast.makeText(ContinuarCadastroActivity.this, usuario.get_mensagem(), Toast.LENGTH_LONG).show();
+                                              if (usuario.is_status())
+                                                  finish();
+                                          }
+                                      }
         );
 
 
+
     }
 
-    public void salvar (View view){
-        this.usuario.setNome(cad.nome.getText().toString());
-        this.usuario.setTipo_sanguineo(cad.sangue.toString());
-        this.usuario.setGenero(cad.sexo.toString());
-        this.usuario.setData_nascimento(cad.btn_data_nascimento.getText().toString());
-        this.usuario.setEmail(cad.email.getText().toString());
-        this.usuario.setSenha(cad.senha.getText().toString());
-        this.usuario.setEstado(this.estado.toString());
-        this.usuario.setCidade(this.cidade.toString());
-        this.usuario.salvar();
 
-        Toast.makeText(this, this.usuario.get_mensagem(), Toast.LENGTH_LONG).show();
-        if (usuario.is_status())
-            finish();
-    }
+
+
 
  }

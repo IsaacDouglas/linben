@@ -40,9 +40,6 @@ public class CadastroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
 
-//        helper = new DBHelper(this);
-
-
         btn_voltar = (Button) findViewById(R.id.voltarseta);
         btn_continuar = (Button) findViewById(R.id.continuar);
         btn_data_nascimento = (Button) findViewById(R.id.data);
