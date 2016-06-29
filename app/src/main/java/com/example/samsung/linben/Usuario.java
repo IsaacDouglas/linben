@@ -15,8 +15,8 @@ public class Usuario extends _Default {
     private String data_nascimento;
     private String email;
     private String senha;
-    private String estado;
-    private String cidade;
+   // private String estado;
+    //private String cidade;
 
 
     public Usuario(){
@@ -28,8 +28,8 @@ public class Usuario extends _Default {
         this.data_nascimento = "";
         this.email = "";
         this.senha = "";
-        this.estado = "";
-        this.cidade = "";
+       // this.estado = "";
+       // this.cidade = "";
     }
 
     public ArrayList<Usuario> getLista(){
@@ -42,13 +42,13 @@ public class Usuario extends _Default {
                     Usuario obj = new Usuario();
                     obj.setId(resultSet.getInt("id"));
                     obj.setNome(resultSet.getString("nome"));
-                    obj.setTipo_sanguineo(resultSet.getString("tipo_sanguineo"));
-                    obj.setGenero(resultSet.getString("genero"));
-                    obj.setData_nascimento(resultSet.getString("data_nascimento"));
+                    //obj.setTipo_sanguineo(resultSet.getString("tipo_sanguineo"));
+                    //obj.setGenero(resultSet.getString("genero"));
+                    //obj.setData_nascimento(resultSet.getString("data_nascimento"));
                     obj.setEmail(resultSet.getString("email"));
                     obj.setSenha(resultSet.getString("senha"));
-                    obj.setEstado(resultSet.getString("estado"));
-                    obj.setCidade(resultSet.getString("cidade"));
+                    //obj.setEstado(resultSet.getString("estado"));
+                    //obj.setCidade(resultSet.getString("cidade"));
                     lista.add(obj);
                     obj = null;
                 }
@@ -65,11 +65,11 @@ public class Usuario extends _Default {
     public  void salvar(){
         String comando = "";
         if (this.getId() == -1){
-            comando = String.format("INSERT INTO usuario (nome, tipo_sanguineo, genero, data_nascimento, email, senha, estado, cidade) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s'); ",
-                    this.getNome(), this.getTipo_sanguineo(), this.getGenero(), this.getData_nascimento(), this.getEmail(), this.getSenha(), this.getEstado(), this.getCidade());
+            comando = String.format("INSERT INTO usuario (nome, email, senha) VALUES ('%s', '%s', '%s'); ",
+                    this.getNome(), this.getEmail(), this.getSenha());
         }else{
-            comando = String.format("UPDATE usuario SET nome = '%s', tipo_sanguineo = '%s', genero = '%s', data_nascimento = '%s', email = '%s', senha = '%s', estado = '%s', cidade = '%s' WHERE id = %d;",
-                    this.getNome(), this.getTipo_sanguineo(), this.getGenero(), this.getData_nascimento(), this.getEmail(), this.getSenha(), this.getEstado(), this.getCidade(), this.getId());
+            comando = String.format("UPDATE usuario SET nome = '%s', email = '%s', senha = '%s' WHERE id = %d;",
+                    this.getNome(), this.getEmail(), this.getSenha(), this.getId());
         }
         DB db = new DB();
         db.execute(comando);
@@ -101,7 +101,7 @@ public class Usuario extends _Default {
         this.nome = nome;
     }
 
-    public String getTipo_sanguineo() {
+    /*public String getTipo_sanguineo() {
         return tipo_sanguineo;
     }
 
@@ -124,7 +124,7 @@ public class Usuario extends _Default {
     public void setData_nascimento(String data_nascimento) {
         this.data_nascimento = data_nascimento;
     }
-
+*/
     public String getEmail() {
         return email;
     }
@@ -141,7 +141,7 @@ public class Usuario extends _Default {
         this.senha = senha;
     }
 
-    public String getEstado() {
+  /*  public String getEstado() {
         return estado;
     }
 
@@ -155,5 +155,5 @@ public class Usuario extends _Default {
 
     public void setCidade(String cidade) {
         this.cidade = cidade;
-    }
+    }*/
 }

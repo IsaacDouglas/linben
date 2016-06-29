@@ -37,14 +37,14 @@ public class UsuarioAdapter extends ArrayAdapter<Usuario> {
         TextView textViewNome = (TextView) convertView.findViewById(R.id.textView_nome);
         textViewNome.setText(itemPosicao.getNome());
 
-        TextView textViewSangue = (TextView) convertView.findViewById(R.id.textView_sangue);
+        /*TextView textViewSangue = (TextView) convertView.findViewById(R.id.textView_sangue);
         textViewSangue.setText(itemPosicao.getTipo_sanguineo());
 
         TextView textViewGenero = (TextView) convertView.findViewById(R.id.textView_genero);
         textViewGenero.setText(itemPosicao.getGenero());
 
         TextView textViewData = (TextView) convertView.findViewById(R.id.textView_data);
-        textViewData.setText(itemPosicao.getData_nascimento());
+        textViewData.setText(itemPosicao.getData_nascimento());*/
 
         TextView textViewEmail = (TextView) convertView.findViewById(R.id.textView_email);
         textViewEmail.setText(itemPosicao.getEmail());
@@ -52,11 +52,11 @@ public class UsuarioAdapter extends ArrayAdapter<Usuario> {
         TextView textViewSenha = (TextView) convertView.findViewById(R.id.textView_senha);
         textViewSenha.setText(itemPosicao.getSenha());
 
-        TextView textViewEstado = (TextView) convertView.findViewById(R.id.textView_estado);
-        textViewEstado.setText(itemPosicao.getEstado());
+       // TextView textViewEstado = (TextView) convertView.findViewById(R.id.textView_estado);
+       // textViewEstado.setText(itemPosicao.getEstado());
 
-        TextView textViewCidade = (TextView) convertView.findViewById(R.id.textView_cidade);
-        textViewCidade.setText(itemPosicao.getCidade());
+        //TextView textViewCidade = (TextView) convertView.findViewById(R.id.textView_cidade);
+        //textViewCidade.setText(itemPosicao.getCidade());
 
         Button button = (Button) convertView.findViewById(R.id.button_editar);
         button.setOnClickListener(new View.OnClickListener(){
@@ -64,13 +64,13 @@ public class UsuarioAdapter extends ArrayAdapter<Usuario> {
             public void onClick(View v){
                 Intent intent = new Intent(context, CadastroActivity.class);
                 intent.putExtra("nome", itemPosicao.getNome());
-                intent.putExtra("tipo_sanguineo", itemPosicao.getTipo_sanguineo());
-                intent.putExtra("genero", itemPosicao.getGenero());
-                intent.putExtra("data", itemPosicao.getData_nascimento());
+                //intent.putExtra("tipo_sanguineo", itemPosicao.getTipo_sanguineo());
+                //intent.putExtra("genero", itemPosicao.getGenero());
+                //intent.putExtra("data", itemPosicao.getData_nascimento());
                 intent.putExtra("email", itemPosicao.getEmail());
                 intent.putExtra("senha", itemPosicao.getSenha());
-                intent.putExtra("estado", itemPosicao.getEstado());
-                intent.putExtra("cidade", itemPosicao.getCidade());
+             //   intent.putExtra("estado", itemPosicao.getEstado());
+              //  intent.putExtra("cidade", itemPosicao.getCidade());
                 context.startActivity(intent);
             }
         });

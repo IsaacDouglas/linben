@@ -30,7 +30,7 @@ public class ContinuarCadastroActivity extends AppCompatActivity {
     private Usuario usuario;
 
     CadastroActivity cad = new CadastroActivity();
-    
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,7 @@ public class ContinuarCadastroActivity extends AppCompatActivity {
         cad.senha = (EditText) findViewById(R.id.t_senha);
         cad.sexo = (Spinner) findViewById(R.id.sexo);
         cad.sangue = (Spinner) findViewById(R.id.sangue);
-        cad.btn_data_nascimento = (Button) findViewById(R.id.data);
+        cad.dataNascimento = (Button) findViewById(R.id.data);
 
         Intent intent = getIntent();
         if (intent != null) {
@@ -92,13 +92,13 @@ public class ContinuarCadastroActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                                               usuario.setNome(cad.nome.getText().toString());
-                                              usuario.setTipo_sanguineo(cad.sangue.toString());
-                                              usuario.setGenero(cad.sexo.toString());
-                                              usuario.setData_nascimento(cad.btn_data_nascimento.getText().toString());
+                                             // usuario.setTipo_sanguineo(cad.sangue.toString());
+                                             // usuario.setGenero(cad.sexo.toString());
+                                             // usuario.setData_nascimento(cad.dataNascimento.getText().toString());
                                               usuario.setEmail(cad.email.getText().toString());
                                               usuario.setSenha(cad.senha.getText().toString());
-                                              usuario.setEstado(estado.toString());
-                                              usuario.setCidade(cidade.toString());
+                                           //   usuario.setEstado(estado.toString());
+                                            //  usuario.setCidade(cidade.toString());
                                               usuario.salvar();
 
                                               Toast.makeText(ContinuarCadastroActivity.this, usuario.get_mensagem(), Toast.LENGTH_LONG).show();

@@ -184,5 +184,14 @@
         android:layout_above="@+id/t_nome"
         android:layout_centerHorizontal="true" />
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="salvar"
+        android:id="@+id/bt_salvar"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/sexo" />
+
 
 </RelativeLayout>
