@@ -144,24 +144,18 @@
 
 
     <Button
-        android:layout_width="130dp"
-        android:layout_height="45dp"
-        android:id="@+id/voltar"
-        android:src="@drawable/voltarbranco"
-        android:background="@drawable/voltarbranco"
-        android:layout_alignTop="@+id/concluir"
-        android:layout_alignStart="@+id/ondemoratx" />
-    <Button
         android:layout_width="140dp"
         android:layout_height="50dp"
         android:src="@drawable/concluirbranco"
-        android:background="@drawable/concluirbranco"
+        android:background="@drawable/concluircad"
         android:id="@+id/concluir"
         style="@style/MyStyle1"
         android:layout_below="@+id/cidade"
         android:layout_alignEnd="@+id/cidade"
-        android:layout_marginTop="70dp"
-        android:longClickable="false" />
+        android:layout_marginTop="50dp"
+        android:longClickable="false"
+        android:layout_toEndOf="@+id/camera"
+        android:layout_alignStart="@+id/estado" />
 
 
 

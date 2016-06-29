@@ -122,5 +122,6 @@
         android:layout_below="@+id/hemocentro"
         android:layout_alignEnd="@+id/hemocentro"
         android:layout_toEndOf="@+id/voltarseta"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp" />
 </RelativeLayout>
