@@ -42,6 +42,24 @@ public class CadastroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
 
+
+       /* Intent intent = getIntent();
+        if (intent != null) {
+            Bundle bundle = intent.getExtras();
+            if (bundle != null) {
+                this.usuario.setId(bundle.getInt("id"));
+                nome.setText(bundle.getString("nome"));
+                //cad.sangue.setAdapter(bundle.getString(""));
+                //genero
+                //data
+                email.setText(bundle.getString("email"));
+                senha.setText(bundle.getString("senha"));
+                //estado
+                //cidade
+            }
+        }*/
+
+
         this.usuario = new Usuario();
 
         btn_voltar = (Button) findViewById(R.id.voltarseta);
@@ -115,7 +133,7 @@ public class CadastroActivity extends AppCompatActivity {
                                              // usuario.setEstado(estado.toString());
                                              // usuario.setCidade(cidade.toString());
                                               usuario.salvar();
-                                              Toast.makeText(CadastroActivity.this, usuario.get_mensagem(), Toast.LENGTH_LONG).show();
+                                              Toast.makeText(CadastroActivity.this, "Usuário cadastrado", Toast.LENGTH_LONG).show();
                                               if (usuario.is_status())
                                                   finish();
                                           }

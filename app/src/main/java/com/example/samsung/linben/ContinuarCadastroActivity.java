@@ -46,21 +46,7 @@ public class ContinuarCadastroActivity extends AppCompatActivity {
         cad.sangue = (Spinner) findViewById(R.id.sangue);
         cad.dataNascimento = (Button) findViewById(R.id.data);
 
-        Intent intent = getIntent();
-        if (intent != null) {
-            Bundle bundle = intent.getExtras();
-            if (bundle != null) {
-                this.usuario.setId(bundle.getInt("id"));
-                cad.nome.setText(bundle.getString("nome"));
-                //cad.sangue.setAdapter(bundle.getString(""));
-                //genero
-                //data
-                cad.email.setText(bundle.getString("email"));
-                cad.senha.setText(bundle.getString("senha"));
-                //estado
-                //cidade
-            }
-        }
+
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, R.array.estado,
@@ -91,19 +77,7 @@ public class ContinuarCadastroActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                                              usuario.setNome(cad.nome.getText().toString());
-                                             // usuario.setTipo_sanguineo(cad.sangue.toString());
-                                             // usuario.setGenero(cad.sexo.toString());
-                                             // usuario.setData_nascimento(cad.dataNascimento.getText().toString());
-                                              usuario.setEmail(cad.email.getText().toString());
-                                              usuario.setSenha(cad.senha.getText().toString());
-                                           //   usuario.setEstado(estado.toString());
-                                            //  usuario.setCidade(cidade.toString());
-                                              usuario.salvar();
 
-                                              Toast.makeText(ContinuarCadastroActivity.this, usuario.get_mensagem(), Toast.LENGTH_LONG).show();
-                                              if (usuario.is_status())
-                                                  finish();
                                           }
                                       }
         );
