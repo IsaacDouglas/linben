@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class ContinuarCadastroActivity extends AppCompatActivity {
     private Spinner estado;
@@ -28,7 +30,7 @@ public class ContinuarCadastroActivity extends AppCompatActivity {
     private Usuario usuario;
 
     CadastroActivity cad = new CadastroActivity();
-
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,13 @@ public class ContinuarCadastroActivity extends AppCompatActivity {
         setContentView(R.layout.activity_continuar_cadastro);
 
         this.usuario = new Usuario();
+
+        cad.nome = (EditText) findViewById(R.id.nome);
+        cad.email = (EditText) findViewById(R.id.email);
+        cad.senha = (EditText) findViewById(R.id.t_senha);
+        cad.sexo = (Spinner) findViewById(R.id.sexo);
+        cad.sangue = (Spinner) findViewById(R.id.sangue);
+        cad.btn_data_nascimento = (Button) findViewById(R.id.data);
 
         Intent intent = getIntent();
         if (intent != null) {
@@ -79,8 +88,9 @@ public class ContinuarCadastroActivity extends AppCompatActivity {
 
 
         btn_concluir.setOnClickListener(new View.OnClickListener() {
-                                          @Override
-                                          public void onClick(View v) {
+            @Override
+            public void onClick(View v) {
+
                                               usuario.setNome(cad.nome.getText().toString());
                                               usuario.setTipo_sanguineo(cad.sangue.toString());
                                               usuario.setGenero(cad.sexo.toString());
