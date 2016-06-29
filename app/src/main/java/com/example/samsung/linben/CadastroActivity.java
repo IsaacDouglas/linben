@@ -125,7 +125,7 @@ public class CadastroActivity extends AppCompatActivity {
                                           @Override
                                           public void onClick(View v) {
                                               usuario.setNome(nome.getText().toString());
-                                              //usuario.setTipo_sanguineo(sangue.toString());
+                                              usuario.setTipo_sanguineo(sangue.getSelectedItem().toString());
                                               //usuario.setGenero(sexo.toString());
                                               //usuario.setData_nascimento(dataNascimento.getText().toString());
                                               usuario.setEmail(email.getText().toString());

@@ -10,9 +10,8 @@ import java.sql.ResultSet;
 public class DB extends _Default implements Runnable{
 
     private Connection conn;
-    //private String host = "192.168.1.10";
-    private String host = "169.254.148.140";
-    private String db = "linben";
+    private String host = "192.168.1.10";
+     private String db = "linben";
     private int port = 5432;
     private String user = "postgres";
     private String pass = "Linben123";

@@ -37,10 +37,10 @@ public class UsuarioAdapter extends ArrayAdapter<Usuario> {
         TextView textViewNome = (TextView) convertView.findViewById(R.id.textView_nome);
         textViewNome.setText(itemPosicao.getNome());
 
-        /*TextView textViewSangue = (TextView) convertView.findViewById(R.id.textView_sangue);
+        TextView textViewSangue = (TextView) convertView.findViewById(R.id.textView_sangue);
         textViewSangue.setText(itemPosicao.getTipo_sanguineo());
 
-        TextView textViewGenero = (TextView) convertView.findViewById(R.id.textView_genero);
+       /* TextView textViewGenero = (TextView) convertView.findViewById(R.id.textView_genero);
         textViewGenero.setText(itemPosicao.getGenero());
 
         TextView textViewData = (TextView) convertView.findViewById(R.id.textView_data);
@@ -64,7 +64,7 @@ public class UsuarioAdapter extends ArrayAdapter<Usuario> {
             public void onClick(View v){
                 Intent intent = new Intent(context, CadastroActivity.class);
                 intent.putExtra("nome", itemPosicao.getNome());
-                //intent.putExtra("tipo_sanguineo", itemPosicao.getTipo_sanguineo());
+                intent.putExtra("tipo_sanguineo", itemPosicao.getTipo_sanguineo());
                 //intent.putExtra("genero", itemPosicao.getGenero());
                 //intent.putExtra("data", itemPosicao.getData_nascimento());
                 intent.putExtra("email", itemPosicao.getEmail());

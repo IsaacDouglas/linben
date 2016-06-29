@@ -42,7 +42,7 @@ public class Usuario extends _Default {
                     Usuario obj = new Usuario();
                     obj.setId(resultSet.getInt("id"));
                     obj.setNome(resultSet.getString("nome"));
-                    //obj.setTipo_sanguineo(resultSet.getString("tipo_sanguineo"));
+                    obj.setTipo_sanguineo(resultSet.getString("tipo_sanguineo"));
                     //obj.setGenero(resultSet.getString("genero"));
                     //obj.setData_nascimento(resultSet.getString("data_nascimento"));
                     obj.setEmail(resultSet.getString("email"));
@@ -65,11 +65,11 @@ public class Usuario extends _Default {
     public  void salvar(){
         String comando = "";
         if (this.getId() == -1){
-            comando = String.format("INSERT INTO usuario (nome, email, senha) VALUES ('%s', '%s', '%s'); ",
-                    this.getNome(), this.getEmail(), this.getSenha());
+            comando = String.format("INSERT INTO usuario (nome, email, senha, tipo_sanguineo) VALUES ('%s', '%s', '%s', '%s'); ",
+                    this.getNome(), this.getEmail(), this.getSenha(), this.getTipo_sanguineo());
         }else{
-            comando = String.format("UPDATE usuario SET nome = '%s', email = '%s', senha = '%s' WHERE id = %d;",
-                    this.getNome(), this.getEmail(), this.getSenha(), this.getId());
+            comando = String.format("UPDATE usuario SET nome = '%s', email = '%s', senha = '%s', tipo_sanguineo = '%s' WHERE id = %d;",
+                    this.getNome(), this.getEmail(), this.getSenha(), this.getTipo_sanguineo(), this.getId());
         }
         DB db = new DB();
         db.execute(comando);
@@ -101,7 +101,7 @@ public class Usuario extends _Default {
         this.nome = nome;
     }
 
-    /*public String getTipo_sanguineo() {
+    public String getTipo_sanguineo() {
         return tipo_sanguineo;
     }
 
@@ -109,7 +109,7 @@ public class Usuario extends _Default {
         this.tipo_sanguineo = tipo_sanguineo;
     }
 
-    public String getGenero() {
+   /* public String getGenero() {
         return genero;
     }
 
