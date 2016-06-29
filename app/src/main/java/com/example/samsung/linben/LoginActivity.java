@@ -46,8 +46,8 @@ public class LoginActivity extends AppCompatActivity  {
         bt_esqueci_senha.setOnClickListener(new View.OnClickListener() {
                                                @Override
                                                public void onClick(View v) {
-                                                   Intent i = new Intent(LoginActivity.this, TesteActivity.class);
-                                                   startActivity(i);
+                                                   Intent intent = new Intent(LoginActivity.this, TesteActivity.class);
+                                                   startActivity(intent);
 
 
                                                }

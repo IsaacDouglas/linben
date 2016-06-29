@@ -7,25 +7,9 @@
     android:background="@color/colorMain">
 
 
-    <EditText
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:id="@+id/txt_buscar"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:text="PLAY"
-        android:id="@+id/bnt_buscar"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
-
     <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/list_output"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/txt_buscar" />
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/listViewUsuario"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
