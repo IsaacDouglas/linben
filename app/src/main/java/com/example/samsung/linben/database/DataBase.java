@@ -1,4 +1,4 @@
-package com.example.samsung.linben;
+package com.example.samsung.linben.database;
 import android.content.Context;
 import android.database.sqlite.*;
 
