@@ -79,7 +79,7 @@ public class UsuarioAdapter extends ArrayAdapter<Usuario> {
         buttonDeletar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                itemPosicao.apagar();
+             //   itemPosicao.apagar();
                 if(itemPosicao._status)
                     layout.setVisibility(View.GONE);
                 else

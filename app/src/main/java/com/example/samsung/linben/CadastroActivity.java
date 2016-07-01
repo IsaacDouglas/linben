@@ -43,23 +43,6 @@ public class CadastroActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cadastro);
 
 
-       /* Intent intent = getIntent();
-        if (intent != null) {
-            Bundle bundle = intent.getExtras();
-            if (bundle != null) {
-                this.usuario.setId(bundle.getInt("id"));
-                nome.setText(bundle.getString("nome"));
-                //cad.sangue.setAdapter(bundle.getString(""));
-                //genero
-                //data
-                email.setText(bundle.getString("email"));
-                senha.setText(bundle.getString("senha"));
-                //estado
-                //cidade
-            }
-        }*/
-
-
         this.usuario = new Usuario();
 
         btn_voltar = (Button) findViewById(R.id.voltarseta);
@@ -102,26 +85,8 @@ public class CadastroActivity extends AppCompatActivity {
         );
 
 
-        btn_continuar.setOnClickListener(new View.OnClickListener() {
-                                            @Override
-                                            public void onClick(View v) {
 
-                                                //verificar se os campos estão vazios
-                                                   if (email.getText().length()==0 || senha.getText().length()==0 || nome.getText().length()==0 || dataNascimento.getText().length()==0){
-                                                      Toast.makeText(getApplication(), "Todos os campos são obrigatórios", Toast.LENGTH_LONG).show();
-
-                                                      }else{
-                                                         Intent i = new Intent(CadastroActivity.this, ContinuarCadastroActivity.class);
-                                                        startActivity(i);
-                                                                                                }
-                                            }
-
-
-                                         }
-        );
-
-
-        btn_salvar.setOnClickListener(new View.OnClickListener() {
+        /*btn_salvar.setOnClickListener(new View.OnClickListener() {
                                           @Override
                                           public void onClick(View v) {
                                               usuario.setNome(nome.getText().toString());
@@ -132,7 +97,7 @@ public class CadastroActivity extends AppCompatActivity {
                                               usuario.setSenha(senha.getText().toString());
                                              // usuario.setEstado(estado.toString());
                                              // usuario.setCidade(cidade.toString());
-                                              usuario.salvar();
+                                            //  usuario.salvar();
                                               Toast.makeText(CadastroActivity.this, "Usuário cadastrado", Toast.LENGTH_LONG).show();
                                               if (usuario.is_status())
                                                   finish();
@@ -140,7 +105,7 @@ public class CadastroActivity extends AppCompatActivity {
         }
 
 
-        );
+        );*/
 
 
     }

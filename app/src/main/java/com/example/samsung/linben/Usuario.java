@@ -33,9 +33,9 @@ public class Usuario extends _Default {
     }
 
     public ArrayList<Usuario> getLista(){
-        DB db = new DB();
+        //DB db = new DB();
         ArrayList<Usuario> lista = new ArrayList<>();
-        try {
+       /* try {
             ResultSet resultSet = db.select("SELECT * FROM usuario");
             if (resultSet != null){
                 while (resultSet.next()){
@@ -57,12 +57,12 @@ public class Usuario extends _Default {
         }catch (Exception ex){
             this._mensagem = ex.getMessage();
             this._status = false;
-        }
+        }*/
         return lista;
     }
 
 
-    public  void salvar(){
+    /*public  void salvar(){
         String comando = "";
         if (this.getId() == -1){
             comando = String.format("INSERT INTO usuario (nome, email, senha, tipo_sanguineo) VALUES ('%s', '%s', '%s', '%s'); ",
@@ -83,7 +83,7 @@ public class Usuario extends _Default {
         db.execute(comando);
         this._mensagem = db._mensagem;
         this._status = db._status;
-    }
+    }*/
 
     public int getId() {
         return id;

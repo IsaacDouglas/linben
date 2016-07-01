@@ -1,7 +1,10 @@
 package com.example.samsung.linben;
 
+import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutCompat;
@@ -10,6 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+import android.database.sqlite.*;
+import android.database.*;
+
 
 
 public class LoginActivity extends AppCompatActivity  {
@@ -18,13 +24,35 @@ public class LoginActivity extends AppCompatActivity  {
     Button bt_esqueci_senha;
     EditText email;
     EditText senha;
-    private RelativeLayout rl;
-    private FragmentActivity fa;
+
+    private  DataBase database;
+    private SQLiteDatabase conn;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+            try {
+                database = new DataBase(this);
+                conn = database.getReadableDatabase();
+
+                AlertDialog.Builder dlg = new AlertDialog.Builder(this);
+                dlg.setMessage("Conexão criada com sucesso!");
+                dlg.setNegativeButton("OK", null);
+                dlg.show();
+            }catch (SQLException ex){
+
+                AlertDialog.Builder dlg = new AlertDialog.Builder(this);
+                dlg.setMessage("Erro ao criar o banco!" + ex.getMessage());
+                dlg.setNegativeButton("OK", null);
+                dlg.show();
+
+            }
+
 
         //chamada dos objetos
         bt_novo_usuario = (Button) findViewById(R.id.bt_novo_usuario);
