@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.*;
 import android.widget.ArrayAdapter;
 
+import com.example.samsung.linben.dominio.entidades.Usuario;
+
 import java.util.ArrayList;
 
 /**
@@ -19,6 +21,21 @@ public class RepositorioUsuario {
 
         this.conn = conn;
     }
+    public void inserir (Usuario usuario)
+    {
+        ContentValues values = new ContentValues();
+
+        values.put("nome", usuario.getNome());
+        values.put("email", usuario.getEmail());
+        values.put("senha", usuario.getSenha());
+        values.put("tipo_sanguineo", usuario.getTipo_sanguineo());
+        values.put("genero", usuario.getGenero());
+        values.put("data_nascimento", usuario.getData_nascimento().getDate());
+
+        conn.insertOrThrow("USUARIO", null, values);
+
+    }
+    /*
     public void testeInserirUsuarios(){
         for(int i = 0; i<10;i++) {
             ContentValues values = new ContentValues();
@@ -26,9 +43,11 @@ public class RepositorioUsuario {
             conn.insertOrThrow("USUARIO", null, values);
         }
     }
-    public ArrayAdapter<String> buscarUsuario(Context context){
+     ----  Usado pra teste
+    */
+    public ArrayAdapter<Usuario> buscarUsuario(Context context){
 
-        ArrayAdapter<String> adpUsuarios = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1);
+        ArrayAdapter<Usuario> adpUsuarios = new ArrayAdapter<Usuario>(context, android.R.layout.simple_list_item_1);
         Cursor cursor = conn.query("USUARIO",null,null,null,null,null,null);
 
         if (cursor.getCount() > 0){
@@ -36,8 +55,15 @@ public class RepositorioUsuario {
             cursor.moveToFirst();
 
             do {
-                String nome = cursor.getString(1);
-                adpUsuarios.add(nome);
+                Usuario usuario = new Usuario();
+                usuario.setNome(cursor.getString(1));
+                usuario.setEmail(cursor.getString(2));
+                usuario.setSenha(cursor.getString(3));
+                usuario.setTipo_sanguineo(cursor.getString(4));
+                usuario.setGenero(cursor.getString(5));
+
+                adpUsuarios.add(usuario);
+
 
             } while (cursor.moveToNext());
 

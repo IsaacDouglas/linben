@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity  {
         bt_novo_usuario.setOnClickListener(new View.OnClickListener() {
                                                @Override
                                                public void onClick(View v) {
-                                                   Intent i = new Intent(LoginActivity.this, TesteActivity.class);
+                                                   Intent i = new Intent(LoginActivity.this, CadastroActivity.class);
                                                    startActivity(i);
 
 
