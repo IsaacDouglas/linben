@@ -1,5 +1,7 @@
 package com.example.samsung.linben;
 
+import android.widget.ArrayAdapter;
+
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
@@ -15,6 +17,7 @@ public class Usuario extends _Default {
     private String data_nascimento;
     private String email;
     private String senha;
+    private ArrayAdapter<String> adpUsuarios;
    // private String estado;
     //private String cidade;
 

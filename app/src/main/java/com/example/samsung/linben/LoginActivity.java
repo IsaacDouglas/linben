@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-            try {
+         /*   try {
                 database = new DataBase(this);
                 conn = database.getReadableDatabase();
 
@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity  {
                 dlg.show();
 
             }
-
+*/
 
         //chamada dos objetos
         bt_novo_usuario = (Button) findViewById(R.id.bt_novo_usuario);
@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity  {
         bt_novo_usuario.setOnClickListener(new View.OnClickListener() {
                                                @Override
                                                public void onClick(View v) {
-                                                   Intent i = new Intent(LoginActivity.this, CadastroActivity.class);
+                                                   Intent i = new Intent(LoginActivity.this, TesteActivity.class);
                                                    startActivity(i);
 
 
