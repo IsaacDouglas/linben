@@ -15,6 +15,10 @@ import com.example.samsung.linben.database.DataBase;
 
 
 public class LoginActivity extends AppCompatActivity  {
+
+
+    private Button btn_listaUsuario;
+
     Button bt_novo_usuario;
     Button bt_entrar;
     Button bt_esqueci_senha;
@@ -22,7 +26,7 @@ public class LoginActivity extends AppCompatActivity  {
     EditText senha;
 
     private DataBase database;
-    private SQLiteDatabase conn;
+    private SQLiteDatabase dbActions;
 
 
 
@@ -32,9 +36,9 @@ public class LoginActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-         /*   try {
+            try {
                 database = new DataBase(this);
-                conn = database.getReadableDatabase();
+                dbActions = database.getReadableDatabase();
 
                 AlertDialog.Builder dlg = new AlertDialog.Builder(this);
                 dlg.setMessage("Conexão criada com sucesso!");
@@ -48,9 +52,10 @@ public class LoginActivity extends AppCompatActivity  {
                 dlg.show();
 
             }
-*/
+
 
         //chamada dos objetos
+        btn_listaUsuario = (Button) findViewById(R.id.btn_listaUsuario);
         bt_novo_usuario = (Button) findViewById(R.id.bt_novo_usuario);
         bt_esqueci_senha = (Button) findViewById(R.id.bt_esqueci_senha);
         bt_entrar = (Button) findViewById(R.id.entrar);
@@ -61,8 +66,6 @@ public class LoginActivity extends AppCompatActivity  {
                                                public void onClick(View v) {
                                                    Intent i = new Intent(LoginActivity.this, CadastroActivity.class);
                                                    startActivity(i);
-
-
                                                }
                                            }
         );
@@ -88,23 +91,31 @@ public class LoginActivity extends AppCompatActivity  {
                                                  //Intent j = new Intent(LoginActivity.this, LoginActivity.class);
                                                  //startActivity(j);
                                              }else{
-                                                 Toast.makeText(getApplication(), "Seja bem vindo ao Linben!", Toast.LENGTH_LONG).show();
-                                                 Intent i = new Intent(LoginActivity.this, MenuActivity.class);
-                                                 startActivity(i);
-                                                 //limpando os campos
-                                                 email.setText("");
-                                                 senha.setText("");
+                                                 String password = database.searchPassword(email.getText().toString());
+                                                 if(senha.getText().toString().equals(password)){
+                                                     Toast.makeText(getApplication(), "Seja bem vindo ao Linben!", Toast.LENGTH_LONG).show();
+                                                     Intent i = new Intent(LoginActivity.this, MenuActivity.class);
+                                                     startActivity(i);
+                                                 }else {
+                                                     Toast.makeText(getApplication(), "Email e Senha não conferem", Toast.LENGTH_SHORT).show();
+                                                     //limpando os campos
+                                                     email.setText("");
+                                                     senha.setText("");
+                                                 }
                                              }
                                          }
                                      }
         );
 
+        btn_listaUsuario.setOnClickListener(new View.OnClickListener(){
+            public void  onClick(View v){
+                Intent i = new Intent(LoginActivity.this, TesteActivity.class);
+                startActivity(i);
+            }
+        });
+
 
     }
-
-
-
-
 
 
 }

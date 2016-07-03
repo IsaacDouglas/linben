@@ -161,17 +161,6 @@
         android:layout_marginLeft="20dp"
         android:layout_alignEnd="@+id/email" />
 
-    <Button
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:background="@drawable/avancarcadastro"
-        android:id="@+id/continuar"
-        style="@style/MyStyle1"
-        android:onClick="insertUser"
-        android:layout_marginTop="52dp"
-        android:layout_below="@+id/t_senha"
-        android:layout_centerHorizontal="true" />
-
     <TextView
         android:layout_width="240dp"
         android:layout_height="45dp"
@@ -190,7 +179,8 @@
         android:text="salvar"
         android:id="@+id/bt_salvar"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/sexo" />
+        android:layout_toEndOf="@+id/sexo"
+        android:layout_marginBottom="56dp" />
 
 
 </RelativeLayout>

@@ -83,5 +83,13 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="listaUsuarios"
+        android:id="@+id/btn_listaUsuario"
+        android:layout_alignTop="@+id/bt_esqueci_senha"
+        android:layout_alignParentEnd="true" />
+
 
 </RelativeLayout>

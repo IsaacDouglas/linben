@@ -2,12 +2,9 @@ package com.example.samsung.linben;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -16,21 +13,15 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 
 import com.example.samsung.linben.database.DataBase;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-import com.example.samsung.linben.dominio.RepositorioUsuario;
-import com.example.samsung.linben.dominio.entidades.Usuario;
+import com.example.samsung.linben.entidades.Usuario;
 
 /**
  * Created by Raquel on 12/05/2016.
@@ -39,22 +30,18 @@ public class CadastroActivity extends AppCompatActivity {
     private int ano, mes, dia;
     Button dataNascimento;
 
-
-
     private Button btn_voltar;
-    private Button btn_continuar;
     private Button btn_salvar;
     private Usuario usuario;
     private DataBase database;
-    private SQLiteDatabase conn;
-    private RepositorioUsuario repositorioUsuario;
+    private SQLiteDatabase dbActions;
 
 
     private EditText nome;
     private EditText email;
     private EditText senha;
-    private Spinner sexo;
-    private Spinner sangue;
+    private Spinner genero;
+    private Spinner tipo_sanguineo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,11 +54,9 @@ public class CadastroActivity extends AppCompatActivity {
 
         try {
             database = new DataBase(this);
-            conn = database.getWritableDatabase();
+            dbActions = database.getWritableDatabase();
 
-            repositorioUsuario = new RepositorioUsuario(conn);
         }catch (SQLException ex){
-
             AlertDialog.Builder dlg = new AlertDialog.Builder(this);
             dlg.setMessage("Erro ao criar o banco!" + ex.getMessage());
             dlg.setNegativeButton("OK", null);
@@ -79,18 +64,16 @@ public class CadastroActivity extends AppCompatActivity {
 
         }
 
-
         this.usuario = new Usuario();
 
         btn_voltar = (Button) findViewById(R.id.voltarseta);
-        btn_continuar = (Button) findViewById(R.id.continuar);
         btn_salvar = (Button) findViewById(R.id.bt_salvar);
 
         nome = (EditText) findViewById(R.id.nome);
         email = (EditText) findViewById(R.id.email);
         senha = (EditText) findViewById(R.id.t_senha);
-        sexo = (Spinner) findViewById(R.id.sexo);
-        sangue = (Spinner) findViewById(R.id.sangue);
+        genero = (Spinner) findViewById(R.id.sexo);
+        tipo_sanguineo = (Spinner) findViewById(R.id.sangue);
 
         Calendar calendar = Calendar.getInstance();
         this.ano = calendar.get(Calendar.YEAR);
@@ -102,14 +85,14 @@ public class CadastroActivity extends AppCompatActivity {
         final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                  this, R.array.tipo_sanguineo,
          android.R.layout.simple_spinner_item);
-         sangue = (Spinner) findViewById(R.id.sangue);
-         sangue.setAdapter(adapter);
+         tipo_sanguineo = (Spinner) findViewById(R.id.sangue);
+         tipo_sanguineo.setAdapter(adapter);
 
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(
                 this, R.array.sexo,
                 android.R.layout.simple_spinner_item);
-        sexo = (Spinner) findViewById(R.id.sexo);
-        sexo.setAdapter(adapter1);
+        genero = (Spinner) findViewById(R.id.sexo);
+        genero.setAdapter(adapter1);
 
 
         btn_voltar.setOnClickListener(new View.OnClickListener() {
@@ -126,24 +109,15 @@ public class CadastroActivity extends AppCompatActivity {
         btn_salvar.setOnClickListener(new View.OnClickListener() {
                                           @Override
                                           public void onClick(View v) {
-
-                                              if (usuario == null){
+                                              if (usuario != null) {
                                                   inserir();
                                                   Toast.makeText(CadastroActivity.this, "Usuário cadastrado", Toast.LENGTH_LONG).show();
-                                                  Intent i = new Intent(CadastroActivity.this,   TesteActivity.class);
+                                                  Intent i = new Intent(CadastroActivity.this, TesteActivity.class);
                                                   startActivity(i);
-
                                               }
-
-
-
                                           }
-        }
-
-
+            }
         );
-
-
     }
 
 
@@ -170,38 +144,29 @@ public class CadastroActivity extends AppCompatActivity {
         }
     };
 
-     private void inserir(){
-         try{
+     private void inserir() {
+         try {
              usuario = new Usuario();
 
              usuario.setNome(nome.getText().toString());
              usuario.setEmail(email.getText().toString());
              usuario.setSenha(senha.getText().toString());
-             usuario.setGenero("");
-             usuario.setTipo_sanguineo("");
+             usuario.setGenero(genero.getSelectedItem().toString());
+             usuario.setTipo_sanguineo(tipo_sanguineo.getSelectedItem().toString());
 
              Date data = new Date();
              usuario.setData_nascimento(data);
+             database.insertUser(usuario);
 
-         }catch (Exception ex){
+         } catch (Exception ex) {
 
              AlertDialog.Builder dlg = new AlertDialog.Builder(this);
-             dlg.setMessage("Erro ao inserir os dados!" + ex.getMessage());
+             dlg.setMessage("Erro ao inserir os dados! " + ex.getMessage());
              dlg.setNegativeButton("OK", null);
              dlg.show();
 
          }
-
-
-
-
-
      }
-
-
-
-
-
 }
 
 

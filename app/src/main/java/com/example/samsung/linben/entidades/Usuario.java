@@ -1,4 +1,4 @@
-package com.example.samsung.linben.dominio.entidades;
+package com.example.samsung.linben.entidades;
 
 import java.util.Date;
 
@@ -76,7 +76,7 @@ public class Usuario {
     }
 
     public String toString(){
-        return nome+ " "+email;
+        return nome+ " " +email;
     }
 
 }

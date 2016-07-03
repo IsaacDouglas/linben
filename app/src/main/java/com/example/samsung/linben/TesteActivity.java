@@ -1,24 +1,17 @@
 package com.example.samsung.linben;
 
-import android.app.Activity;
-import android.app.IntentService;
 import android.content.Intent;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AlertDialog;
-import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.example.samsung.linben.database.DataBase;
-import com.example.samsung.linben.dominio.RepositorioUsuario;
-import com.example.samsung.linben.dominio.entidades.*;
-import com.example.samsung.linben.dominio.entidades.Usuario;
+import com.example.samsung.linben.entidades.Usuario;
 
 /**
  * Created by Raquel on 23/06/2016.
@@ -29,9 +22,8 @@ public class TesteActivity extends ActionBarActivity {
    public static final int CONST_TELA_TESTE  = 1;
     private ArrayAdapter<Usuario> adpUsuarios;
     private ListView listViewUsuario;
-    private RepositorioUsuario repositorioUsuario;
     private DataBase database;
-    private SQLiteDatabase conn;
+    private SQLiteDatabase dbActions;
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,20 +42,10 @@ public class TesteActivity extends ActionBarActivity {
 
             try {
                 database = new DataBase(this);
-                conn = database.getWritableDatabase();
-
-                repositorioUsuario = new RepositorioUsuario(conn);
-                //repositorioUsuario.testeInserirUsuarios(); <- usado so pra teste inicial
-
-                adpUsuarios = repositorioUsuario.buscarUsuario(this);
+                dbActions = database.getWritableDatabase();
+                adpUsuarios = database.buscarUsuario(this);
                 listViewUsuario.setAdapter(adpUsuarios);
-/*
-            AlertDialog.Builder dlg = new AlertDialog.Builder(this);
-            dlg.setMessage("Conexão criada com sucesso!");
-            dlg.setNegativeButton("OK", null);
-            dlg.show();
-            <- também so usada pra teste
-            */
+
             } catch (SQLException ex) {
 
                 AlertDialog.Builder dlg = new AlertDialog.Builder(this);
@@ -81,7 +63,7 @@ public class TesteActivity extends ActionBarActivity {
 
     }
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        adpUsuarios = repositorioUsuario.buscarUsuario(this);
+        adpUsuarios = database.buscarUsuario(this);
         listViewUsuario.setAdapter(adpUsuarios);
     }
 }
