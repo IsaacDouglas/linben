@@ -110,10 +110,14 @@ public class CadastroActivity extends AppCompatActivity {
                                           @Override
                                           public void onClick(View v) {
                                               if (usuario != null) {
-                                                  inserir();
-                                                  Toast.makeText(CadastroActivity.this, "Usuário cadastrado", Toast.LENGTH_LONG).show();
-                                                  Intent i = new Intent(CadastroActivity.this, TesteActivity.class);
-                                                  startActivity(i);
+                                                  if (email.getText().length()==0 || senha.getText().length()==0 || nome.getText().length()==0) {
+                                                      Toast.makeText(getApplication(), "Todos os campos são obrigatórios", Toast.LENGTH_LONG).show();
+                                                  }else {
+                                                      inserir();
+                                                      Toast.makeText(CadastroActivity.this, "Usuário cadastrado com sucesso!", Toast.LENGTH_LONG).show();
+                                                      Intent i = new Intent(CadastroActivity.this, LoginActivity.class);
+                                                      startActivity(i);
+                                                  }
                                               }
                                           }
             }

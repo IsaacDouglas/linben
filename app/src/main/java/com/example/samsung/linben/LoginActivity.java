@@ -41,9 +41,9 @@ public class LoginActivity extends AppCompatActivity  {
                 dbActions = database.getReadableDatabase();
 
                 AlertDialog.Builder dlg = new AlertDialog.Builder(this);
-                dlg.setMessage("Conexão criada com sucesso!");
-                dlg.setNegativeButton("OK", null);
-                dlg.show();
+               // dlg.setMessage("Conexão criada com sucesso!");
+                //dlg.setNegativeButton("OK", null);
+                //dlg.show();
             }catch (SQLException ex){
 
                 AlertDialog.Builder dlg = new AlertDialog.Builder(this);
@@ -55,9 +55,8 @@ public class LoginActivity extends AppCompatActivity  {
 
 
         //chamada dos objetos
-        btn_listaUsuario = (Button) findViewById(R.id.btn_listaUsuario);
+        btn_listaUsuario = (Button) findViewById(R.id.btn_listarUsuario);
         bt_novo_usuario = (Button) findViewById(R.id.bt_novo_usuario);
-        bt_esqueci_senha = (Button) findViewById(R.id.bt_esqueci_senha);
         bt_entrar = (Button) findViewById(R.id.entrar);
         email = (EditText) findViewById(R.id.email);
         senha = (EditText) findViewById(R.id.senha);
@@ -70,18 +69,7 @@ public class LoginActivity extends AppCompatActivity  {
                                            }
         );
 
-        bt_esqueci_senha.setOnClickListener(new View.OnClickListener() {
-                                               @Override
-                                               public void onClick(View v) {
-                                                   Intent intent = new Intent(LoginActivity.this, TesteActivity.class);
-                                                   startActivity(intent);
-
-
-                                               }
-                                           }
-        );
-
-        bt_entrar.setOnClickListener(new View.OnClickListener() {
+       bt_entrar.setOnClickListener(new View.OnClickListener() {
                                          @Override
                                          public void onClick(View v) {
 
