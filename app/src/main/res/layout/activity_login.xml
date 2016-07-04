@@ -66,7 +66,7 @@
         android:layout_height="30dp"
         android:layout_width="120dp"
         android:background="@color/colorMain"
-        android:text="lista"
+        android:text="list-User"
         android:textSize="12dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
@@ -83,6 +83,16 @@
         android:layout_below="@+id/entrar"
         android:layout_alignEnd="@+id/logo"
         android:layout_alignStart="@+id/logo" />
+
+    <Button
+        android:id="@+id/btn_listarCausa"
+        android:layout_height="30dp"
+        android:layout_width="120dp"
+        android:background="@color/colorMain"
+        android:text="list-Causa"
+        android:textSize="12dp"
+        android:layout_above="@+id/btn_listarUsuario"
+        android:layout_toEndOf="@+id/bt_novo_usuario" />
 
 
 </RelativeLayout>

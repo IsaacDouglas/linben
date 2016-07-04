@@ -11,26 +11,26 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.samsung.linben.database.DataBase;
-import com.example.samsung.linben.entidades.Usuario;
+import com.example.samsung.linben.entidades.Causa;
 
 /**
- * Created by Raquel on 23/06/2016.
+ * Created by Raquel on 04/07/2016.
  */
-public class TesteActivity extends ActionBarActivity {
+public class ListaCausaActivity extends ActionBarActivity {
 
-   // private ListView listViewUsuario;
-   public static final int CONST_TELA_TESTE  = 1;
-    private ArrayAdapter<Usuario> adpUsuarios;
-    private ListView listViewUsuario;
+    public static final int CONST_TELA_TESTE1  = 1;
+    private ArrayAdapter<Causa> adpCausas;
+    private ListView listViewCausa;
     private DataBase database;
     private SQLiteDatabase dbActions;
+
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teste);
+        setContentView(R.layout.activity_lista_causa);
 
-        this.listViewUsuario = (ListView) findViewById(R.id.listViewUsuario);
-        //this.listViewUsuario.setAdapter(new UsuarioAdapter(this, new Usuario().getLista()));
+        this.listViewCausa = (ListView) findViewById(R.id.listViewCausa);
+
         Intent intent = getIntent();
         if (intent != null) {
             Bundle params = intent.getExtras();
@@ -43,8 +43,8 @@ public class TesteActivity extends ActionBarActivity {
             try {
                 database = new DataBase(this);
                 dbActions = database.getWritableDatabase();
-                adpUsuarios = database.buscarUsuario(this);
-                listViewUsuario.setAdapter(adpUsuarios);
+                adpCausas = database.buscarCausa(this);
+                listViewCausa.setAdapter(adpCausas);
 
             } catch (SQLException ex) {
 
@@ -58,14 +58,12 @@ public class TesteActivity extends ActionBarActivity {
     }
 
     public void onClick(View view){
-        Intent i = new Intent(this,CadastroActivity.class);
-        startActivityForResult(i,CONST_TELA_TESTE);
+        Intent i = new Intent(this,ApeloActivity.class);
+        startActivityForResult(i,CONST_TELA_TESTE1);
 
     }
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        adpUsuarios = database.buscarUsuario(this);
-        listViewUsuario.setAdapter(adpUsuarios);
+        adpCausas = database.buscarCausa(this);
+        listViewCausa.setAdapter(adpCausas);
     }
 }
-
-

@@ -2,21 +2,28 @@ package com.example.samsung.linben;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NotificationCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.samsung.linben.database.DataBase;
+import com.example.samsung.linben.entidades.Causa;
 
 /**
  * Created by Raquel on 12/05/2016.
@@ -25,6 +32,11 @@ public class ApeloActivity extends Activity {
     private Spinner estado;
     private Spinner cidade;
     private Spinner hemocentro;
+    private EditText descricao;
+
+    private DataBase database;
+    private SQLiteDatabase dbActions;
+
     private Button btn_voltar;
     private Button btn_continuar;
 
@@ -44,6 +56,23 @@ public class ApeloActivity extends Activity {
         btn_voltar = (Button) findViewById(R.id.voltarseta);
         btn_continuar = (Button) findViewById(R.id.concluir);
 
+
+        descricao = (EditText) findViewById(R.id.descricao);
+        cidade = (Spinner) findViewById(R.id.cidade);
+        estado = (Spinner) findViewById(R.id.estado);
+        hemocentro = (Spinner) findViewById(R.id.hemocentro);
+
+        try {
+            database = new DataBase(this);
+            dbActions = database.getWritableDatabase();
+
+        }catch (SQLException ex){
+            AlertDialog.Builder dlg = new AlertDialog.Builder(this);
+            dlg.setMessage("Erro ao criar o banco!" + ex.getMessage());
+            dlg.setNegativeButton("OK", null);
+            dlg.show();
+
+        }
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, R.array.estado,
@@ -73,14 +102,15 @@ public class ApeloActivity extends Activity {
                                       }
         );
 
-//mudar
+
         btn_continuar.setOnClickListener(new View.OnClickListener() {
                                              @Override
                                              public void onClick(View v) {
 
-
-                                                     Intent i = new Intent(ApeloActivity.this, MenuActivity.class);
-                                                     startActivity(i);
+                                                 inserir();
+                                                 Toast.makeText(ApeloActivity.this, "Novo apelo cadastrado", Toast.LENGTH_LONG).show();
+                                                 Intent i = new Intent(ApeloActivity.this, LoginActivity.class);
+                                                 startActivity(i);
                                                  }
                                              }
 
@@ -118,5 +148,27 @@ public class ApeloActivity extends Activity {
     private void mostrarMensagem(String msg){
         Toast.makeText(this, msg,Toast.LENGTH_LONG).show();
     }
+
+
+    private void inserir() {
+        try {
+            Causa causa = new Causa();
+            causa.setDescricao(descricao.getText().toString());
+            causa.setCidade(cidade.getSelectedItem().toString());
+            causa.setEstado(estado.getSelectedItem().toString());
+            causa.setHemocentro(hemocentro.getSelectedItem().toString());
+
+            database.insertCausa(causa);
+
+        } catch (Exception ex) {
+
+            AlertDialog.Builder dlg = new AlertDialog.Builder(this);
+            dlg.setMessage("Erro ao inserir os dados! " + ex.getMessage());
+            dlg.setNegativeButton("OK", null);
+            dlg.show();
+
+        }
+    }
+
 
 }

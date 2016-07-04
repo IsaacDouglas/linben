@@ -31,7 +31,8 @@
         <activity android:name=".AlertAproxChaveiroActivity" />
         <activity android:name=".AlertAcessoNegadoActivity" />
         <activity android:name=".AlertWifiActivity" />
-        <activity android:name=".TesteActivity" />
+        <activity android:name=".ListaUsuarioActivity" />
+        <activity android:name=".ListaCausaActivity" />
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"

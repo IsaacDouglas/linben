@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.samsung.linben.database.DataBase;
 
+import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -49,7 +50,7 @@ public class CadastroActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cadastro);
 
         //verifica se a tela mandou dados para a outra
-
+        usuario = new Usuario();
 
 
         try {
@@ -63,8 +64,6 @@ public class CadastroActivity extends AppCompatActivity {
             dlg.show();
 
         }
-
-        this.usuario = new Usuario();
 
         btn_voltar = (Button) findViewById(R.id.voltarseta);
         btn_salvar = (Button) findViewById(R.id.bt_salvar);
@@ -80,7 +79,7 @@ public class CadastroActivity extends AppCompatActivity {
         this.mes = calendar.get(Calendar.MONTH);
         this.dia = calendar.get(Calendar.DAY_OF_MONTH);
         this.dataNascimento = (Button) findViewById(R.id.data);
-        dataNascimento.setText(dia + "/" + (mes+1) + "/" + ano);
+        //dataNascimento.setText(dia + "/" + (mes+1) + "/" + ano);
 
         final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                  this, R.array.tipo_sanguineo,
@@ -116,7 +115,7 @@ public class CadastroActivity extends AppCompatActivity {
                                                       inserir();
                                                       Toast.makeText(CadastroActivity.this, "Usuário cadastrado com sucesso!", Toast.LENGTH_LONG).show();
                                                       Intent i = new Intent(CadastroActivity.this, LoginActivity.class);
-                                                      startActivity(i);
+                                                     startActivity(i);
                                                   }
                                               }
                                           }
@@ -144,13 +143,26 @@ public class CadastroActivity extends AppCompatActivity {
             ano = year;
             mes = monthOfYear;
             dia = dayOfMonth;
-            dataNascimento.setText(dia + "/" + (mes+1) + "/" + ano);
+
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(ano, mes, dia);
+            Date data = calendar.getTime();
+
+
+            DateFormat format = DateFormat.getDateInstance(DateFormat.MEDIUM);
+            String dt = format.format(data);
+
+            dataNascimento.setText(dt);
+            //dataNascimento.setText(dia + "/" + (mes+1) + "/" + ano);
+            usuario.setData_nascimento(data);
         }
     };
 
-     private void inserir() {
+
+
+         private void inserir() {
          try {
-             usuario = new Usuario();
+
 
              usuario.setNome(nome.getText().toString());
              usuario.setEmail(email.getText().toString());
@@ -158,8 +170,6 @@ public class CadastroActivity extends AppCompatActivity {
              usuario.setGenero(genero.getSelectedItem().toString());
              usuario.setTipo_sanguineo(tipo_sanguineo.getSelectedItem().toString());
 
-             Date data = new Date();
-             usuario.setData_nascimento(data);
              database.insertUser(usuario);
 
          } catch (Exception ex) {
@@ -171,6 +181,8 @@ public class CadastroActivity extends AppCompatActivity {
 
          }
      }
+
+
 }
 
 
