@@ -22,18 +22,19 @@
     <Button
         android:id="@+id/voltarseta"
         android:layout_width="15dp"
-        android:layout_height="30dp"
+        android:layout_height="25dp"
         android:background="@drawable/voltartopo"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp" />
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp" />
     <Button
         android:id="@+id/ajuda"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:background="@drawable/duvidatopo"
         android:layout_marginRight="5dp"
         android:layout_alignTop="@+id/voltarseta"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="5dp" />
 
     <TextView
         android:layout_width="70dp"
@@ -41,20 +42,21 @@
         android:text="Nome"
         style="@style/LetrasPreta"
         android:id="@+id/t_nome"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/imageView"
-        android:layout_toEndOf="@+id/voltarseta" />
+        android:layout_marginTop="31dp"
+        android:layout_below="@+id/ajuda"
+        android:layout_alignStart="@+id/nome" />
 
     <EditText
         android:layout_width="270dp"
         android:layout_height="30dp"
-        android:background="#94cdcdcd"
+        android:background="#61cdcdcd"
         android:id="@+id/nome"
         android:clickable="false"
         android:layout_below="@+id/t_nome"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="20dp"
-        android:layout_toStartOf="@+id/ajuda" />
+        android:layout_toStartOf="@+id/ajuda"
+        android:textColor="@color/colorMain" />
 
     <TextView
         android:text="Tipo sanguineo"
@@ -70,7 +72,7 @@
         android:id="@+id/sangue"
         android:layout_width="50dp"
         android:layout_height="30dp"
-        android:background="#94cdcdcd"
+        android:background="#61cdcdcd"
         android:layout_below="@+id/t_tipo_sanguineo"
         android:layout_alignParentStart="true"
         android:layout_alignEnd="@+id/t_tipo_sanguineo"
@@ -90,7 +92,7 @@
         android:id="@+id/sexo"
         android:layout_width="50dp"
         android:layout_height="30dp"
-        android:background="#94cdcdcd"
+        android:background="#61cdcdcd"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="20dp"
         android:layout_below="@+id/t_sexo"
@@ -110,14 +112,15 @@
         android:layout_width="50dp"
         android:layout_height="30dp"
         android:inputType="date"
-        android:background="#94cdcdcd"
+        android:background="#61cdcdcd"
         android:id="@+id/data"
         android:onClick="selecionarData"
         android:layout_alignEnd="@+id/nome"
         android:layout_alignBottom="@+id/sexo"
         android:layout_toEndOf="@+id/email"
         android:layout_below="@+id/t_sexo"
-        android:layout_alignStart="@+id/t_data_nascimento" />
+        android:layout_alignStart="@+id/t_data_nascimento"
+        android:textColor="@color/colorMain" />
 
     <TextView
         android:text="Email"
@@ -133,12 +136,13 @@
         android:layout_height="30dp"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:background="#94cdcdcd"
+        android:background="#61cdcdcd"
         android:id="@+id/email"
         android:layout_below="@+id/textView"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="20dp"
-        android:layout_toStartOf="@+id/ajuda" />
+        android:layout_toStartOf="@+id/ajuda"
+        android:textColor="@color/colorMain"/>
 
     <TextView
         android:text="Senha"
@@ -154,33 +158,36 @@
         android:layout_height="30dp"
         android:inputType="textPassword"
         android:ems="10"
-        android:background="#94cdcdcd"
+        android:background="#61cdcdcd"
         android:id="@+id/t_senha"
         android:layout_below="@+id/senha"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="20dp"
-        android:layout_alignEnd="@+id/email" />
+        android:layout_alignEnd="@+id/email"
+        android:textColor="@color/colorMain"/>
 
     <TextView
         android:layout_width="240dp"
         android:layout_height="45dp"
         android:text="Novo Cadastro"
         android:id="@+id/textView7"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:textAlignment="center"
         android:layout_above="@+id/t_nome"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/color"/>
+        android:textColor="@color/color"
+        android:layout_marginTop="5dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="salvar"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
         android:id="@+id/bt_salvar"
+        android:background="@drawable/concluircad"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/sexo"
-        android:layout_marginBottom="56dp" />
+        android:layout_alignStart="@+id/voltarseta"
+        android:layout_marginBottom="49dp"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

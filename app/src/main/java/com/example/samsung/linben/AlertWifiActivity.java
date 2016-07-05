@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.os.Bundle;
+import android.widget.Button;
 
 /**
  * Created by Samsung on 03/06/2016.
@@ -13,6 +14,7 @@ import android.os.Bundle;
 public class AlertWifiActivity extends Activity{
     //atributo da classe.
     private AlertDialog alerta;
+    private Button btn_fechar;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //LayoutInflater é utilizado para inflar nosso layout em uma view.
@@ -26,7 +28,7 @@ public class AlertWifiActivity extends Activity{
 
 //definimos para o botão do layout um clickListener
 
-        view.findViewById(R.id.bt).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.fechar).setOnClickListener(new View.OnClickListener() {
 
 
             public void onClick(View arg0) { //exibe um Toast informativo.

@@ -109,7 +109,7 @@ public class ApeloActivity extends Activity {
 
                                                  inserir();
                                                  Toast.makeText(ApeloActivity.this, "Novo apelo cadastrado", Toast.LENGTH_LONG).show();
-                                                 Intent i = new Intent(ApeloActivity.this, LoginActivity.class);
+                                                 Intent i = new Intent(ApeloActivity.this, MenuActivity.class);
                                                  startActivity(i);
                                                  }
                                              }
