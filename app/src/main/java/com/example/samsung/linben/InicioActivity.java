@@ -28,6 +28,8 @@ public class InicioActivity extends Activity{
     private Button bt_criar;
     private Button bt_ver1;
 
+    ListaCausaActivity listaCausa = new ListaCausaActivity();
+
     ListView list;
     String[] itemname ={
             "Mariana",

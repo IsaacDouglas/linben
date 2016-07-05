@@ -1,12 +1,24 @@
 package com.example.samsung.linben;
 
 import android.app.Activity;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import com.example.samsung.linben.database.DataBase;
+import com.example.samsung.linben.entidades.Causa;
+import com.example.samsung.linben.entidades.Usuario;
+
+import java.util.Date;
 
 /**
  * Created by dell on 15/06/2016.
@@ -16,6 +28,8 @@ public class CustomListAdapter extends ArrayAdapter<String>{
     private final Activity context;
     private final String[] itemname;
     private final Integer[] imgid;
+    SQLiteDatabase db;
+
 
     public CustomListAdapter(Activity context, String[] itemname, Integer[] imgid){
         super(context, R.layout.list_inicio, itemname);
