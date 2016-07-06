@@ -11,11 +11,9 @@
         android:layout_width="400px"
         android:layout_height="350px"
         android:src="@drawable/logo"
+        android:layout_marginTop="51dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="61dp" />
-
-
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="300dp"
@@ -29,9 +27,8 @@
         android:singleLine="true"
         android:hint="Insira seu e-mail"
         android:textColorHint="@color/colorMain"
-        android:layout_below="@+id/logo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="74dp" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="300dp"
@@ -50,16 +47,7 @@
         android:layout_marginTop="10dp" />
 
 
-    <Button
-        android:layout_width="50dp"
-        android:layout_height="45dp"
-        android:background="@drawable/entrarlogin"
-        android:id="@+id/entrar"
-        android:layout_above="@+id/btn_listarUsuario"
-        android:layout_marginBottom="40dp"
-        android:layout_marginTop="10dp"
-        android:layout_alignStart="@+id/senha"
-        android:layout_alignEnd="@+id/senha" />
+
 
     <Button
         android:id="@+id/btn_listarUsuario"
@@ -68,21 +56,43 @@
         android:background="@color/colorMain"
         android:text="list-User"
         android:textSize="12dp"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/btn_listarCausa"
         android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/bt_novo_usuario" />
+        android:layout_toEndOf="@+id/email" />
+
+    <Button
+        android:id="@+id/bt_esqueci_senha"
+        android:layout_height="25dp"
+        android:layout_width="150dp"
+        android:background="@color/colorMain"
+        android:text="Esqueci a senha"
+        android:textSize="12dp"
+        style="@style/LetrasBranca"
+        android:layout_above="@+id/bt_novo_usuario"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/bt_novo_usuario"
         android:layout_height="25dp"
-        android:layout_width="100dp"
+        android:layout_width="5dp"
         android:background="@color/colorMain"
-        android:text="Não tenho cadastro"
+        android:text="Novo usuário"
         android:textSize="12dp"
-        style="@style/LetrasPreta"
-        android:layout_below="@+id/entrar"
-        android:layout_alignEnd="@+id/logo"
-        android:layout_alignStart="@+id/logo" />
+        style="@style/LetrasBranca"
+        android:layout_above="@+id/bt_ajuda"
+        android:layout_alignEnd="@+id/bt_esqueci_senha"
+        android:layout_alignStart="@+id/bt_esqueci_senha" />
+
+    <Button
+        android:id="@+id/bt_ajuda"
+        android:layout_height="25dp"
+        android:layout_width="150dp"
+        android:background="@color/colorMain"
+        android:text="Ajuda"
+        android:textSize="12dp"
+        style="@style/LetrasBranca"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/bt_novo_usuario" />
 
     <Button
         android:id="@+id/btn_listarCausa"
@@ -91,8 +101,19 @@
         android:background="@color/colorMain"
         android:text="list-Causa"
         android:textSize="12dp"
-        android:layout_above="@+id/btn_listarUsuario"
-        android:layout_toEndOf="@+id/bt_novo_usuario" />
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/btn_listarUsuario" />
+
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:background="@drawable/entrarlogin"
+        android:id="@+id/entrar"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/senha"
+        android:layout_alignEnd="@+id/senha"
+        android:layout_alignStart="@+id/senha" />
 
 
 </RelativeLayout>

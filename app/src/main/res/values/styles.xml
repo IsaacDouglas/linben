@@ -59,6 +59,13 @@
         <item name="android:padding">5dp</item>
     </style>
 
+    <style name="LetrasBranca">
+        <item name="android:textColor">#d0ffffff</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
     <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
