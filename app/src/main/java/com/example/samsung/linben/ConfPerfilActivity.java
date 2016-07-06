@@ -210,7 +210,7 @@ public class ConfPerfilActivity extends Activity {
         cidade = (Spinner) findViewById(R.id.cidade);
         cidade.setAdapter(adapter1);
 
-       btn_voltar = (Button) findViewById(R.id.voltar);
+       btn_voltar = (Button) findViewById(R.id.voltarseta);
        btn_concluir = (Button) findViewById(R.id.concluir);
 
         btn_foto = (Button) findViewById(R.id.camera);
@@ -226,20 +226,20 @@ public class ConfPerfilActivity extends Activity {
         });
 
 
-        /*btn_voltar.setOnClickListener(new View.OnClickListener() {
+        btn_voltar.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
-                                            Intent i = new Intent(ConfPerfilActivity.this, CadastroActivity.class);
+                                            Intent i = new Intent(ConfPerfilActivity.this, InicioActivity.class);
                                             startActivity(i);
                                         }
                                     }
-        );*/
+        );
 
 
         btn_concluir.setOnClickListener(new View.OnClickListener() {
                                        @Override
                                        public void onClick(View v) {
-                                           Intent i = new Intent(ConfPerfilActivity.this, LoginActivity.class);
+                                           Intent i = new Intent(ConfPerfilActivity.this, InicioActivity.class);
                                            startActivity(i);
                                        }
                                    }

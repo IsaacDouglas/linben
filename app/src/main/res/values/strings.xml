@@ -25,12 +25,15 @@
 
     <string-array name="estado">
         <item>PE</item>
-        <item>PB</item>
     </string-array>
 
     <string-array name="cidade">
         <item>Recife</item>
         <item>Olinda</item>
+        <item>Jaboatão</item>
+        <item>Camaragibe</item>
+        <item>Paulista</item>
+        <item>Moreno</item>
     </string-array>
 
     <string-array name="hemocentro">
