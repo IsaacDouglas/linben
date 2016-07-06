@@ -10,10 +10,15 @@ import android.view.View;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
+import java.io.File;
+
 public class VerCausaActivity extends AppCompatActivity {
 
     //atributo da classe.
     private AlertDialog alerta;
+    private VideoView video;
+    private File videosDir;
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //LayoutInflater é utilizado para inflar nosso layout em uma view.

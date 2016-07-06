@@ -156,7 +156,7 @@ public class MenuActivity extends AppCompatActivity
         FragmentManager fragmentManager = getFragmentManager();
         if (id == R.id.nav_minhas_causas) {
             if (this.getClass().getSimpleName().equals("ApeloActivity")) {
-                 drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             } else {
                 Intent i = new Intent(this, ApeloActivity.class);
                 startActivity(i);
@@ -178,7 +178,7 @@ public class MenuActivity extends AppCompatActivity
 
         }
 
-         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
