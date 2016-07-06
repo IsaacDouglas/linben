@@ -171,7 +171,12 @@ public class MenuActivity extends AppCompatActivity
             }
 
         } else if (id == R.id.nav_hemocentros) {
-
+            if (this.getClass().getSimpleName().equals("HemocentroActivity")) {
+                drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            } else {
+                Intent i = new Intent(this, HemocentroActivity.class);
+                startActivity(i);
+            }
         } else if (id == R.id.nav_sobre) {
             if (this.getClass().getSimpleName().equals("SobreActivity")) {
                 drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
