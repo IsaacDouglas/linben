@@ -10,8 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:id="@+id/imageView"
-        android:background="@drawable/agendartopo"
-        android:src ="@drawable/agendartopo"
+        android:background="@drawable/sobre"
+        android:src ="@drawable/sobre"
         android:baselineAlignBottom="false"
         android:clickable="true"
         android:layout_alignParentStart="false"
@@ -36,37 +36,36 @@
 
 
     <ImageView
-        android:layout_width="300dp"
-        android:layout_height="150dp"
-        android:id="@+id/descricao"
-        android:background="@drawable/descriacaodoacao"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/imageLogo"
+        android:background="@drawable/logosobre"
+
         android:baselineAlignBottom="false"
-        android:layout_marginTop="64dp"
+        android:clickable="true"
+        android:layout_marginTop="41dp"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true" />
 
 
-    <Button
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:inputType="date"
-        android:background="#61cdcdcd"
-        android:id="@+id/data"
-        android:onClick="selecionarData"
-        android:textColor="@color/colorMain"
-        android:layout_marginTop="63dp"
-        android:layout_below="@+id/descricao"
+    <TextView
+        android:text="Versão 1.0"
+        android:layout_width="90dp"
+        android:layout_height="35dp"
+        style="@style/LetrasVinho"
+        android:id="@+id/t_versao"
+        android:layout_below="@+id/imageLogo"
         android:layout_centerHorizontal="true" />
 
-
-    <Button
+    <ImageView
         android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/agendabotao"
-        android:id="@+id/agendar"
-        android:longClickable="false"
-        android:layout_marginBottom="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
+        android:layout_height="200dp"
+        android:id="@+id/imagetex"
+        android:background="@drawable/textosobre"
+        android:baselineAlignBottom="false"
+        android:clickable="true"
+        android:layout_below="@+id/t_versao"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

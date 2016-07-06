@@ -35,6 +35,7 @@
         <activity android:name=".ListaCausaActivity" />
         <activity android:name=".InicioActivity" />
         <activity android:name=".AgendarActivity" />
+        <activity android:name=".SobreActivity" />
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"

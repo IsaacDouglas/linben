@@ -229,7 +229,7 @@ public class ConfPerfilActivity extends Activity {
         btn_voltar.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
-                                            Intent i = new Intent(ConfPerfilActivity.this, InicioActivity.class);
+                                            Intent i = new Intent(ConfPerfilActivity.this, MenuActivity.class);
                                             startActivity(i);
                                         }
                                     }
@@ -239,7 +239,7 @@ public class ConfPerfilActivity extends Activity {
         btn_concluir.setOnClickListener(new View.OnClickListener() {
                                        @Override
                                        public void onClick(View v) {
-                                           Intent i = new Intent(ConfPerfilActivity.this, InicioActivity.class);
+                                           Intent i = new Intent(ConfPerfilActivity.this, MenuActivity.class);
                                            startActivity(i);
                                        }
                                    }
