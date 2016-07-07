@@ -25,7 +25,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".CadastroActivity" />
-        <activity android:name=".Causa1Activity" />
         <activity android:name=".ApeloActivity" />
         <activity android:name=".ConfPerfilActivity" />
         <activity android:name=".AlertAproxChaveiroActivity" />

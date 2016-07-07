@@ -72,7 +72,7 @@ public class MenuActivity extends AppCompatActivity
 /*        bt_ver1.setOnClickListener(new View.OnClickListener() {
                                        @Override
                                        public void onClick(View v) {
-                                           Intent i = new Intent(MenuActivity.this, Causa1Activity.class);
+                                           Intent i = new Intent(MenuActivity.this, VerCausaActivity.class);
                                            startActivity(i);
                                        }
                                    }

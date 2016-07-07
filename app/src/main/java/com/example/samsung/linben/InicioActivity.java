@@ -83,44 +83,7 @@ public class InicioActivity extends Activity{
                                     }
         );
 
-
-        bt_ver1.setOnClickListener(new View.OnClickListener() {
-                                       @Override
-                                       public void onClick(View v) {
-                                           Intent i = new Intent(fa,Causa1Activity.class);
-                                           startActivity(i);
-                                       }
-                                   }
-        );
-        return rl;
-    }
 */
 
-/*   protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inicio);
-        Button bt_criar = (Button) findViewById(R.id.criar);
-        Button bt_ver1 = (Button) findViewById(R.id.ver1);
 
-        bt_criar.setOnClickListener(new View.OnClickListener() {
-                                         @Override
-                                         public void onClick(View v) {
-                                             Intent i = new Intent(InicioActivity.this, ApeloActivity.class);
-                                             startActivity(i);
-                                         }
-                                     }
-        );
-
-
-        bt_ver1.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View v) {
-                                            Intent i = new Intent(InicioActivity.this, Causa1Activity.class);
-                                            startActivity(i);
-                                        }
-                                    }
-        );
-
-
-    }*/
 }
