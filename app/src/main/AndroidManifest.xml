@@ -26,7 +26,6 @@
         </activity>
         <activity android:name=".CadastroActivity" />
         <activity android:name=".ApeloActivity" />
-        <activity android:name=".ConfPerfilActivity" />
         <activity android:name=".AlertAproxChaveiroActivity" />
         <activity android:name=".AlertAcessoNegadoActivity" />
         <activity android:name=".AlertWifiActivity" />
