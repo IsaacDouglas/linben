@@ -7,56 +7,88 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.widget.Button;
 import android.widget.MediaController;
 import android.widget.VideoView;
+import android.webkit.WebView;
+
+import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnPreparedListener;
+import android.net.Uri;
+import android.os.Bundle;
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.util.Log;
+
 
 import java.io.File;
 
 public class VerCausaActivity extends AppCompatActivity {
 
     //atributo da classe.
+    private Button btn_doar;
+    private Button btn_voltar;
+    private Button btn_ajuda;
     private AlertDialog alerta;
     private VideoView video;
     private File videosDir;
+    ProgressDialog pDialog;
+    VideoView videoview;
+    WebView mWebView;
 
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        //LayoutInflater é utilizado para inflar nosso layout em uma view.
-        //-pegamos nossa instancia da classe
-        LayoutInflater li = getLayoutInflater();
-        View view = li.inflate( R.layout.activity_ver_causa,null);
+    super.onCreate(savedInstanceState);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setView(view);
-        final AlertDialog alerta = builder.create();
+    setContentView(R.layout.activity_ver_causa);
+        videoview = (VideoView) findViewById(R.id.videoView);
 
-        VideoView videoView =(VideoView)findViewById(R.id.videoView);
-        MediaController mediaController= new MediaController(this);
-        mediaController.setAnchorView(videoView);
-        Uri uri=Uri.parse("rtsp://r13---sn-q4f7sner.googlevideo.com/Cj0LENy73wIaNAkISL5O5YIWlhMYDSANFC241n9XMOCoAUIASARgteGy1JOTm7xXigELbU13ZDltRU1NaDAM/287B2B5239DE3C87F596ACB9E2F838E84B8A553B.5C7E2ECF9D46FC3C476B6F22F912AED2CEAF55DD/yt6/1/video.3gp");
-        videoView.setMediaController(mediaController);
-        videoView.setVideoURI(uri);
-        videoView.requestFocus();
-        videoView.start();
 
-//definimos para o botão do layout um clickListener
+    try {
+        // Start the MediaController
+        MediaController mediacontroller = new MediaController(
+                VerCausaActivity.this);
+        mediacontroller.setAnchorView(videoview);
+        // Get the URL from String VideoURL
+        Uri video = Uri.parse("android.resource://com.example.samsung.linben/raw/pedido");
+        videoview.setMediaController(mediacontroller);
+        videoview.setVideoURI(video);
 
-      //  view.findViewById(R.id.bt).setOnClickListener(new View.OnClickListener() {
-
-/*
-            public void onClick(View arg0) { //exibe um Toast informativo.
-
-                //  Toast.makeText(AlertWifiActivity.this, "alerta.dismiss()", Toast.LENGTH_SHORT).show(); //desfaz o alerta.
-                Intent i = new Intent(VerCausaActivity.this, MenuActivity.class);
-                startActivity(i);
-                //  alerta.dismiss();
-
-            }
-
-        });
-
-*/
-        alerta.show();
-
+    } catch (Exception e) {
+        Log.e("Error", e.getMessage());
+        e.printStackTrace();
     }
+        btn_doar = (Button) findViewById(R.id.botao);
+        btn_voltar = (Button) findViewById(R.id.voltarseta);
+        btn_ajuda = (Button) findViewById(R.id.ajuda);
+
+        btn_doar.setOnClickListener(new View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+                                              Intent i = new Intent(VerCausaActivity.this, AgendarActivity.class);
+                                              startActivity(i);
+                                          }
+                                      }
+        );
+        btn_voltar.setOnClickListener(new View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+                                              Intent i = new Intent(VerCausaActivity.this, MenuActivity.class);
+                                              startActivity(i);
+                                          }
+                                      }
+        );
+        btn_ajuda.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            Intent i = new Intent(VerCausaActivity.this, AjudaActivity.class);
+                                            startActivity(i);
+                                        }
+                                    }
+        );
+
+
+}
+
 }

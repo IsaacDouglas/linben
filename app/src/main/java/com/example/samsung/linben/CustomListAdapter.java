@@ -24,6 +24,7 @@ import java.util.Date;
 /**
  * Created by dell on 15/06/2016.
  */
+
 public class CustomListAdapter extends ArrayAdapter<String>{
 
     private final Activity context;
