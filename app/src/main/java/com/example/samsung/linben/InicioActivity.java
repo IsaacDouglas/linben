@@ -63,8 +63,14 @@ public class InicioActivity extends Activity{
                 String Slecteditem = itemname[+position];
                 Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
             }
+
         });
+
+
+
     }
+
+
 /*
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 

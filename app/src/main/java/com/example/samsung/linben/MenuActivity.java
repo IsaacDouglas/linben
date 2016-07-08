@@ -26,6 +26,7 @@ public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawer;
     private Button bt_ver1;
+    private Button bt_criar;
 
     ListView list;
     String[] itemname ={
@@ -63,6 +64,8 @@ public class MenuActivity extends AppCompatActivity
                 Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
             }
         });
+
+
 
        // super.onCreate(savedInstanceState);
        // setContentView(R.layout.content_menu);
