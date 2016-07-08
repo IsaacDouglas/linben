@@ -21,6 +21,7 @@ public class LoginActivity extends AppCompatActivity  {
     private Button btn_listarCausa;
     Button bt_novo_usuario;
     Button bt_entrar;
+    Button bt_ajuda;
     Button bt_esqueci_senha;
     EditText email;
     EditText senha;
@@ -59,6 +60,7 @@ public class LoginActivity extends AppCompatActivity  {
         btn_listarCausa = (Button) findViewById(R.id.btn_listarCausa);
         bt_novo_usuario = (Button) findViewById(R.id.bt_novo_usuario);
         bt_entrar = (Button) findViewById(R.id.entrar);
+        bt_ajuda = (Button) findViewById(R.id.bt_ajuda);
         bt_esqueci_senha = (Button) findViewById(R.id.bt_esqueci_senha);
         email = (EditText) findViewById(R.id.email);
         senha = (EditText) findViewById(R.id.senha);
@@ -120,6 +122,15 @@ public class LoginActivity extends AppCompatActivity  {
                                                    startActivity(i);
                                                }
                                            }
+        );
+
+        bt_ajuda.setOnClickListener(new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View v) {
+                                                    Intent i = new Intent(LoginActivity.this, AjudaActivity.class);
+                                                    startActivity(i);
+                                                }
+                                            }
         );
 
     }

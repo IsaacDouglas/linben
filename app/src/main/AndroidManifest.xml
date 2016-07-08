@@ -39,6 +39,7 @@
         <activity android:name=".EnviarActivity"/>
         <activity android:name=".HemocentroActivity"/>
         <activity android:name=".CadastroGotinhaActivity"/>
+        <activity android:name=".AjudaActivity"/>
 
         <activity
             android:name=".MenuActivity"
