@@ -30,6 +30,15 @@ public class VerCausaActivity extends AppCompatActivity {
         builder.setView(view);
         final AlertDialog alerta = builder.create();
 
+        VideoView videoView =(VideoView)findViewById(R.id.videoView);
+        MediaController mediaController= new MediaController(this);
+        mediaController.setAnchorView(videoView);
+        Uri uri=Uri.parse("rtsp://r13---sn-q4f7sner.googlevideo.com/Cj0LENy73wIaNAkISL5O5YIWlhMYDSANFC241n9XMOCoAUIASARgteGy1JOTm7xXigELbU13ZDltRU1NaDAM/287B2B5239DE3C87F596ACB9E2F838E84B8A553B.5C7E2ECF9D46FC3C476B6F22F912AED2CEAF55DD/yt6/1/video.3gp");
+        videoView.setMediaController(mediaController);
+        videoView.setVideoURI(uri);
+        videoView.requestFocus();
+        videoView.start();
+
 //definimos para o botão do layout um clickListener
 
       //  view.findViewById(R.id.bt).setOnClickListener(new View.OnClickListener() {
