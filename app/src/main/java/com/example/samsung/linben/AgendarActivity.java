@@ -17,6 +17,7 @@ public class AgendarActivity extends AppCompatActivity {
 
     private Button btn_agendar;
     private Button btn_voltar;
+    private Button btn_ajuda;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class AgendarActivity extends AppCompatActivity {
 
         btn_agendar = (Button) findViewById(R.id.agendar);
         btn_voltar = (Button) findViewById(R.id.voltarseta);
+        btn_ajuda = (Button) findViewById(R.id.ajuda);
 
         Calendar calendar = Calendar.getInstance();
         this.ano = calendar.get(Calendar.YEAR);
@@ -48,6 +50,15 @@ public class AgendarActivity extends AppCompatActivity {
                                                startActivity(i);
                                            }
                                        }
+        );
+
+        btn_ajuda.setOnClickListener(new View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+                                              Intent i = new Intent(AgendarActivity.this, AjudaActivity.class);
+                                              startActivity(i);
+                                          }
+                                      }
         );
 
     }

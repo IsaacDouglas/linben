@@ -12,6 +12,7 @@ import android.widget.Button;
 public class HemocentroActivity extends AppCompatActivity {
 
     private Button btn_voltar;
+    private Button btn_ajuda;
 
 
     @Override
@@ -20,6 +21,17 @@ public class HemocentroActivity extends AppCompatActivity {
         setContentView(R.layout.activity_hemocentro);
 
         btn_voltar = (Button) findViewById(R.id.voltarseta);
+        btn_ajuda = (Button) findViewById(R.id.ajuda);
+
+        btn_ajuda.setOnClickListener(new View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+                                              Intent i = new Intent(HemocentroActivity.this, AjudaActivity.class);
+                                              startActivity(i);
+                                          }
+                                      }
+        );
+
 
         btn_voltar.setOnClickListener(new View.OnClickListener() {
                                           @Override

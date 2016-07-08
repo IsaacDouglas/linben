@@ -49,6 +49,15 @@ public class EsqueciSenhaActivity extends AppCompatActivity {
                                      }
         );
 
+        btn_ajuda.setOnClickListener(new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View v) {
+                                                    Intent i = new Intent(EsqueciSenhaActivity.this, AjudaActivity.class);
+                                                    startActivity(i);
+                                                }
+                                            }
+        );
+
         btn_enviar.setOnClickListener(new View.OnClickListener() {
                                          @Override
                                          public void onClick(View v) {

@@ -14,7 +14,7 @@ import java.util.Calendar;
 public class SobreActivity extends AppCompatActivity {
 
     private Button btn_voltar;
-
+    private Button btn_ajuda;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,7 @@ public class SobreActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sobre);
 
         btn_voltar = (Button) findViewById(R.id.voltarseta);
+        btn_ajuda = (Button) findViewById(R.id.ajuda);
 
         btn_voltar.setOnClickListener(new View.OnClickListener() {
                                            @Override
@@ -30,6 +31,16 @@ public class SobreActivity extends AppCompatActivity {
                                                startActivity(i);
                                            }
                                        }
+        );
+
+
+        btn_voltar.setOnClickListener(new View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+                                              Intent i = new Intent(SobreActivity.this, AjudaActivity.class);
+                                              startActivity(i);
+                                          }
+                                      }
         );
 
     }

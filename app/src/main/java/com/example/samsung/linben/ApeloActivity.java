@@ -51,6 +51,7 @@ public class ApeloActivity extends Activity {
     private EditText descricao;
     private Button btn_voltar;
     private Button btn_continuar;
+    private Button btn_ajuda;
 
     private DataBase database;
     private SQLiteDatabase dbActions;
@@ -156,7 +157,7 @@ public class ApeloActivity extends Activity {
         super.onCreate(savedInstanceState);
         btn_voltar = (Button) findViewById(R.id.voltarseta);
         btn_continuar = (Button) findViewById(R.id.concluir);
-
+        btn_ajuda = (Button) findViewById(R.id.ajuda);
 
         descricao = (EditText) findViewById(R.id.descricao);
         cidade = (Spinner) findViewById(R.id.cidade);
@@ -232,6 +233,15 @@ public class ApeloActivity extends Activity {
 
 
 
+        );
+
+        btn_ajuda.setOnClickListener(new View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+                                              Intent i = new Intent(ApeloActivity.this, AjudaActivity.class);
+                                              startActivity(i);
+                                          }
+                                      }
         );
 
     }
