@@ -30,10 +30,10 @@ public class MenuActivity extends AppCompatActivity
     ListView list;
     String[] itemname ={
             "Mariana",
-            "Claádia",
+            "Claúdia",
             "Júlio",
             "Nathália",
-            "Paulo",
+            "Fernanda",
             "Felipe"
     };
 
@@ -155,18 +155,12 @@ public class MenuActivity extends AppCompatActivity
         int id = item.getItemId();
         FragmentManager fragmentManager = getFragmentManager();
         if (id == R.id.nav_minhas_causas) {
-            if (this.getClass().getSimpleName().equals("ApeloActivity")) {
-                drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-            } else {
-                Intent i = new Intent(this, ApeloActivity.class);
-                startActivity(i);
-            }
 
         }else if (id == R.id.nav_editar) {
-            if (this.getClass().getSimpleName().equals("ConfPerfilActivity")) {
+            if (this.getClass().getSimpleName().equals("CadastroGotinhaActivity")) {
                 drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             } else {
-                Intent i = new Intent(this, ConfPerfilActivity.class);
+                Intent i = new Intent(this, CadastroGotinhaActivity.class);
                 startActivity(i);
             }
 

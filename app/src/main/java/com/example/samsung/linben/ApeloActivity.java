@@ -188,7 +188,7 @@ public class ApeloActivity extends Activity {
         estado.setAdapter(adapter);
 
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(
-                this, R.array.cidade,
+                this, R.array.cidade1,
                 android.R.layout.simple_spinner_item);
         cidade = (Spinner) findViewById(R.id.cidade);
         cidade.setAdapter(adapter1);

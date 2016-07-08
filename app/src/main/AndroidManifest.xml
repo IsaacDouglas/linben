@@ -38,6 +38,8 @@
         <activity android:name=".EsqueciSenhaActivity"/>
         <activity android:name=".EnviarActivity"/>
         <activity android:name=".HemocentroActivity"/>
+        <activity android:name=".CadastroGotinhaActivity"/>
+
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
