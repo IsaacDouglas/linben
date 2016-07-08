@@ -53,7 +53,18 @@ public class MenuActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        bt_ver1 =  (Button) findViewById(R.id.button2);
 
+        bt_ver1.setOnClickListener(new View.OnClickListener() {
+                                       @Override
+                                       public void onClick(View v) {
+                                           Intent i = new Intent(MenuActivity.this, VerCausaActivity.class);
+                                           startActivity(i);
+                                       }
+                                   }
+        );
+
+/*
         CustomListAdapter adapter = new CustomListAdapter(this, itemname, imgid);
         list = (ListView) findViewById(R.id.list);
         list.setAdapter(adapter);
@@ -64,6 +75,7 @@ public class MenuActivity extends AppCompatActivity
                 Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
             }
         });
+        */
 
 
 

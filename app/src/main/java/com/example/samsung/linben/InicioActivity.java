@@ -54,7 +54,18 @@ public class InicioActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_menu);
 
-        CustomListAdapter adapter = new CustomListAdapter(this, itemname, imgid);
+        bt_ver1 =  (Button) findViewById(R.id.button2);
+
+        bt_ver1.setOnClickListener(new View.OnClickListener() {
+                                         @Override
+                                         public void onClick(View v) {
+                                             Intent i = new Intent(InicioActivity.this, VerCausaActivity.class);
+                                             startActivity(i);
+                                         }
+                                     }
+        );
+
+     /*   CustomListAdapter adapter = new CustomListAdapter(this, itemname, imgid);
         list = (ListView) findViewById(R.id.list);
         list.setAdapter(adapter);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -65,7 +76,7 @@ public class InicioActivity extends Activity{
             }
 
         });
-
+*/
 
 
     }

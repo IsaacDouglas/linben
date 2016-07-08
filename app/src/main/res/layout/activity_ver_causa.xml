@@ -47,7 +47,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:padding="5dp"
-        android:src= "@drawable/fotohome1"
+        android:src= "@drawable/fotohome2"
         android:layout_below="@+id/imageView"
         android:layout_alignStart="@+id/naousa" />
 
@@ -66,7 +66,7 @@
             android:id="@+id/item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nome do criador"
+            android:text="Ana Paula"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_marginLeft="10dp"
             android:padding="2dp"
@@ -103,11 +103,13 @@
     <TextView
         android:layout_width="250dp"
         android:layout_height="60dp"
-        android:text="Tenho Leucemia preciso de sangue "
+        android:text="Fui diagnosticada com leucemia, e atualmente me encontro internada no Hospital de Sao Marcos. "
         android:id="@+id/textView8"
         android:textColor="@color/colorMain"
         android:layout_below="@+id/relativeLayout"
-        android:layout_alignStart="@+id/relativeLayout" />
+        android:textAlignment="center"
+        android:layout_alignEnd="@+id/videoView"
+        android:layout_alignStart="@+id/videoView" />
 
     <Button
         android:id="@+id/botao"
