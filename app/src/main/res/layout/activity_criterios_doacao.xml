@@ -43,6 +43,17 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="48dp" />
 
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="35dp"
+        android:id="@+id/gota"
+        android:background="@drawable/gota"
+        android:baselineAlignBottom="false"
+        android:clickable="true"
+        android:layout_marginTop="21dp"
+        android:layout_alignTop="@+id/editText2"
+        android:layout_toEndOf="@+id/voltarseta" />
+
 
     <TextView
         android:layout_width="240dp"
@@ -68,16 +79,118 @@
         android:textSize="25dp" />
 
     <EditText
-        android:layout_width="300dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/editText2"
         android:textColor="@color/colorMain"
-        android:text="Critérios seguem as normas nacionais e internacionais, como as do Ministério da Saúde,  Associação Americana e Conselho Europeu de Bancos de Sangue. O alto rigor no cumprimento  dessas normas visa oferecer segurança e proteção ao receptor e ao doador.  Abaixo estão listados os requisitos básicos e alguns dos principais impedimentos temporários e  definitivos para doação de sangue. No entanto, esta lista não esgota os motivos de impedimentos  para doação, de forma que outras informações prestadas por você durante a triagem clínica  serão consideradas para definir se está apto para doar sangue nesse momento.  Requisitos básicos  » Estar em boas condições de saúde.  » Ter entre 16 e 69 anos, desde que a primeira doação tenha sido feita até 60 anos (menores de  18 anos, clique para ver documentos necessários e formulário de autorização).  » Pesar no mínimo 50kg.  » Estar descansado (ter dormido pelo menos 6 horas nas últimas 24 horas).  » Estar alimentado (evitar alimentação gordurosa nas 4 horas que antecedem a doação).  » Apresentar documento original com foto recente, que permita a identificação do candidato,  emitido por órgão oficial (Carteira de Identidade, Cartão de Identidade de Profissional Liberal,  Carteira de Trabalho e Previdência Social).  Impedimentos temporários  » Resfriado: aguardar 7 dias após desaparecimento dos sintomas.  » Gravidez  » 90 dias após parto normal e 180 dias após cesariana.  » Amamentação (se o parto ocorreu há menos de 12 meses).  » Ingestão de bebida alcoólica nas 12 horas que antecedem a doação.  » Tatuagem / maquiagem definitiva nos últimos 12 meses.  » Situações nas quais há maior risco de adquirir doenças sexualmente transmissíveis: aguardar  12 meses.  » Acre, Amapá, Amazonas, Rondônia, Roraima, Maranhão, Mato Grosso, Pará e Tocantins são  estados onde há alta prevalência de malária. Quem esteve nesses estados deve aguardar 12  meses.  » Qualquer procedimento endoscópico (endoscopia digestiva alta, colonoscopia, rinoscopia etc):  aguardar 6 meses.  » Extração dentária (verificar uso de medicação) ou tratamento de canal (verificar medicação):  por 7 dias.  » Cirurgia odontológica com anestesia geral: por 4 semanas.  » Acupuntura: se realizada com material descartável: 24 horas; se realizada com laser ou  sementes: apto; se realizada com material sem condições de avaliação: aguardar 12 meses.  » Vacina contra gripe: por 48 horas.  » Herpes labial ou genital: apto após desaparecimento total das lesões.  » Herpes Zoster: apto após 6 meses da cura (vírus Varicella Zoster).  Impedimentos definitivos  » Hepatite após os 11 anos de idade. *  » Evidência clínica ou laboratorial das seguintes doenças infecciosas transmissíveis pelo sangue:  Hepatites B e C, AIDS (vírus HIV), doenças associadas aos vírus HTLV I e II e Doença de  Chagas.  » Uso de drogas ilícitas injetáveis.  » Malária.  * Hepatite após o 11o aniversário: Recusa Definitiva; Hepatite B ou C após ou antes dos 10 anos:  Recusa definitiva; Hepatite por Medicamento: apto após a cura e avaliado clinicamente; Hepatite  viral (A): após os 11 anos de idade, se trouxer o exame do diagnóstico da doença, será avaliado  pelo médico da triagem.  Respeitar os intervalos para doação  » Homens ­ 60 dias (máximo de 04 doações nos últimos 12 meses).  » Mulheres ­ 90 dias (máximo de 03 doações nos últimos 12 meses)."
-        android:layout_alignBaseline="@+id/textView10"
-        android:layout_alignBottom="@+id/textView10"
-        android:layout_alignStart="@+id/textView10" />
+        android:text="A pessoa deve ter, no mínimo, 16 anos completos e no máximo 69 anos"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/textView10"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/textView9" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="35dp"
+        android:id="@+id/imageView2"
+        android:background="@drawable/gota"
+        android:baselineAlignBottom="false"
+        android:clickable="false"
+        android:layout_below="@+id/editText2"
+        android:layout_alignStart="@+id/gota" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="35dp"
+        android:id="@+id/imageView7"
+        android:background="@drawable/gota"
+        android:baselineAlignBottom="false"
+        android:clickable="true"
+        android:layout_below="@+id/editText"
+        android:layout_alignStart="@+id/imageView2" />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:textColor="@color/colorMain"
+        android:text="A pessoa deve pesar no mínimo 50 kg"
+        android:layout_below="@+id/editText2"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/editText2" />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editText3"
+        android:textColor="@color/colorMain"
+        android:text="A pessoa não pode ter tatuagens ou piercing recentes (1 ano)"
+        android:layout_alignTop="@+id/imageView7"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/editText" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="35dp"
+        android:id="@+id/imageView8"
+        android:background="@drawable/gota"
+        android:baselineAlignBottom="false"
+        android:clickable="true"
+        android:layout_below="@+id/editText3"
+        android:layout_alignStart="@+id/imageView7" />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editText4"
+        android:textColor="@color/colorMain"
+        android:text="A pessoa não pode ter ingerido bebida alcoólica nas últimas 12 horas"
+        android:layout_below="@+id/editText3"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/editText3" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Você está ciente dos critérios para a doação?"
+        android:id="@+id/textView11"
+        android:textColor="@color/colorMain"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:textAlignment="center"
+        android:layout_below="@+id/editText4"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="22dp" />
+
+    <Button
+        android:id="@+id/nao"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:background="@drawable/nao"
+        android:src ="@drawable/nao"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@+id/textView11"
+        android:layout_alignStart="@+id/imageView8"
+        android:layout_marginTop="29dp" />
+
+    <Button
+        android:id="@+id/sim"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:background="@drawable/sim"
+        android:src ="@drawable/sim"
+        android:layout_marginLeft="5dp"
+        android:layout_alignBottom="@+id/nao"
+        android:layout_toEndOf="@+id/naousa" />
+
 
 
 </RelativeLayout>
