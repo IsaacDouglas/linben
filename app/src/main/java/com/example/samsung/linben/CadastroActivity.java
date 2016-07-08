@@ -33,6 +33,7 @@ public class CadastroActivity extends AppCompatActivity {
 
     private Button btn_voltar;
     private Button btn_salvar;
+    private Button btn_ajuda;
     private Usuario usuario;
     private DataBase database;
     private SQLiteDatabase dbActions;
@@ -67,6 +68,7 @@ public class CadastroActivity extends AppCompatActivity {
 
         btn_voltar = (Button) findViewById(R.id.voltarseta);
         btn_salvar = (Button) findViewById(R.id.bt_salvar);
+        btn_ajuda = (Button) findViewById(R.id.ajuda);
 
         nome = (EditText) findViewById(R.id.nome);
         email = (EditText) findViewById(R.id.email);
@@ -93,6 +95,15 @@ public class CadastroActivity extends AppCompatActivity {
         genero = (Spinner) findViewById(R.id.sexo);
         genero.setAdapter(adapter1);
 
+
+        btn_ajuda.setOnClickListener(new View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View v) {
+                                              Intent i = new Intent(CadastroActivity.this, AjudaActivity.class);
+                                              startActivity(i);
+                                          }
+                                      }
+        );
 
         btn_voltar.setOnClickListener(new View.OnClickListener() {
                                           @Override
