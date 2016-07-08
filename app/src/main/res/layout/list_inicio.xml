@@ -47,15 +47,14 @@
 
         <TextView
             android:id="@+id/sangue"
-            android:layout_width="80dp"
+            android:layout_width="40dp"
             android:layout_height="34dp"
             android:text="A+"
             android:layout_marginLeft="20dp"
             android:layout_gravity="right"
+            style="@style/LetrasVinho"
             android:layout_alignTop="@+id/item"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="63dp"
-            style="@style/LetrasVinho"/>
+            android:layout_alignParentEnd="true" />
 
         <Button
             android:layout_width="40dp"
@@ -63,9 +62,9 @@
             android:background="@drawable/vermais"
             android:id="@+id/button2"
             android:layout_alignParentBottom="true"
-            android:layout_alignEnd="@+id/textView1"
             android:layout_marginBottom="10dp"
-            android:layout_alignStart="@+id/textView1" />
+            android:layout_alignStart="@+id/textView1"
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
 
