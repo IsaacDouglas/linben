@@ -37,7 +37,7 @@
 
     <ImageView
         android:layout_width="350dp"
-        android:layout_height="130dp"
+        android:layout_height="120dp"
         android:id="@+id/texto"
         android:background="@drawable/hemocentrotexto"
         android:baselineAlignBottom="false"
@@ -47,18 +47,16 @@
 
     <ImageView
         android:layout_width="fill_parent"
-        android:layout_height="210dp"
+        android:layout_height="250dp"
         android:id="@+id/mapa"
         android:background="@drawable/mapa"
         android:baselineAlignBottom="false"
-        android:layout_marginTop="34dp"
         android:layout_below="@+id/texto"
-        android:layout_alignStart="@+id/voltarseta"
-        android:layout_alignEnd="@+id/ajuda" />
+        android:layout_alignParentStart="true" />
 
     <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="390dp"
+        android:layout_height="20dp"
         android:id="@+id/endereco"
         android:background="@drawable/endereco"
         android:baselineAlignBottom="false"

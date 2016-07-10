@@ -37,11 +37,11 @@
 
     <ImageView
         android:layout_width="300dp"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
         android:id="@+id/descricao"
         android:background="@drawable/descriacaodoacao"
         android:baselineAlignBottom="false"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="70dp"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true" />
 

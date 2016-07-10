@@ -90,6 +90,7 @@
         android:layout_toEndOf="@+id/voltarseta" />
 
     <Spinner
+        style="@style/LetrasVinho"
         android:id="@+id/sexo"
         android:layout_width="50dp"
         android:layout_height="30dp"
@@ -98,7 +99,7 @@
         android:layout_marginLeft="20dp"
         android:layout_below="@+id/t_sexo"
         android:layout_alignEnd="@+id/sangue"
-        android:textColor="@color/colorMain" >
+        android:textColor="@color/colorMain">
     </Spinner>
 
 
@@ -110,19 +111,6 @@
         android:id="@+id/t_data_nascimento"
         android:layout_below="@+id/sangue"
         android:layout_alignEnd="@+id/ajuda" />
-    <Button
-        android:layout_width="50dp"
-        android:layout_height="30dp"
-        android:inputType="date"
-        android:background="#61cdcdcd"
-        android:id="@+id/data"
-        android:onClick="selecionarData"
-        android:layout_alignEnd="@+id/nome"
-        android:layout_alignBottom="@+id/sexo"
-        android:layout_toEndOf="@+id/email"
-        android:layout_below="@+id/t_sexo"
-        android:layout_alignStart="@+id/t_data_nascimento"
-        android:textColor="@color/colorMain" />
 
     <TextView
         android:text="Email"
@@ -191,6 +179,20 @@
         android:layout_alignEnd="@+id/t_data_nascimento"
         android:layout_alignStart="@+id/voltarseta"
         android:layout_marginBottom="15dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#61cdcdcd"
+        android:ems="10"
+        android:id="@+id/editText5"
+        android:textColor="@color/colorMain"
+        android:hint="DD/MM/YYYY"
+        android:textColorHint="@color/colorMain"
+        android:layout_below="@+id/t_sexo"
+        android:layout_alignStart="@+id/t_data_nascimento"
+        android:layout_alignBottom="@+id/sexo"
+        android:layout_alignEnd="@+id/email" />
 
 
 </RelativeLayout>
