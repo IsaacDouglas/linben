@@ -52,7 +52,7 @@ public class AgendarActivity extends AppCompatActivity {
         btn_voltar.setOnClickListener(new View.OnClickListener() {
                                           @Override
                                           public void onClick(View v) {
-                                              Intent i = new Intent(AgendarActivity.this, MenuActivity.class);
+                                              Intent i = new Intent(AgendarActivity.this, CriteriosDoacaoActivity.class);
                                               startActivity(i);
                                           }
                                       }
@@ -89,6 +89,16 @@ public class AgendarActivity extends AppCompatActivity {
             ano = year;
             mes = monthOfYear;
             dia = dayOfMonth;
+
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(ano, mes, dia);
+            Date data = calendar.getTime();
+
+
+            DateFormat format = DateFormat.getDateInstance(DateFormat.MEDIUM);
+            String dt = format.format(data);
+
+            data_nascimento.setText(dt);
 
         }
 

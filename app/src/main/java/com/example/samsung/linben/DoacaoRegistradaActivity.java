@@ -30,7 +30,7 @@ public class DoacaoRegistradaActivity extends AppCompatActivity {
             public void onClick(View arg0) { //exibe um Toast informativo.
 
                // Toast.makeText(DoacaoRegistradaActivity.this, "alerta.dismiss()", Toast.LENGTH_SHORT).show(); //desfaz o alerta.
-                Intent i = new Intent(DoacaoRegistradaActivity.this, AgendarActivity.class);
+                Intent i = new Intent(DoacaoRegistradaActivity.this, MenuActivity.class);
                 startActivity(i);
              //   alerta.dismiss();
 

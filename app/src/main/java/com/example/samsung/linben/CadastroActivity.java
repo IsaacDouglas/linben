@@ -258,7 +258,7 @@ public class CadastroActivity extends AppCompatActivity {
         genero.setAdapter(adapter1);
 
 
-        btn_foto = (Button) findViewById(R.id.camera);
+        /*btn_foto = (Button) findViewById(R.id.camera);
         if (new File(profileDir.getPath() + "/1.jpg") != null){
             btn_foto.setBackground(Drawable.createFromPath(String.valueOf(new File(profileDir.getPath() + "/1.jpg"))));
         }
@@ -268,7 +268,7 @@ public class CadastroActivity extends AppCompatActivity {
             public void onClick(View v){
                 escolheFoto();
             }
-        });
+        });*/
 
         btn_ajuda.setOnClickListener(new View.OnClickListener() {
                                          @Override

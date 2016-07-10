@@ -35,6 +35,7 @@ public class VerCausaActivity extends AppCompatActivity {
     //atributo da classe.
     private Button btn_doar;
     private Button btn_voltar;
+    private Button btn_divulgar;
     private Button btn_ajuda;
     private AlertDialog alerta;
 
@@ -68,11 +69,12 @@ public class VerCausaActivity extends AppCompatActivity {
         btn_doar = (Button) findViewById(R.id.botao);
         btn_voltar = (Button) findViewById(R.id.voltarseta);
         btn_ajuda = (Button) findViewById(R.id.ajuda);
+        btn_divulgar = (Button) findViewById(R.id.botao2) ;
 
         btn_doar.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
-                                            Intent i = new Intent(VerCausaActivity.this, AgendarActivity.class);
+                                            Intent i = new Intent(VerCausaActivity.this, CriteriosDoacaoActivity.class);
                                             startActivity(i);
                                         }
                                     }
@@ -93,6 +95,16 @@ public class VerCausaActivity extends AppCompatActivity {
                                          }
                                      }
         );
+
+        btn_divulgar.setOnClickListener(new View.OnClickListener() {
+                                         @Override
+                                         public void onClick(View v) {
+                                             Intent i = new Intent(VerCausaActivity.this, ApoiarActivity.class);
+                                             startActivity(i);
+                                         }
+                                     }
+        );
+
 
 
     }
