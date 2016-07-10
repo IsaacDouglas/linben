@@ -185,7 +185,7 @@
         android:layout_height="wrap_content"
         android:background="#61cdcdcd"
         android:ems="10"
-        android:id="@+id/editText5"
+        android:id="@+id/dataN"
         android:textColor="@color/colorMain"
         android:hint="DD/MM/YYYY"
         android:textColorHint="@color/colorMain"

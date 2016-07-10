@@ -81,7 +81,7 @@ public class DataBase extends SQLiteOpenHelper{
         values.put(PASSWORD, usuario.getSenha());
         values.put(BLOOD_TYPE, usuario.getTipo_sanguineo());
         values.put(GENERE, usuario.getGenero());
-        values.put(BIRTH_DATE, usuario.getData_nascimento().getDate());
+        values.put(BIRTH_DATE, usuario.getData_nascimento());
 
         db.insertOrThrow("USUARIO", null, values);
     }
@@ -104,7 +104,7 @@ public class DataBase extends SQLiteOpenHelper{
                 usuario.setSenha(cursor.getString(3));
                 usuario.setTipo_sanguineo(cursor.getString(4));
                 usuario.setGenero(cursor.getString(5));
-                usuario.setData_nascimento(new Date(cursor.getInt(6)));
+                usuario.setData_nascimento(cursor.getString(6));
 
                 adpUsuarios.add(usuario);
 

@@ -13,7 +13,7 @@ public class Usuario {
     private String senha;
     private String tipo_sanguineo;
     private String genero;
-    private Date data_nascimento;
+    private String data_nascimento;
 
     public  Usuario (){
 
@@ -67,11 +67,11 @@ public class Usuario {
         this.genero = genero;
     }
 
-    public Date getData_nascimento() {
+    public String getData_nascimento() {
         return data_nascimento;
     }
 
-    public void setData_nascimento(Date data_nascimento) {
+    public void setData_nascimento(String data_nascimento) {
         this.data_nascimento = data_nascimento;
     }
 

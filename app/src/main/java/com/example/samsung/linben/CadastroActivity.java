@@ -48,7 +48,7 @@ import com.example.samsung.linben.entidades.Usuario;
  */
 public class CadastroActivity extends AppCompatActivity {
     private int ano, mes, dia;
-    Button dataNascimento;
+    EditText dataNascimento;
 
     private Button btn_voltar;
     private Button btn_salvar;
@@ -238,11 +238,11 @@ public class CadastroActivity extends AppCompatActivity {
         genero = (Spinner) findViewById(R.id.sexo);
         tipo_sanguineo = (Spinner) findViewById(R.id.sangue);
 
-        Calendar calendar = Calendar.getInstance();
+       /* Calendar calendar = Calendar.getInstance();
         this.ano = calendar.get(Calendar.YEAR);
         this.mes = calendar.get(Calendar.MONTH);
-        this.dia = calendar.get(Calendar.DAY_OF_MONTH);
-        this.dataNascimento = (Button) findViewById(R.id.data);
+        this.dia = calendar.get(Calendar.DAY_OF_MONTH);*/
+        dataNascimento = (EditText) findViewById(R.id.dataN);
         //dataNascimento.setText(dia + "/" + (mes+1) + "/" + ano);
 
         final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
@@ -299,7 +299,7 @@ public class CadastroActivity extends AppCompatActivity {
                                                   }else {
                                                       inserir();
                                                       Toast.makeText(CadastroActivity.this, "Usuário cadastrado com sucesso!", Toast.LENGTH_LONG).show();
-                                                      Intent i = new Intent(CadastroActivity.this, LoginActivity.class);
+                                                       Intent i = new Intent(CadastroActivity.this, LoginActivity.class);
                                                       startActivity(i);
                                                   }
                                               }
@@ -310,7 +310,7 @@ public class CadastroActivity extends AppCompatActivity {
 
 
 
-    public void selecionarData(View view){
+    /*public void selecionarData(View view){
         showDialog(view.getId());
     }
 
@@ -340,9 +340,10 @@ public class CadastroActivity extends AppCompatActivity {
             dataNascimento.setText(dt);
             //dataNascimento.setText(dia + "/" + (mes+1) + "/" + ano);
             usuario.setData_nascimento(data);
+
         }
     };
-
+*/
 
 
     private void inserir() {
@@ -354,6 +355,7 @@ public class CadastroActivity extends AppCompatActivity {
             usuario.setSenha(senha.getText().toString());
             usuario.setGenero(genero.getSelectedItem().toString());
             usuario.setTipo_sanguineo(tipo_sanguineo.getSelectedItem().toString());
+            usuario.setNome(dataNascimento.getText().toString());
 
             database.insertUser(usuario);
 
