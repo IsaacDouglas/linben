@@ -27,6 +27,9 @@ public class InicioActivity extends Activity{
     private FragmentActivity fa;
     private Button bt_criar;
     private Button bt_ver1;
+    private Button bt_ver2;
+    private Button bt_ver3;
+    private Button bt_ver4;
 
     ListaCausaActivity listaCausa = new ListaCausaActivity();
 
@@ -54,53 +57,45 @@ public class InicioActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_menu);
 
-        bt_ver1 =  (Button) findViewById(R.id.button2);
+        bt_ver1 = (Button) findViewById(R.id.button2);
+        bt_ver2 =  (Button) findViewById(R.id.vermais2);
+        bt_ver3 =  (Button) findViewById(R.id.vermais3);
+        bt_ver4 =  (Button) findViewById(R.id.vermais4);
 
         bt_ver1.setOnClickListener(new View.OnClickListener() {
-                                         @Override
-                                         public void onClick(View v) {
-                                             Intent i = new Intent(InicioActivity.this, VerCausaActivity.class);
-                                             startActivity(i);
-                                         }
-                                     }
+                                       @Override
+                                       public void onClick(View v) {
+                                           Intent i = new Intent(InicioActivity.this, VerCausaActivity.class);
+                                           startActivity(i);
+                                       }
+                                   }
         );
-
-     /*   CustomListAdapter adapter = new CustomListAdapter(this, itemname, imgid);
-        list = (ListView) findViewById(R.id.list);
-        list.setAdapter(adapter);
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String Slecteditem = itemname[+position];
-                Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
-            }
-
-        });
-*/
-
+        bt_ver2.setOnClickListener(new View.OnClickListener() {
+                                       @Override
+                                       public void onClick(View v) {
+                                           Intent i = new Intent(InicioActivity.this, VerCausaActivity.class);
+                                           startActivity(i);
+                                       }
+                                   }
+        );
+        bt_ver3.setOnClickListener(new View.OnClickListener() {
+                                       @Override
+                                       public void onClick(View v) {
+                                           Intent i = new Intent(InicioActivity.this, VerCausaActivity.class);
+                                           startActivity(i);
+                                       }
+                                   }
+        );
+        bt_ver4.setOnClickListener(new View.OnClickListener() {
+                                       @Override
+                                       public void onClick(View v) {
+                                           Intent i = new Intent(InicioActivity.this, VerCausaActivity.class);
+                                           startActivity(i);
+                                       }
+                                   }
+        );
 
     }
-
-
-/*
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        fa = (FragmentActivity) super.getActivity();
-        rl = (RelativeLayout) inflater.inflate(R.layout.activity_inicio, container, false);
-        super.onCreate(savedInstanceState);
-        bt_criar = (Button) rl.findViewById(R.id.criar);
-        bt_ver1 =  (Button)  rl.findViewById(R.id.ver1);
-
-        bt_criar.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View v) {
-                                            Intent i = new Intent(fa,ApeloActivity.class);
-                                            startActivity(i);
-                                        }
-                                    }
-        );
-
-*/
 
 
 }

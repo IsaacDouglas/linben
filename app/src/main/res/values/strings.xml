@@ -38,7 +38,7 @@
 
     <string-array name="cidade1">
         <item>Recife</item>
-       </string-array>
+    </string-array>
 
     <string-array name="hemocentro">
         <item>HEMOPE</item>

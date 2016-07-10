@@ -147,7 +147,7 @@
                         style="@style/LetrasCinza"
                         android:layout_alignStart="@+id/item1"
                         android:layout_toStartOf="@+id/sangue1"
-                        android:layout_above="@+id/button21"
+                        android:layout_above="@+id/vermais2"
                         android:layout_marginBottom="10dp"
                         android:layout_alignEnd="@+id/sangue1" />
 
@@ -166,7 +166,7 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/vermais"
-                        android:id="@+id/button21"
+                        android:id="@+id/vermais2"
                         android:layout_alignParentBottom="true"
                         android:layout_marginBottom="10dp"
                         android:layout_alignParentEnd="true"
@@ -218,7 +218,7 @@
                         style="@style/LetrasCinza"
                         android:layout_alignStart="@+id/item2"
                         android:layout_toStartOf="@+id/sangue2"
-                        android:layout_above="@+id/button22"
+                        android:layout_above="@+id/vermais3"
                         android:layout_marginBottom="10dp"
                         android:layout_alignEnd="@+id/sangue2" />
 
@@ -237,7 +237,7 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/vermais"
-                        android:id="@+id/button22"
+                        android:id="@+id/vermais3"
                         android:layout_alignParentBottom="true"
                         android:layout_marginBottom="10dp"
                         android:layout_alignParentEnd="true"
@@ -290,7 +290,7 @@
                         style="@style/LetrasCinza"
                         android:layout_alignStart="@+id/item3"
                         android:layout_toStartOf="@+id/sangue3"
-                        android:layout_above="@+id/button23"
+                        android:layout_above="@+id/vermais4"
                         android:layout_marginBottom="10dp"
                         android:layout_alignEnd="@+id/sangue3" />
 
@@ -309,7 +309,7 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/vermais"
-                        android:id="@+id/button23"
+                        android:id="@+id/vermais4"
                         android:layout_alignParentBottom="true"
                         android:layout_marginBottom="10dp"
                         android:layout_alignParentEnd="true"

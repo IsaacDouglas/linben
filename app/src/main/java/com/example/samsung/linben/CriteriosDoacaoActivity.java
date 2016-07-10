@@ -13,9 +13,6 @@ public class CriteriosDoacaoActivity extends AppCompatActivity {
     private Button btn_sim;
     private Button btn_nao;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,11 +1,14 @@
 package com.example.samsung.linben;
 
 import android.app.AlertDialog;
+import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -25,6 +28,8 @@ import android.util.Log;
 
 import java.io.File;
 
+import java.io.File;
+
 public class VerCausaActivity extends AppCompatActivity {
 
     //atributo da classe.
@@ -32,6 +37,7 @@ public class VerCausaActivity extends AppCompatActivity {
     private Button btn_voltar;
     private Button btn_ajuda;
     private AlertDialog alerta;
+
     private VideoView video;
     private File videosDir;
     ProgressDialog pDialog;
@@ -39,37 +45,37 @@ public class VerCausaActivity extends AppCompatActivity {
     WebView mWebView;
 
     public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState);
 
-    setContentView(R.layout.activity_ver_causa);
+        setContentView(R.layout.activity_ver_causa);
         videoview = (VideoView) findViewById(R.id.videoView);
 
 
-    try {
-        // Start the MediaController
-        MediaController mediacontroller = new MediaController(
-                VerCausaActivity.this);
-        mediacontroller.setAnchorView(videoview);
-        // Get the URL from String VideoURL
-        Uri video = Uri.parse("android.resource://com.example.samsung.linben/raw/pedido");
-        videoview.setMediaController(mediacontroller);
-        videoview.setVideoURI(video);
+        try {
+            // Start the MediaController
+            MediaController mediacontroller = new MediaController(
+                    VerCausaActivity.this);
+            mediacontroller.setAnchorView(videoview);
+            // Get the URL from String VideoURL
+            Uri video = Uri.parse("android.resource://com.example.samsung.linben/raw/pedido");
+            videoview.setMediaController(mediacontroller);
+            videoview.setVideoURI(video);
 
-    } catch (Exception e) {
-        Log.e("Error", e.getMessage());
-        e.printStackTrace();
-    }
+        } catch (Exception e) {
+            Log.e("Error", e.getMessage());
+            e.printStackTrace();
+        }
         btn_doar = (Button) findViewById(R.id.botao);
         btn_voltar = (Button) findViewById(R.id.voltarseta);
         btn_ajuda = (Button) findViewById(R.id.ajuda);
 
         btn_doar.setOnClickListener(new View.OnClickListener() {
-                                          @Override
-                                          public void onClick(View v) {
-                                              Intent i = new Intent(VerCausaActivity.this, AgendarActivity.class);
-                                              startActivity(i);
-                                          }
-                                      }
+                                        @Override
+                                        public void onClick(View v) {
+                                            Intent i = new Intent(VerCausaActivity.this, AgendarActivity.class);
+                                            startActivity(i);
+                                        }
+                                    }
         );
         btn_voltar.setOnClickListener(new View.OnClickListener() {
                                           @Override
@@ -80,15 +86,15 @@ public class VerCausaActivity extends AppCompatActivity {
                                       }
         );
         btn_ajuda.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View v) {
-                                            Intent i = new Intent(VerCausaActivity.this, AjudaActivity.class);
-                                            startActivity(i);
-                                        }
-                                    }
+                                         @Override
+                                         public void onClick(View v) {
+                                             Intent i = new Intent(VerCausaActivity.this, AjudaActivity.class);
+                                             startActivity(i);
+                                         }
+                                     }
         );
 
 
-}
+    }
 
 }

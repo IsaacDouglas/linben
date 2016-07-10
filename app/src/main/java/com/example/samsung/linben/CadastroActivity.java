@@ -246,10 +246,10 @@ public class CadastroActivity extends AppCompatActivity {
         //dataNascimento.setText(dia + "/" + (mes+1) + "/" + ano);
 
         final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                 this, R.array.tipo_sanguineo,
-         android.R.layout.simple_spinner_item);
-         tipo_sanguineo = (Spinner) findViewById(R.id.sangue);
-         tipo_sanguineo.setAdapter(adapter);
+                this, R.array.tipo_sanguineo,
+                android.R.layout.simple_spinner_item);
+        tipo_sanguineo = (Spinner) findViewById(R.id.sangue);
+        tipo_sanguineo.setAdapter(adapter);
 
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(
                 this, R.array.sexo,
@@ -271,12 +271,12 @@ public class CadastroActivity extends AppCompatActivity {
         });
 
         btn_ajuda.setOnClickListener(new View.OnClickListener() {
-                                          @Override
-                                          public void onClick(View v) {
-                                              Intent i = new Intent(CadastroActivity.this, AjudaActivity.class);
-                                              startActivity(i);
-                                          }
-                                      }
+                                         @Override
+                                         public void onClick(View v) {
+                                             Intent i = new Intent(CadastroActivity.this, AjudaActivity.class);
+                                             startActivity(i);
+                                         }
+                                     }
         );
 
         btn_voltar.setOnClickListener(new View.OnClickListener() {
@@ -300,11 +300,11 @@ public class CadastroActivity extends AppCompatActivity {
                                                       inserir();
                                                       Toast.makeText(CadastroActivity.this, "Usuário cadastrado com sucesso!", Toast.LENGTH_LONG).show();
                                                       Intent i = new Intent(CadastroActivity.this, LoginActivity.class);
-                                                     startActivity(i);
+                                                      startActivity(i);
                                                   }
                                               }
                                           }
-            }
+                                      }
         );
     }
 
@@ -345,29 +345,27 @@ public class CadastroActivity extends AppCompatActivity {
 
 
 
-         private void inserir() {
-         try {
+    private void inserir() {
+        try {
 
 
-             usuario.setNome(nome.getText().toString());
-             usuario.setEmail(email.getText().toString());
-             usuario.setSenha(senha.getText().toString());
-             usuario.setGenero(genero.getSelectedItem().toString());
-             usuario.setTipo_sanguineo(tipo_sanguineo.getSelectedItem().toString());
+            usuario.setNome(nome.getText().toString());
+            usuario.setEmail(email.getText().toString());
+            usuario.setSenha(senha.getText().toString());
+            usuario.setGenero(genero.getSelectedItem().toString());
+            usuario.setTipo_sanguineo(tipo_sanguineo.getSelectedItem().toString());
 
-             database.insertUser(usuario);
+            database.insertUser(usuario);
 
-         } catch (Exception ex) {
+        } catch (Exception ex) {
 
-             AlertDialog.Builder dlg = new AlertDialog.Builder(this);
-             dlg.setMessage("Erro ao inserir os dados! " + ex.getMessage());
-             dlg.setNegativeButton("OK", null);
-             dlg.show();
+            AlertDialog.Builder dlg = new AlertDialog.Builder(this);
+            dlg.setMessage("Erro ao inserir os dados! " + ex.getMessage());
+            dlg.setNegativeButton("OK", null);
+            dlg.show();
 
-         }
-     }
+        }
+    }
 
 
 }
-
-

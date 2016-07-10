@@ -26,6 +26,9 @@ public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawer;
     private Button bt_ver1;
+    private Button bt_ver2;
+    private Button bt_ver3;
+    private Button bt_ver4;
     private Button bt_criar;
 
     ListView list;
@@ -54,6 +57,10 @@ public class MenuActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         bt_ver1 =  (Button) findViewById(R.id.button2);
+        bt_ver2 =  (Button) findViewById(R.id.vermais2);
+        bt_ver3 =  (Button) findViewById(R.id.vermais3);
+        bt_ver4 =  (Button) findViewById(R.id.vermais4);
+
 
         bt_ver1.setOnClickListener(new View.OnClickListener() {
                                        @Override
@@ -63,28 +70,7 @@ public class MenuActivity extends AppCompatActivity
                                        }
                                    }
         );
-
-/*
-        CustomListAdapter adapter = new CustomListAdapter(this, itemname, imgid);
-        list = (ListView) findViewById(R.id.list);
-        list.setAdapter(adapter);
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String Slecteditem = itemname[+position];
-                Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
-            }
-        });
-        */
-
-
-
-       // super.onCreate(savedInstanceState);
-       // setContentView(R.layout.content_menu);
-       // Button bt_criar = (Button) findViewById(R.id.criar);
-        //Button bt_ver1 = (Button) findViewById(R.id.ver1);
-
-/*        bt_ver1.setOnClickListener(new View.OnClickListener() {
+        bt_ver2.setOnClickListener(new View.OnClickListener() {
                                        @Override
                                        public void onClick(View v) {
                                            Intent i = new Intent(MenuActivity.this, VerCausaActivity.class);
@@ -92,17 +78,23 @@ public class MenuActivity extends AppCompatActivity
                                        }
                                    }
         );
-*/
+        bt_ver3.setOnClickListener(new View.OnClickListener() {
+                                       @Override
+                                       public void onClick(View v) {
+                                           Intent i = new Intent(MenuActivity.this, VerCausaActivity.class);
+                                           startActivity(i);
+                                       }
+                                   }
+        );
+        bt_ver4.setOnClickListener(new View.OnClickListener() {
+                                       @Override
+                                       public void onClick(View v) {
+                                           Intent i = new Intent(MenuActivity.this, VerCausaActivity.class);
+                                           startActivity(i);
+                                       }
+                                   }
+        );
 
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.nav_Ajuda);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-*/
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);

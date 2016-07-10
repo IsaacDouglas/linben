@@ -8,7 +8,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:id="@+id/imageView"
         android:background="@drawable/hemocentros"
         android:src ="@drawable/hemocentros"
@@ -20,15 +20,15 @@
 
     <Button
         android:id="@+id/voltarseta"
-        android:layout_width="20dp"
-        android:layout_height="35dp"
+        android:layout_width="15dp"
+        android:layout_height="25dp"
         android:background="@drawable/voltartopo"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="5dp" />
     <Button
         android:id="@+id/ajuda"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:background="@drawable/duvidatopo"
         android:layout_marginRight="5dp"
         android:layout_alignTop="@+id/voltarseta"

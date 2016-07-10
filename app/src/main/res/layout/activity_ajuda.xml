@@ -31,14 +31,6 @@
         android:layout_marginTop="5dp" />
 
 
-    <Button
-        android:id="@+id/voltarseta"
-        android:layout_width="15dp"
-        android:layout_height="25dp"
-        android:background="@drawable/voltartopo"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp" />
-
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="600dp"

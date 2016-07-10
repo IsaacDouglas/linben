@@ -34,7 +34,7 @@ public class SobreActivity extends AppCompatActivity {
         );
 
 
-        btn_voltar.setOnClickListener(new View.OnClickListener() {
+        btn_ajuda.setOnClickListener(new View.OnClickListener() {
                                           @Override
                                           public void onClick(View v) {
                                               Intent i = new Intent(SobreActivity.this, AjudaActivity.class);
