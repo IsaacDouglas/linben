@@ -70,30 +70,6 @@ public class InicioActivity extends Activity{
                                        }
                                    }
         );
-        bt_ver2.setOnClickListener(new View.OnClickListener() {
-                                       @Override
-                                       public void onClick(View v) {
-                                           Intent i = new Intent(InicioActivity.this, VerCausaActivity.class);
-                                           startActivity(i);
-                                       }
-                                   }
-        );
-        bt_ver3.setOnClickListener(new View.OnClickListener() {
-                                       @Override
-                                       public void onClick(View v) {
-                                           Intent i = new Intent(InicioActivity.this, VerCausaActivity.class);
-                                           startActivity(i);
-                                       }
-                                   }
-        );
-        bt_ver4.setOnClickListener(new View.OnClickListener() {
-                                       @Override
-                                       public void onClick(View v) {
-                                           Intent i = new Intent(InicioActivity.this, VerCausaActivity.class);
-                                           startActivity(i);
-                                       }
-                                   }
-        );
 
     }
 

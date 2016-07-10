@@ -70,30 +70,7 @@ public class MenuActivity extends AppCompatActivity
                                        }
                                    }
         );
-        bt_ver2.setOnClickListener(new View.OnClickListener() {
-                                       @Override
-                                       public void onClick(View v) {
-                                           Intent i = new Intent(MenuActivity.this, VerCausaActivity.class);
-                                           startActivity(i);
-                                       }
-                                   }
-        );
-        bt_ver3.setOnClickListener(new View.OnClickListener() {
-                                       @Override
-                                       public void onClick(View v) {
-                                           Intent i = new Intent(MenuActivity.this, VerCausaActivity.class);
-                                           startActivity(i);
-                                       }
-                                   }
-        );
-        bt_ver4.setOnClickListener(new View.OnClickListener() {
-                                       @Override
-                                       public void onClick(View v) {
-                                           Intent i = new Intent(MenuActivity.this, VerCausaActivity.class);
-                                           startActivity(i);
-                                       }
-                                   }
-        );
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
