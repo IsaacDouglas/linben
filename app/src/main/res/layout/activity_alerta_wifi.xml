@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="300dp"
-    android:layout_height="400dp"
+    android:layout_height="500dp"
     android:layout_marginTop="50dp"
     android:layout_marginLeft="40dp"
     android:background="@drawable/janelapopup"
@@ -28,26 +28,15 @@
         android:layout_centerHorizontal="true" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        style="@style/LetrasCinza"
-        android:text="Acesso Liberado!"
-        android:textStyle="bold"
-        android:textSize="30dp"
-        android:textAlignment="center"
-        android:layout_below="@+id/imageView4"
-        android:layout_alignParentStart="true"
-        android:id="@+id/textView5" />
-
-    <TextView
         android:layout_width="300dp"
-        android:layout_height="160dp"
+        android:layout_height="250dp"
         style="@style/LetrasCinza"
-        android:text="Você tem 20 minutos de internet grátis!"
+        android:text="Você tem 20 minutos de Internet grátis! Vá para algum ponto de acesso para liberá-los."
         android:textSize="30dp"
         android:textAlignment="center"
         android:layout_marginLeft="40dp"
-        android:layout_below="@+id/textView5"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/textView6" />
+
+        android:id="@+id/textView6"
+        android:layout_below="@+id/imageView4"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

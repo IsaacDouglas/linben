@@ -120,11 +120,9 @@
         android:ems="10"
         android:id="@+id/editText"
         android:textColor="@color/colorMain"
-        android:text="A pessoa deve pesar no mínimo 50 kg"
-        android:layout_above="@+id/editText3"
-        android:layout_alignStart="@+id/editText2"
-        android:layout_toStartOf="@+id/ajuda"
-        android:layout_marginBottom="18dp" />
+        android:text="Deve pesar no mínimo 50 kg"
+        android:layout_alignTop="@+id/imageView2"
+        android:layout_alignStart="@+id/editText2" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -134,7 +132,7 @@
         android:id="@+id/editText3"
         android:textSize="18dp"
         android:textColor="@color/colorMain"
-        android:text="A pessoa não pode ter tatuagens ou piercing recentes (1 ano)"
+        android:text="Não pode ter tatuagens ou piercing recentes (no mínimo, 1 ano)"
         android:layout_alignTop="@+id/imageView7"
         android:layout_alignEnd="@+id/textView11"
         android:layout_alignStart="@+id/editText" />
@@ -157,7 +155,7 @@
         android:id="@+id/editText4"
         android:textSize="18dp"
         android:textColor="@color/colorMain"
-        android:text="A pessoa não pode ter ingerido bebida alcoólica nas últimas 12 horas"
+        android:text="Não pode ter ingerido bebida alcoólica nas últimas 12 horas"
         android:layout_marginTop="40dp"
         android:layout_below="@+id/imageView7"
         android:layout_alignStart="@+id/editText3"
