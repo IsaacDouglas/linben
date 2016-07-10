@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class ApoiarActivity extends AppCompatActivity {
     private Button btn_concluir;
@@ -21,6 +22,7 @@ public class ApoiarActivity extends AppCompatActivity {
         btn_concluir.setOnClickListener(new View.OnClickListener() {
                                             @Override
                                             public void onClick(View v) {
+                                                Toast.makeText(ApoiarActivity.this, "Divulgação Realizada!", Toast.LENGTH_LONG).show();
                                                 Intent i = new Intent(ApoiarActivity.this, MenuActivity.class);
                                                 startActivity(i);
                                             }
